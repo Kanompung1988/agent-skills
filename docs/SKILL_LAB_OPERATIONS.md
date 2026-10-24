@@ -1,91 +1,45 @@
-# AREAZERO Skill Lab — autonomous release operations
+# AREAZERO Skill Lab — autonomous publishing contract
 
-> **Series:** AREAZERO Skill Lab · *Make AI more useful every day*  
-> **Thai public tagline:** ทำให้ AI เก่งขึ้นทุกวัน  
-> **GitHub:** [Kanompung1988/agent-skills](https://github.com/Kanompung1988/agent-skills)  
-> **Related, separate series:** Daily AI Scout (news and AI trends, **not** software releases).
+> **Thai series title:** ทำให้ AI เก่งขึ้นทุกวัน  
+> **GitHub portfolio:** [Kanompung1988/agent-skills](https://github.com/Kanompung1988/agent-skills)  
+> **Public code model:** **ONE SKILL = ONE DEDICATED PUBLIC REPOSITORY**, not a monorepo.  
+> **Sibling editorial series:** Daily AI Scout (AI news/trends, not skill releases).
 
-This document is the reproducible operations contract for an autonomous daily run. It does not grant new tool permissions; use only connected, authorized services and verify every external result. Quality outranks daily output volume. A missed day is better than an untested public claim.
+## Objectives
 
-## What ships
+Build technical credibility for GitHub [@Kanompung1988](https://github.com/Kanompung1988) by shipping small, honestly tested open-source tools, with beautiful English GitHub documentation and one combined Thai daily recap when verified releases exist. If no skill passes quality gates, do not create filler content or fake releases.
 
-Each successful episode announces **one combined set of one or two new, tested Agent Skills**. Never create two separate promotional posts for two skills on the same day. A finished skill is a portable directory with `SKILL.md`, `README.md`, implementation scripts where needed, focused references, LICENSE / attribution, synthetic examples, tests and limitations. Public README text and code are English; Instagram/Facebook marketing is Thai.
+## Repository responsibilities
 
-- **Skill code owner:** `Kanompung1988/agent-skills` (public repo; `main` is publication source of truth).
-- **Social media assets/log owner:** `Kanompung1988/Bot_new_areazero`, only branch `areazero-social-assets` (never modify that repository's main for posts).
-- **Instagram:** `@areazero.ai` and **Facebook Page:** `AreaZero`, via Metricool brand `7611512` (check actual network account identity each run).
-- **Publication:** exactly `12:00:00` `Asia/Bangkok`, using autoPublish; *preparation time is not publication time*.
-- **Series line:** `AREAZERO Skill Lab | EP.XX — ทำให้ AI เก่งขึ้นทุกวัน`. Episode numbers count **verified public releases**, not dates or failed drafts.
+- **Individual public repositories**: `Kanompung1988/<skill-slug>` contain all of that skill's `SKILL.md`, README, implementation, tests, examples, references, LICENSE, original logo and their own `.github/workflows/ci.yml`. Each repo accumulates its own Stars, Issues, CI history and contributions.
+- **Public portfolio only**: `Kanompung1988/agent-skills` `main` contains human-readable directory/episode index and operating docs. **Do not add released Skill source folders to the portfolio default branch**.
+- **Ephemeral staging**: for a new skill, stage its validated package on a *non-default branch* of `Kanompung1988/agent-skills` under `skills/<slug>/` (or use a separate authorized staging repository), then request repository provisioning. Keep it out of public `main`. Do not claim that staging is a public release.
+- **Creation router**: GitHub Actions `Kanompung1988/Bot_new_areazero/.github/workflows/provision-skill-repos.yml` reads `.github/skill-lab/repository-requests.json` on `main` and uses server-side secret `AREAZERO_GITHUB_TOKEN` to create a PUBLIC repo idempotently. The request must contain `slug`, `source_path=skills/<slug>` and, for staging branches, `source_ref`. The workflow verifies that SKILL.md exists at that ref before creating a repo. **Do not send secrets in chat or public commits.**
+- **Social image/log storage**: `Kanompung1988/Bot_new_areazero`, branch `areazero-social-assets` only. Never use its `main` branch for image posts. Do not use Google Drive.
 
-## Daily state machine
+## Daily autonomous production loop
 
-```mermaid
-flowchart TD
-    A[Read playbook and repo state] --> B{Same agent/date/platform already queued?}
-    B -->|yes| C[Do not reschedule; inspect existing IDs and work ahead]
-    B -->|no| D[Evaluate 8 fresh developer pain points]
-    D --> E{Any nonduplicate concept scores at least 85?}
-    E -->|no| F[Log DRAFT or SKIPPED with reasons]
-    E -->|yes| G[Build at most 2 self-contained skills]
-    G --> H[Local checks, examples, docs, review]
-    H --> I[PR and remote GitHub Actions matrix]
-    I --> J{Both Python jobs successful?}
-    J -->|no| F
-    J -->|yes| K[Merge and verify public default-branch files]
-    K --> L[Render actual Thai 4:5 artwork + official logo]
-    L --> M[Upload binary JPG/PNG to dedicated GitHub branch]
-    M --> N[Recheck Metricool account, queue and idempotency]
-    N --> O{Valid future 12:00 slot?}
-    O -->|no| F
-    O -->|yes| P[Schedule one combined IG + FB post]
-    P --> Q[Verify provider statuses and save IDs/URLs]
-```
+1. Inspect latest [Social publishing playbook](https://github.com/Kanompung1988/Bot_new_areazero/blob/areazero-social-assets/AUTOMATION_PLAYBOOK.md), existing Metricool queue, today's agent-specific publication logs, this operations contract and all existing repos/episodes. Current timezone: `Asia/Bangkok`.
+2. Research **8** concrete developer pain points. Score utility (25), distinctiveness (20), Claude/Codex relevance (15), feasibility (15), audience (10), demonstrability (10), social shareability (5), and reject near-duplicates. Editorial score **>=85/100** required; build 0–2 excellent skills only.
+3. Implement one portable Agent Skill **per standalone repo**. Each package needs valid frontmatter `SKILL.md`, exact trigger/non-trigger guidance, step-by-step procedure, references, complete English README with original branded hero and unmodified Area Zero SVG logo, source/scripts, synthetic fixtures, tests, MIT code LICENSE and clear limitations/security/attribution. Optional dependencies must be documented. Use [agentskills.io/specification](https://agentskills.io/specification).
+4. Test locally, report honest counts and any failures. If the `skills-ref` validator is not actually run, state `NOT_RUN`, not `PASSED`. Never claim external usage, unique invention or third-party review without evidence. Show a real CLI run and protect inputs/secrets.
+5. Stage the complete package on a non-default `agent-skills` branch under `skills/<slug>/` and update the **authorized** repository-request manifest on `Bot_new_areazero/main` (only after checking idempotency and target repo existence). Use connector actions or GitHub Actions to provision. Confirm GitHub created exactly `Kanompung1988/<slug>` PUBLIC; do not substitute a different repo.
+6. Populate the target repo on a feature branch and open a PR. CI on the **new standalone repo** must verify its tests and demo across supported Python versions. Compare actual latest head SHA and all job statuses; only merge after all gates truly pass. Then read `SKILL.md` and `README.md` back from the **public default branch**. A successful provisioning Action is not proof of published code.
+7. Only then update this directory's README and [docs/EPISODES.md](EPISODES.md) with the verified repo links and CI. Never keep permanent duplicate copies of released source under the portfolio's `main`.
+8. Design one real professional **1080×1350 Thai** image for the combined Skill Lab episode. Preserve the official logo SVG untouched (`Areazerowebsite/public/logo-full.svg` or trusted Library copy) with clear space and brand colors `#00D9FF`, `#00FFA3`, `#0A1929`. Visually inspect all Thai text, numbers and screenshots/fixtures. Use real source links to each newly published repo; say `แจกฟรี` only for source confirmed public.
+9. Before social write, call Metricool getBrandSettings and getScheduledPosts and inspect `posts/YYYY-MM-DD/open-source-lab-publication.json`. Verify brand **7611512**, `@areazero.ai` and FB Page AreaZero; idempotency key = `date + areazero-open-source-lab + platform`. If `SCHEDULED`/`PENDING`/`PUBLISHING`/`PUBLISHED`, DO NOT create another post. Update the same UUID only for necessary corrections; the id changes while UUID stays fixed.
+10. Commit the actual JPG/PNG bytes as Base64 GitHub blob on dedicated `areazero-social-assets` branch using a correct **tree SHA** as create_tree base, non-forced update_ref, commit-pinned public raw URL; verify Metricool media ingest. Schedule one combined IG+FB post only at **12:00 Asia/Bangkok** with `autoPublish:true`. If noon has passed, choose next truly free noon slot; do not backdate.
+11. Save full source, decision rubric, image hash, skill repo URLs and CI run IDs, social caption, Metricool ID+stable UUID, per-provider schedule/publication status to GitHub logs. Call a platform PUBLISHED only with per-provider publicUrl, not because automation completed or because a post disappeared from the queue. Report blockers rather than retrying possible duplicates.
 
-### Morning agent run
+## Backlog and existing episode guard
 
-1. Load the **latest** `AUTOMATION_PLAYBOOK.md` on `areazero-social-assets`, this document, previous day logs, today's existing calendar queue, the public GitHub repo and current skills directory. Check what the other series (Daily AI Scout) is doing so the stories are distinct.
-2. Fetch at least **8** specific developer pain points, supported by public docs/real engineering friction (date the sources). Check competing open-source approaches and *every currently published skill path* in the owner repo. Reject near-duplicates and weak wrappers.
-3. Score each concept with the same weighted rubric as `CANDIDATES-AND-SOURCES.md`: utility **25**, distinctiveness **20**, Claude Code/Codex relevance **15**, build feasibility **15**, audience **10**, demonstration/evidence **10**, shareability **5**. These are **editorial estimates**, never user adoption data. Record all 8 and reasons; only advance score **>=85/100**. One excellent skill is preferable to two rushed ones; zero acceptable results means no promotional post.
-4. Construct the complete portable skill. Follow [Agent Skills specification](https://agentskills.io/specification): `name` is lowercase kebab-case, 1-64 chars, equals folder; `description` is 1-1024 chars and describes trigger; complete frontmatter + Markdown instructions. Include explicit when-not-to-use, examples, failure cases, permissions, references, reproducible code, a license and tests. Keep the content safe for a public repo: no secrets/private logs/license-incompatible material.
-5. Test in a real execution environment. Run `python scripts/validate_skills.py --check`, `python scripts/validate_skills.py --run-tests`, `python -m unittest discover -s tests -v`, and `python scripts/smoke_examples.py`. Use Python 3.10 and 3.12 matrix remotely. If available, ALSO run `skills-ref validate skills/<slug>` and document whether it passed; **never claim official validation unless executed**. Review edge cases, inspect CLI output and cite test evidence accurately. Do not manufacture an independent review.
-6. Branch from current `main`, submit a meaningful PR with candidates, usage, known limitations, test evidence and licensing. Wait for actual successful **all** required GitHub Actions jobs on the latest head SHA. Failed/queued/unknown checks block merge; fix in branch and run again. Do not force-push or bypass failed checks. If permissions allow and checks are green, merge and verify exact `SKILL.md` paths on the **public default branch**. The merged commit/PR URL are facts of record.
-7. For a post-worthy public release, make **one** polished 1080×1350 (4:5) Thai artwork. Include a useful hero tech graphic/real fixture output, correct `EP.XX`, no invented screenshots or metrics, and composite the **unaltered owner logo** from `Kanompung1988/Areazerowebsite/public/logo-full.svg` or the trusted `/Areazero/Brand Assets/` library copy. Keep original aspect ratio and cyan `#00D9FF`, mint `#00FFA3`, navy `#0A1929`. Inspect the rendered JPG/PNG with vision at full size for Thai spelling/tofu glyphs. A prompt alone is not an image asset.
-8. Write a Thai caption with the series label, developer problem, what the skill actually does, verifiable tests, GitHub repository and exact paths, limitations and CTA to star/issue/PR. Say `แจกฟรี` **only** when the public source exists; otherwise use `กำลังพัฒนา` and leave marketing in DRAFT. Do not overpromise autonomous intelligence or unsupported impact.
-9. **Before any social write**, get Metricool brand settings + queue for the destination date and inspect `posts/YYYY-MM-DD/open-source-lab-publication.json` and any earlier agent-specific log. Key = `YYYY-MM-DD:areazero-open-source-lab:<instagram|facebook>`. An existing `SCHEDULED`, `PENDING`, `PUBLISHING` or `PUBLISHED` key is a hard barrier for that network; `DRAFT` is not. Check social account identity, not brand ID alone.
-10. Schedule one combined post to both providers **exactly** at `YYYY-MM-DDT12:00:00+07:00` with `autoPublish:true`, `draft:false`, publication timezone `Asia/Bangkok`, actual public media and the expected Instagram/Facebook networkData. Check the resulting UUID, fresh post ID, provider statuses, scheduled time and real planner URL. Store the complete caption and image path + blob SHA + commit-pinned raw URL. `PENDING` is `SCHEDULED`, never `PUBLISHED`; only provider-confirmed published URLs qualify.
-11. Update `docs/EPISODES.md` with verified code evidence after release; save candidate decisions, release evidence and exact social status to the GitHub asset branch under agent-specific paths. Return a concise state per target: `PUBLIC`, `SCHEDULED`, `DRAFT`, `BLOCKED` and actual links. Do not confuse successful automation execution with successful platform posting.
+- EP.01 was released on 2026-10-24 as *two standalone public repositories*, and its **single combined social post** has already been scheduled for **2026-10-25 12:00 ICT**, Metricool UUID `2137186428519728769`. **Do not create a second post for that day**. Consult live Metricool statuses; until public URL confirms publication report SCHEDULED/PENDING only.
+- Daily AI Scout is independent. Keep its own content and idempotency keys separate; never alter it for Skill Lab releases.
+- Do not split a two-skill episode into two overlapping marketing posts. Quality beats post frequency. If no new qualified public skills, produce a no-release report and stop rather than posting non-release filler.
 
-## Scheduling and backlog behavior
+## Tested release evidence (2026-10-24)
 
-- Start preparation early each morning, but **never post during preparation**. Noon is the scheduled publication moment.
-- If a previous episode is already scheduled for today's noon (e.g. launch EP.01 on **2026-10-25**, Metricool UUID `2137186428519728769`), **do not create or reschedule another Skill Lab post for that date**. Continue building skills only when useful; put validated new work into the next free date's backlog.
-- Before researching new ideas, inspect any previously validated, unscheduled public release candidate. Prioritize publishing that existing work over duplicating it.
-- If CI is not green or source is not public by the safe planning cutoff (suggest 11:30 ICT), never publish a placeholder. Carry a still-timely release to the **next verified empty date at exactly 12:00**, keeping its actual release date in the copy. Do not schedule into the past, and do not silently reassign a different series' slot.
-- If Metricool is unavailable, identity mismatches, image transport is blocked, or the scheduled entry can't be verified, keep real artifacts and a `DRAFT`/`BLOCKED` report. Do not invent IDs, reuse yesterday's image, or retry a potentially successful creation without checking the UUID/queue first.
-- The sibling **Daily AI Scout** is a separate agent with different story selection and its own idempotency keys; do not confuse a news post with a Skill Lab episode. Cross-series simultaneous noon posts are permitted under existing per-agent rules, but each can schedule at most one post per provider/date.
-
-## Tested image-to-GitHub transport (no Google Drive)
-
-1. Produce the actual image locally, check MIME, width/height, content and SHA-256. Convert **image bytes** to Base64. Never encode a filename or image asset pointer.
-2. Since the ChatGPT JS tool isolate may not read the container filesystem, if necessary write Base64 in **small UTF-8 .txt chunks** (e.g. 10–25 KB), upload these temporary files to `/Areazero/Publishing/` using `files__manage_library`, and read their complete contents through `files__read` in `functions.exec` (verify no truncation, exact combined encoded length and characters). Keep the Base64 **out of user-facing messages**.
-3. Pass the assembled string to GitHub `create_blob(encoding="base64")` for `Bot_new_areazero`. Use `fetch_commit` to read the current asset-branch commit SHA; use `GET /git/commits/{commitSHA}` to obtain its **tree SHA**. When calling `create_tree`, set `base_tree_sha` to the **TREE SHA, not the commit SHA**, and add the new image blob path. Create a commit with parent = prior commit SHA; update branch ref with `force:false` and `expected_sha` prior HEAD. On a race, re-read branch and reconcile instead of force-overwriting another agent's work.
-4. Confirm the committed asset's Git tree has the correct path, blob SHA and nonzero size. Construct a **commit-pinned** `raw.githubusercontent.com` URL. Metricool's successful media ingest (returned Metricool media URL) provides additional validation; do not claim a broken/unverified raw URL is valid.
-5. Remove temporary Base64 bridge text files from Library after verified upload and log, preserving source artwork and hash elsewhere. Never use Google Drive.
-
-## Idempotency, updating and post-publication QA
-
-- A scheduled post is keyed by **stable Metricool UUID**, while `updateScheduledPost` returns a **new post ID**. Always refresh the scheduled post, preserve the full providers/media/metadata, omit unrelated network data, and update the stored ID/UUID rather than creating a second post.
-- A scheduled item may disappear from `getScheduledPosts` after its due time. **Absence does not prove publishing or failure.** Query available per-provider statuses and links using authorized Metricool tools and logs. Do not republish unless a failed or unsent state is proven and user permission permits.
-- The existing daily noon QA task should inspect both series after 12:00, verify each provider's final public URL/status when supported, flag mismatches and preserve immutable source/commit links. Notifications help surface blockers; they are not posting confirmations.
-- Avoid editing or deleting other agents' posts, mixing asset branches or leaking PATs/Secrets.
-
-## Quality, reputation and disclosure
-
-We build developer trust by shipping credible reproducible artifacts, not by maximizing the daily post count. No made-up GitHub stars, adoption, CI runs, performance claims or independent review. Explicitly state known limitations, use synthetic example fixtures, support Issues and PRs, and update README/CHANGELOG when behavior changes. Official brand logos remain outside the MIT grant (see `BRAND.md`).
-
-### Current verified launch baseline — 2026-10-24
-
-- `Kanompung1988/agent-skills` exists and is public on `main`.
-- First release: `openapi-compat-audit`, `ci-log-triage`; PR #1 merged, CI Python 3.10 and 3.12 **32 unit tests + 2 smoke tests per version** (Run `40090285727`). Official `skills-ref` and independent review were **not** run for that initial release.
-- `AREAZERO Skill Lab | EP.01` is scheduled for **2026-10-25 12:00 Asia/Bangkok** on existing Metricool UUID `2137186428519728769` for IG and FB. Latest edit assigned ID `404941924`; both providers `PENDING` when last checked, not `PUBLISHED`. This is an idempotency barrier for 2026-10-25; do not create another episode for that date.
-- Social log: [Oct 25 publication record](https://github.com/Kanompung1988/Bot_new_areazero/blob/areazero-social-assets/posts/2026-10-25/open-source-lab-publication.json).
+- Repository bootstrap: [GitHub Actions run #1](https://github.com/Kanompung1988/Bot_new_areazero/actions/runs/40092561794) created both public skill repositories.
+- [OpenAPI independent CI](https://github.com/Kanompung1988/openapi-compat-audit/actions/runs/40093092063) — Python 3.10/3.12, 16 unit tests + 1 smoke per version, all passed.
+- [CI Log Triage independent CI](https://github.com/Kanompung1988/ci-log-triage/actions/runs/40093094810) — Python 3.10/3.12, 16 unit tests + 1 smoke per version, all passed.
+- Current original-logo SVG hashes are pinned in the standalone test suites; changes require explicit owner approval.

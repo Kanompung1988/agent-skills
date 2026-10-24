@@ -1,15 +1,17 @@
-# AREAZERO Skill Lab — episode catalog
+# AREAZERO Skill Lab — verified episode catalogue
 
-**Make AI more useful every day.** We publish source code and test evidence, not imaginary achievements. This is an index of verified public releases; a social post is recorded separately from the code release.
+**Make AI more useful every day.** One dedicated public repository per skill; the portfolio hosts only discovery links and evidence.
 
-| Episode | Code release | New Agent Skills | Reproducible QA | Social distribution |
-|---|---|---|---|---|
-| **EP.01** | [2026-10-24 merge](https://github.com/Kanompung1988/agent-skills/pull/1) | [OpenAPI Compatibility Audit](../skills/openapi-compat-audit/) · [CI Log Triage](../skills/ci-log-triage/) | [GitHub Actions run #3](https://github.com/Kanompung1988/agent-skills/actions/runs/40090285727) — 32 unittest checks + 2 CLI smoke checks per Python 3.10 / 3.12 | **SCHEDULED** on 2026-10-25 12:00 Asia/Bangkok; [live Metricool status log](https://github.com/Kanompung1988/Bot_new_areazero/blob/areazero-social-assets/posts/2026-10-25/open-source-lab-publication.json) |
+| Episode | Independent public releases | Independent CI proof | Social distribution |
+|---|---|---|---|
+| **EP.01 — 2026-10-24** | [OpenAPI Compatibility Audit](https://github.com/Kanompung1988/openapi-compat-audit) · [CI Log Triage](https://github.com/Kanompung1988/ci-log-triage) | [OpenAPI: 16+1 × Python 3.10/3.12](https://github.com/Kanompung1988/openapi-compat-audit/actions/runs/40093092063) · [CI: 16+1 × Python 3.10/3.12](https://github.com/Kanompung1988/ci-log-triage/actions/runs/40093094810) | **SCHEDULED**, 2026-10-25 12:00 Asia/Bangkok, [Metricool publication record](https://github.com/Kanompung1988/Bot_new_areazero/blob/areazero-social-assets/posts/2026-10-25/open-source-lab-publication.json) |
 
-## Release policy
+## History and provenance
 
-- Add an episode only after a successful public code merge and verified `SKILL.md` paths on the default branch.
-- A public repo release is not a social publication; record each provider status and public URL only after confirmed by the platform.
-- Use consecutively numbered successful episodes. Don't backfill skipped days or overstate test performance.
-- If a package fails verification, keep it as a local/branch draft and do not describe it as a released skill.
-- Follow the [full release operations contract](SKILL_LAB_OPERATIONS.md).
+EP.01 began in the original [agent-skills PR #1](https://github.com/Kanompung1988/agent-skills/pull/1) and was moved to two self-contained projects after a packaging review. The separate repositories are the canonical code sources now; this index preserves the provenance and launch dates. Every released project has its own README, SKILL.md, regression tests, CI, issue tracker and license.
+
+## Claim boundaries
+
+- A passing CI job is not an independent audit; the official `skills-ref` validator was not run for this episode.
+- A scheduled social post is not a published social post. Verify Instagram/Facebook statuses and URLs with Metricool before writing PUBLISHED.
+- A new episode is counted only after standalone source is actually visible on a public repository's default branch and passes its own CI.
