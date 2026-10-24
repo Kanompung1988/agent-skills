@@ -1,0 +1,12 @@
+test_ci_sample_has_redacted_evidence (test_distribution.DistributionTest.test_ci_sample_has_redacted_evidence) ... ok
+test_openapi_sample_reports_detect_breaking (test_distribution.DistributionTest.test_openapi_sample_reports_detect_breaking) ... ok
+test_python_scripts_never_import_process_or_network (test_distribution.DistributionTest.test_python_scripts_never_import_process_or_network) ... ok
+test_script_generated_output_does_not_leak_fake_token (test_distribution.DistributionTest.test_script_generated_output_does_not_leak_fake_token) ... ok
+test_skill_local_markdown_links_exist (test_distribution.DistributionTest.test_skill_local_markdown_links_exist) ... ok
+test_skill_metadata_matches_spec (test_distribution.DistributionTest.test_skill_metadata_matches_spec)
+Apply the normative filename, required-field and character constraints. ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 2.351s
+
+OK
