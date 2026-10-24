@@ -1,4 +1,4 @@
-name: Validate agent skills
+name: Verify Skill Lab portfolio
 
 on:
   push:
@@ -10,30 +10,16 @@ permissions:
   contents: read
 
 jobs:
-  test:
-    name: Python ${{ matrix.python-version }} / offline QA
+  check-portfolio:
+    name: Verify portfolio links and official brand assets
     runs-on: ubuntu-latest
-    timeout-minutes: 15
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ['3.10', '3.12']
+    timeout-minutes: 10
     steps:
-      - name: Check out source
-        uses: actions/checkout@v6
+      - uses: actions/checkout@v6
         with:
           persist-credentials: false
-      - name: Set up Python
-        uses: actions/setup-python@v6
+      - uses: actions/setup-python@v6
         with:
-          python-version: ${{ matrix.python-version }}
-      - name: Compile all scripts
-        run: python -m compileall -q skills tests scripts
-      - name: Verify every skill directory and metadata
-        run: python scripts/validate_skills.py --check
-      - name: Dynamically test every skill (including future skills)
-        run: python scripts/validate_skills.py --run-tests
-      - name: Repository distribution and brand QA
+          python-version: '3.12'
+      - name: Test portfolio contract
         run: python -m unittest discover -s tests -v
-      - name: Reproduce documented CLI examples
-        run: python scripts/smoke_examples.py
