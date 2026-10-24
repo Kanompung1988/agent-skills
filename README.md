@@ -4,11 +4,13 @@
 
 <p align="center"><img src="assets/hero.svg" alt="Areazero Agent Skills: Built to ship — OpenAPI compatibility auditing and CI log triage" width="100%"></p>
 
-<h3 align="center">Small, reliable Agent Skills for the messy parts of software engineering.</h3>
+<h3 align="center">AREAZERO SKILL LAB · Make AI more useful every day.</h3>
+
+<p align="center">Small, reliable Agent Skills for the messy parts of software engineering.</p>
 
 <p align="center">
   Two focused tools. Offline-first scripts. Reproducible examples. Clear limits.<br>
-  Built by <b>Areazero Open Source Lab</b> for developers working with <b>Claude Code</b>, <b>Codex</b> and the command line.
+  Built by <b>AREAZERO Skill Lab</b> for developers working with <b>Claude Code</b>, <b>Codex</b> and the command line.
 </p>
 
 <p align="center">
@@ -24,6 +26,8 @@
   <a href="#the-skills"><b>Explore skills</b></a> &nbsp;·&nbsp;
   <a href="#see-it-work"><b>See it work</b></a> &nbsp;·&nbsp;
   <a href="#quality--validation"><b>Quality</b></a> &nbsp;·&nbsp;
+  <a href="docs/EPISODES.md"><b>Episodes</b></a> &nbsp;·&nbsp;
+  <a href="docs/SKILL_LAB_OPERATIONS.md"><b>Our process</b></a> &nbsp;·&nbsp;
   <a href="CONTRIBUTING.md"><b>Contribute</b></a> &nbsp;·&nbsp;
   <a href="SECURITY.md"><b>Security</b></a>
 </p>
@@ -34,6 +38,17 @@
 ## Why this exists
 
 Developer productivity isn't just writing more code. Release confidence erodes when API contracts drift silently and CI failures are buried under hundreds of irrelevant log lines. **Areazero builds narrow, inspectable tools that make the next engineering decision easier.** No invented AI benchmarks, no mystery dependencies, no automatic changes to your repository.
+
+## AREAZERO Skill Lab — the series
+
+**ทำให้ AI เก่งขึ้นทุกวัน** · *Make AI more useful every day.* We turn recurring developer problems into small, portable Agent Skills that work with Claude Code, Codex and the CLI. Every episode is a **real public release**, not a mockup or a prompt collection.
+
+| | Our publishing pillars |
+|---|---|
+| **Daily AI Scout** | What changed in AI and tech, sourced from current announcements (Thai news briefs). |
+| **AREAZERO Skill Lab** | What we built: repository code, repeatable examples, documented limitations and CI evidence (Thai release stories). |
+
+The lab researches eight candidate pain points each day and may ship **up to two** if they pass its quality gate. **It does not promise daily releases when no skill is ready.** We require working software, synthetic examples, honest attribution and verified public links before announcing anything as free. Browse the [episode catalog](docs/EPISODES.md) or read the [release and automation standard](docs/SKILL_LAB_OPERATIONS.md) for the full gate, daily schedule, per-platform idempotency and GitHub PR flow.
 
 <p align="center"><img src="assets/workflow.svg" alt="Discover real pains, build reproducible skills, test offline, review and publish" width="100%"></p>
 
@@ -159,9 +174,9 @@ On **2026-10-24**, the local release candidate was rerun in a Python execution c
 | Deterministic fixture smoke tests | See [CI workflow](.github/workflows/validate-skills.yml) | `python3 scripts/smoke_examples.py` |
 | Python syntax check | See [CI workflow](.github/workflows/validate-skills.yml) | `python3 -m compileall -q skills tests scripts` |
 
-The distribution suite includes documentation link checks, SVG syntax and unchanged official brand hashes (`tests/test_readme_assets.py`).
+The distribution suite includes dynamic new-skill registration checks, documentation link checks, SVG syntax and unchanged official brand hashes (`tests/test_readme_assets.py`).
 
-**GitHub Actions is the live source of truth for cloud CI:** [validate-skills workflow](https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml). It runs the checks on push and pull request for Python 3.10 and 3.12. The independent external reference validator (`skills-ref`) was not part of the original local 28 checks. Never interpret local scores as real-world adoption or measured accuracy.
+**GitHub Actions is the live source of truth for cloud CI:** [validate-skills workflow](https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml). It runs the checks on push and pull request for Python 3.10 and 3.12, **auto-discovers and tests every new skill folder**, and rejects missing skill metadata/README/LICENSE/tests. The independent external reference validator (`skills-ref`) was not part of the original local 28 checks. Never interpret local scores as real-world adoption or measured accuracy.
 
 See [quality review and known limitations](reports/QUALITY-REVIEW-2026-10-24.md), [eight candidate decisions](CANDIDATES-AND-SOURCES.md), and the [release changelog](CHANGELOG.md).
 
@@ -182,10 +197,11 @@ agent-skills/
 │   ├── openapi-compat-audit/ # SKILL.md, CLI, references, tests, README
 │   └── ci-log-triage/        # SKILL.md, CLI, references, tests, README
 ├── examples/                 # Synthetic fixtures + matching reports
-├── scripts/                  # Release example smoke test
-├── tests/                    # Metadata, links, CLI smoke + safety checks
+├── scripts/                  # Dynamic skill validation + release example smoke tests
+├── tests/                    # Metadata, dynamic release gate, links and safety checks
 ├── reports/                  # QA findings and claim boundaries
 ├── .github/workflows/        # Python compatibility matrix and checks
+├── docs/                     # AREAZERO Skill Lab daily automation and release policy
 ├── CONTRIBUTING.md          # Contribution bar and verification
 ├── SECURITY.md              # Safe handling and reporting
 └── LICENSE                  # MIT for code; marks excluded (BRAND.md)
@@ -205,6 +221,6 @@ We value tests, minimal reproducible failures, explicit limitations and narrowly
 
 ## Credits & license
 
-Built by **Areazero Open Source Lab** · [GitHub @Kanompung1988](https://github.com/Kanompung1988). Original skill implementations and documentation are distributed under the [MIT License](LICENSE). Original Area Zero branding is used unchanged with permission and is **excluded** from the code license; see [BRAND.md](BRAND.md). The included demo data is synthetic.
+Built by **AREAZERO Skill Lab** · [GitHub @Kanompung1988](https://github.com/Kanompung1988). Original skill implementations and documentation are distributed under the [MIT License](LICENSE). Original Area Zero branding is used unchanged with permission and is **excluded** from the code license; see [BRAND.md](BRAND.md). The included demo data is synthetic.
 
-<p align="center"><sub>AREAZERO · Build useful things. Show the evidence. Improve in public.</sub></p>
+<p align="center"><sub>AREAZERO SKILL LAB · Build useful things. Show the evidence. Make AI more useful every day.</sub></p>

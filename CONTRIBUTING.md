@@ -12,8 +12,8 @@ Thanks for making small, verifiable developer tools better. The best contributio
 
 ```bash
 python3 -m compileall -q skills tests scripts
-python3 -m unittest discover -s skills/openapi-compat-audit/tests -v
-python3 -m unittest discover -s skills/ci-log-triage/tests -v
+python3 scripts/validate_skills.py --check
+python3 scripts/validate_skills.py --run-tests
 python3 -m unittest discover -s tests -v
 python3 scripts/smoke_examples.py
 ```
@@ -34,3 +34,7 @@ A PR should state: **problem**, **smallest reproduction**, **change**, **test ev
 Open a feature branch and PR against `main`. The CI matrix runs on PR and push. Merging requires human review when external contributors are involved; automation must never falsely claim independent review or completed CI.
 
 For private vulnerability reports, follow [SECURITY.md](SECURITY.md) rather than disclosing exploits in a public issue.
+
+## New Agent Skill release checklist
+
+For any newly added `skills/<slug>/` folder, the automated gate discovers the folder and requires `SKILL.md` with compliant naming and a single-line trigger description, `README.md`, `LICENSE`, an executable Python script, and at least one deterministic `tests/test_*.py` fixture suite. The CI workflow runs each folder's unittest suite automatically on Python 3.10 and 3.12. Add a reproducible CLI demo and explicit capability limits. Read [the Skill Lab operations contract](docs/SKILL_LAB_OPERATIONS.md) for the release/publishing state machine.
