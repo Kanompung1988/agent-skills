@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="570" viewBox="0 0 1440 570" role="img" aria-label="Areazero Agent Skills — production-minded tooling with OpenAPI compatibility audit and CI log triage">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071321"/><stop offset=".56" stop-color="#0A1929"/><stop offset="1" stop-color="#102B3E"/></linearGradient>
+  <linearGradient id="mint" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#00D9FF"/><stop offset="1" stop-color="#00FFA3"/></linearGradient>
+  <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#152C40"/><stop offset="1" stop-color="#0A1728"/></linearGradient>
+  <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse"><path d="M44 0H0V44" fill="none" stroke="#7DAEC1" stroke-opacity=".09" stroke-width="1"/></pattern>
+  <filter id="glow"><feGaussianBlur stdDeviation="9"/></filter>
+</defs>
+<rect width="1440" height="570" rx="22" fill="url(#bg)"/><rect width="1440" height="570" rx="22" fill="url(#grid)"/>
+<circle cx="1317" cy="72" r="220" fill="#00D9FF" opacity=".07" filter="url(#glow)"/>
+<circle cx="1180" cy="477" r="160" fill="#00FFA3" opacity=".07" filter="url(#glow)"/>
+<g font-family="Inter, DejaVu Sans, Arial, sans-serif">
+<rect x="64" y="58" width="223" height="31" rx="15" fill="#173549" stroke="#30667A" stroke-width="1"/>
+<circle cx="86" cy="73" r="5" fill="#00FFA3"/><text x="102" y="79" fill="#BFEFEE" font-size="13" font-weight="700" letter-spacing="2">OPEN SOURCE LAB</text>
+<text x="62" y="169" fill="#FFFFFF" font-size="70" font-weight="800" letter-spacing="-2">Agent Skills.</text>
+<text x="62" y="245" fill="url(#mint)" font-size="70" font-weight="800" letter-spacing="-2">Built to ship.</text>
+<text x="65" y="303" fill="#A3B9C9" font-size="22">Portable, testable tools for real developer pain.</text>
+<text x="65" y="338" fill="#A3B9C9" font-size="22">Claude Code  /  Codex  /  Python CLI</text>
+<rect x="63" y="397" width="218" height="48" rx="12" fill="url(#mint)"/>
+<text x="88" y="427" fill="#061623" font-size="18" font-weight="800">2 usable skills</text>
+<rect x="296" y="397" width="230" height="48" rx="12" fill="none" stroke="#46677B" stroke-width="2"/>
+<text x="323" y="427" fill="#E4FAFF" font-size="18" font-weight="700">Offline by default</text>
+<text x="65" y="513" fill="#7691A4" font-size="15" letter-spacing="2">EVIDENCE OVER HYPE  //  2026 EDITION</text>
+</g>
+<!-- terminal panels -->
+<g font-family="DejaVu Sans Mono, monospace">
+<rect x="770" y="83" width="602" height="206" rx="16" fill="url(#panel)" stroke="#305367" stroke-width="1.5"/>
+<path d="M771 128H1370" stroke="#2C4859" stroke-width="1"/>
+<circle cx="797" cy="108" r="6" fill="#F88C91"/><circle cx="817" cy="108" r="6" fill="#F1D980"/><circle cx="837" cy="108" r="6" fill="#6BEAB7"/>
+<text x="866" y="113" font-size="14" fill="#BFD8E5">openapi-compat-audit</text>
+<text x="792" y="157" font-size="15" fill="#9ED8F0">$ compare old.json new.json</text>
+<text x="792" y="192" font-size="19" font-weight="700" fill="#00FFA3">3 breaking changes detected</text>
+<text x="792" y="227" font-size="14" fill="#D8E8F0">+ new required property</text><text x="792" y="254" font-size="14" fill="#D8E8F0">- removed success response</text>
+<rect x="827" y="319" width="545" height="171" rx="16" fill="url(#panel)" stroke="#305367" stroke-width="1.5"/>
+<path d="M828 359H1371" stroke="#2C4859" stroke-width="1"/>
+<circle cx="853" cy="341" r="6" fill="#F88C91"/><circle cx="873" cy="341" r="6" fill="#F1D980"/><circle cx="893" cy="341" r="6" fill="#6BEAB7"/>
+<text x="921" y="346" font-size="14" fill="#BFD8E5">ci-log-triage</text>
+<text x="848" y="394" font-size="15" fill="#9ED8F0">$ triage-ci failed-job.log</text>
+<text x="848" y="425" font-size="17" font-weight="700" fill="#00D9FF">Signal 01: TypeScript TS2345</text>
+<text x="848" y="453" font-size="14" fill="#D8E8F0">Line 4  |  evidence &amp; next check</text>
+</g>
+<path d="M660 78Q716 235 670 391" fill="none" stroke="#00D9FF" stroke-width="1" stroke-dasharray="4 8" opacity=".5"/>
+<circle cx="668" cy="236" r="5" fill="#00FFA3"/>
+</svg>

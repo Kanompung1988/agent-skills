@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="246" viewBox="0 0 1180 246" role="img" aria-label="Workflow: discover pain, design skill, execute deterministic tests, review evidence, publish">
+<rect width="1180" height="246" rx="16" fill="#0A1929"/>
+<g font-family="DejaVu Sans,Arial,sans-serif" text-anchor="middle" font-weight="700">
+<g fill="#143146" stroke="#37647A"><rect x="28" y="61" width="197" height="119" rx="16"/><rect x="261" y="61" width="197" height="119" rx="16"/><rect x="494" y="61" width="197" height="119" rx="16"/><rect x="727" y="61" width="197" height="119" rx="16"/><rect x="960" y="61" width="192" height="119" rx="16"/></g>
+<g font-size="16" fill="#EFFCFF"><text x="126" y="105">01  DISCOVER</text><text x="360" y="105">02  BUILD</text><text x="592" y="105">03  TEST</text><text x="825" y="105">04  REVIEW</text><text x="1055" y="105">05  SHIP</text></g>
+<g fill="#95B8CA" font-size="13" font-weight="400"><text x="126" y="138">real developer problem</text><text x="360" y="138">SKILL.md + scripts</text><text x="592" y="138">offline fixtures</text><text x="825" y="138">limits + evidence</text><text x="1055" y="138">public, verifiable</text></g>
+<g stroke="#00D9FF" stroke-width="3" fill="none"><path d="M231 121h22m-6-6 6 6-6 6"/><path d="M464 121h22m-6-6 6 6-6 6"/><path d="M697 121h22m-6-6 6 6-6 6"/><path d="M930 121h22m-6-6 6 6-6 6"/></g></g>
+<text x="31" y="222" font-family="DejaVu Sans,Arial,sans-serif" fill="#00FFA3" font-size="13" letter-spacing="2">AREAZERO ENGINEERING STANDARD  /  QUALITY BEFORE QUANTITY</text>
+</svg>
