@@ -71,7 +71,8 @@ def markdown(report: dict[str,Any], source: str) -> str:
     for f in items:
         lines.extend([f"## {f['rule']} — {f['category']}",f"Evidence hits: {f['count']}. Confidence hint: {f['confidence_hint']} (pattern specificity only).",f"**Hypothesis:** {f['hypothesis']}",f"**Next verification:** {f['safe_next_step']}",'','Evidence (redacted):'])
         for e in f['evidence']:
-            lines.append(f"- Line {e['line']}: `{e['text'].replace('`', '\\`')}`")
+            safe_text = e["text"].replace("`", r"\`")
+            lines.append(f"- Line {e['line']}: `{safe_text}`")
         lines.append('')
     lines.append('This tool does not assert a root cause or execute code, tests, network access, or repairs.\n')
     return '\n'.join(lines)
