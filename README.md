@@ -9,7 +9,7 @@
 <p align="center">
 <a href="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml"><img alt="Index QA status" src="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml/badge.svg"></a>
 <a href="https://agentskills.io/specification"><img src="https://img.shields.io/badge/Agent%20Skills-open%20spec-00D9FF?style=flat-square" alt="Agent Skills specification"></a>
-<img src="https://img.shields.io/badge/independent%20skill%20repos-2-00FFA3?style=flat-square" alt="Two independent skills">
+<img src="https://img.shields.io/badge/independent%20skill%20repos-4-00FFA3?style=flat-square" alt="Four independent skills">
 <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-0A1929?style=flat-square" alt="Code MIT License"></a>
 </p>
 
@@ -41,12 +41,30 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 <p><a href="https://github.com/Kanompung1988/ci-log-triage/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/ci-log-triage/actions/workflows/ci.yml/badge.svg" alt="CI Triage independent CI"></a></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<h3>03 · GHA Trust Boundary Audit</h3>
+<p><b>Line-level review of privileged GitHub Actions trust crossings.</b></p>
+<p>Read-only inspection of pull_request_target checkout and execution, script interpolation from untrusted event values, token permissions and mutable actions. Includes conservative severity and remediation.</p>
+<p><a href="https://github.com/Kanompung1988/gha-trust-boundary-audit"><b>Source, README & install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/gha-trust-boundary-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/gha-trust-boundary-audit/actions/workflows/ci.yml/badge.svg" alt="GHA Trust Boundary CI"></a></p>
+</td>
+<td width="50%" valign="top">
+<h3>04 · Env Contract Audit</h3>
+<p><b>Find environment-variable documentation drift before deploy.</b></p>
+<p>Offline names-only comparison of Python/Node/Vite references with .env.example; flags missing declarations and suspect public-bundle names without reading actual secrets.</p>
+<p><a href="https://github.com/Kanompung1988/env-contract-audit"><b>Source, README & install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/env-contract-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/env-contract-audit/actions/workflows/ci.yml/badge.svg" alt="Env Contract CI"></a></p>
+</td>
+</tr>
 </table>
 
 | Skill | CLI | Verified QA evidence | Repository |
 |---|---|---|---|
 | OpenAPI audit | Local JSON/YAML OpenAPI 3.x comparison | [Python 3.10/3.12 — 16 unit tests + 1 smoke each](https://github.com/Kanompung1988/openapi-compat-audit/actions/runs/40093092063) | [openapi-compat-audit](https://github.com/Kanompung1988/openapi-compat-audit) |
 | CI log triage | Local text CI log classification | [Python 3.10/3.12 — 16 unit tests + 1 smoke each](https://github.com/Kanompung1988/ci-log-triage/actions/runs/40093094810) | [ci-log-triage](https://github.com/Kanompung1988/ci-log-triage) |
+| GHA trust boundary | Local GitHub Actions YAML static review | [Python 3.10/3.12 — 23 unit tests + CLI smoke each](https://github.com/Kanompung1988/gha-trust-boundary-audit/actions/runs/40258709081) | [gha-trust-boundary-audit](https://github.com/Kanompung1988/gha-trust-boundary-audit) |
+| Env contract | Offline code/example env-key name comparison | [Python 3.10/3.12 — 25 unit tests + CLI smoke each](https://github.com/Kanompung1988/env-contract-audit/actions/runs/40258713283) | [env-contract-audit](https://github.com/Kanompung1988/env-contract-audit) |
 
 ## How to install
 
@@ -80,16 +98,15 @@ flowchart LR
     F -->|No| D
     F -->|Yes| G[Merge, verify PUBLIC main]
     G --> H[Add project link to this portfolio]
-    H --> I[One combined Thai Skill Lab post]
 ```
 
-**Release gate:** Quality ≥85/100 is an internal editorial filter, not a claim of external adoption. A project ships only when tests pass, the source is public, and documentation is complete. No obligation to release a weak skill every day. A social post is scheduled only after a public skill release has been verified.
+**Release gate:** Quality ≥85/100 is an internal editorial filter, not a claim of external adoption. A project ships only when tests pass, the source is public, and documentation is complete. No obligation to release a weak skill every day. **Skill Lab social publishing is OFF by owner instruction (2026-10-25)**, including Instagram and Facebook. Code releases continue normally; no marketing posts are queued by this workflow.
 
-The technical runbook is [Skill Lab operations](docs/SKILL_LAB_OPERATIONS.md); verified episode history is [EPISODES.md](docs/EPISODES.md). Historic candidate research is [CANDIDATES-AND-SOURCES.md](CANDIDATES-AND-SOURCES.md).
+The technical runbook is [Skill Lab operations](docs/SKILL_LAB_OPERATIONS.md); verified episode history is [EPISODES.md](docs/EPISODES.md). Historic candidate research is [CANDIDATES-AND-SOURCES.md](CANDIDATES-AND-SOURCES.md); [EP.02's scored eight-candidate research](docs/CANDIDATE_RESEARCH_2026-10-26.md).
 
 ## Reproducible evidence, not vanity metrics
 
-The two initial standalones passed **16 unit checks and 1 deterministic CLI demo** on both Python 3.10 and 3.12; follow the exact per-repository CI links above. We do **not** claim external user results, independent security audit, or the official `skills-ref` validator. Tests cover selected synthetic edge cases and cannot guarantee full OpenAPI or CI failure diagnosis.
+The two EP.01 standalones passed **16 unit checks and 1 deterministic CLI demo** on both Python 3.10 and 3.12; follow the exact per-repository CI links above. We do **not** claim external user results, independent security audit, or the official `skills-ref` validator. EP.02 adds GHA Trust Boundary Audit (23 tests) and Env Contract Audit (25 tests), each green on Python 3.10 and 3.12 in its own PR CI. These static checks are heuristics, not a professional security certification. Tests cover selected synthetic edge cases and cannot guarantee full OpenAPI or CI failure diagnosis.
 
 ## Roadmap and collaboration
 

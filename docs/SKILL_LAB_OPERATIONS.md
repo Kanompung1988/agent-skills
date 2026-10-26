@@ -1,5 +1,8 @@
 # AREAZERO Skill Lab — autonomous publishing contract
 
+> [!IMPORTANT]
+> **LATEST OWNER OVERRIDE (2026-10-25; applied to automation 2026-10-26): Skill Lab social publishing is OFF indefinitely.** Build, test, PR, and publish standalone GitHub code normally, but **do not create/schedule/enable/reschedule/publish posts on Instagram/Facebook**, via Metricool, workflows, or any service. Never turn a draft into autoPublish:true. Optional copy/artwork can exist only as offline DRAFT. This supersedes ALL older social instructions in this document and the bot playbook until the user explicitly reauthorizes Skill Lab social posting. Daily AI Scout is unaffected.
+
 > **Thai series title:** ทำให้ AI เก่งขึ้นทุกวัน  
 > **GitHub portfolio:** [Kanompung1988/agent-skills](https://github.com/Kanompung1988/agent-skills)  
 > **Public code model:** **ONE SKILL = ONE DEDICATED PUBLIC REPOSITORY**, not a monorepo.  
@@ -26,10 +29,9 @@ Build technical credibility for GitHub [@Kanompung1988](https://github.com/Kanom
 5. Stage the complete package on a non-default `agent-skills` branch under `skills/<slug>/` and update the **authorized** repository-request manifest on `Bot_new_areazero/main` (only after checking idempotency and target repo existence). Use connector actions or GitHub Actions to provision. Confirm GitHub created exactly `Kanompung1988/<slug>` PUBLIC; do not substitute a different repo.
 6. Populate the target repo on a feature branch and open a PR. CI on the **new standalone repo** must verify its tests and demo across supported Python versions. Compare actual latest head SHA and all job statuses; only merge after all gates truly pass. Then read `SKILL.md` and `README.md` back from the **public default branch**. A successful provisioning Action is not proof of published code.
 7. Only then update this directory's README and [docs/EPISODES.md](EPISODES.md) with the verified repo links and CI. Never keep permanent duplicate copies of released source under the portfolio's `main`.
-8. Design one real professional **1080×1350 Thai** image for the combined Skill Lab episode. Preserve the official logo SVG untouched (`Areazerowebsite/public/logo-full.svg` or trusted Library copy) with clear space and brand colors `#00D9FF`, `#00FFA3`, `#0A1929`. Visually inspect all Thai text, numbers and screenshots/fixtures. Use real source links to each newly published repo; say `แจกฟรี` only for source confirmed public.
-9. Before social write, call Metricool getBrandSettings and getScheduledPosts and inspect `posts/YYYY-MM-DD/open-source-lab-publication.json`. Verify brand **7611512**, `@areazero.ai` and FB Page AreaZero; idempotency key = `date + areazero-open-source-lab + platform`. If `SCHEDULED`/`PENDING`/`PUBLISHING`/`PUBLISHED`, DO NOT create another post. Update the same UUID only for necessary corrections; the id changes while UUID stays fixed.
-10. Commit the actual JPG/PNG bytes as Base64 GitHub blob on dedicated `areazero-social-assets` branch using a correct **tree SHA** as create_tree base, non-forced update_ref, commit-pinned public raw URL; verify Metricool media ingest. Schedule one combined IG+FB post only at **12:00 Asia/Bangkok** with `autoPublish:true`. If noon has passed, choose next truly free noon slot; do not backdate.
-11. Save full source, decision rubric, image hash, skill repo URLs and CI run IDs, social caption, Metricool ID+stable UUID, per-provider schedule/publication status to GitHub logs. Call a platform PUBLISHED only with per-provider publicUrl, not because automation completed or because a post disappeared from the queue. Report blockers rather than retrying possible duplicates.
+8. **SOCIAL OFF** — Do not call Metricool create/update/schedule/publish or GitHub social workflows for Skill Lab. Offline art or draft captions are optional only and must not be scheduled or uploaded for distribution.
+9. Save verified code release evidence, PR/CI URLs and a clear social status **OFF** in GitHub documentation. If any prior scheduled draft exists, leave it unchanged; do not reactivate it.
+10. Never interpret current GitHub publishing as permission for social publishing; only an explicit future owner instruction can restore it.
 
 ## Backlog and existing episode guard
 
