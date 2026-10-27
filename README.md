@@ -9,7 +9,7 @@
 <p align="center">
 <a href="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml"><img alt="Index QA status" src="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml/badge.svg"></a>
 <a href="https://agentskills.io/specification"><img src="https://img.shields.io/badge/Agent%20Skills-open%20spec-00D9FF?style=flat-square" alt="Agent Skills specification"></a>
-<img src="https://img.shields.io/badge/independent%20skill%20repos-4-00FFA3?style=flat-square" alt="Four independent skills">
+<img src="https://img.shields.io/badge/independent%20skill%20repos-6-00FFA3?style=flat-square" alt="Six independent skills">
 <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-0A1929?style=flat-square" alt="Code MIT License"></a>
 </p>
 
@@ -57,6 +57,22 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 <p><a href="https://github.com/Kanompung1988/env-contract-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/env-contract-audit/actions/workflows/ci.yml/badge.svg" alt="Env Contract CI"></a></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<h3>05 · PG Migration Risk Audit</h3>
+<p><b>Find PostgreSQL migration lock and data-loss risks before deployment.</b></p>
+<p>Offline, line-level review of SQL migrations for DROP, TRUNCATE, unbounded writes and concurrent index transaction issues. Reads files only; never executes SQL or connects to the database.</p>
+<p><a href="https://github.com/Kanompung1988/pg-migration-risk-audit"><b>Source, README & install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/pg-migration-risk-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/pg-migration-risk-audit/actions/workflows/ci.yml/badge.svg" alt="PG Migration independent CI"></a></p>
+</td>
+<td width="50%" valign="top">
+<h3>06 · Docker Context Guard</h3>
+<p><b>Review what Docker might send into a build context.</b></p>
+<p>Read-only review of Dockerfile COPY/ADD, .dockerignore precedence, sensitive-looking filenames and ARG/ENV key names without reading secret values. The matcher is deliberately an approximation.</p>
+<p><a href="https://github.com/Kanompung1988/docker-context-guard"><b>Source, README & install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/docker-context-guard/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/docker-context-guard/actions/workflows/ci.yml/badge.svg" alt="Docker Context independent CI"></a></p>
+</td>
+</tr>
 </table>
 
 | Skill | CLI | Verified QA evidence | Repository |
@@ -65,6 +81,9 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 | CI log triage | Local text CI log classification | [Python 3.10/3.12 — 16 unit tests + 1 smoke each](https://github.com/Kanompung1988/ci-log-triage/actions/runs/40093094810) | [ci-log-triage](https://github.com/Kanompung1988/ci-log-triage) |
 | GHA trust boundary | Local GitHub Actions YAML static review | [Python 3.10/3.12 — 23 unit tests + CLI smoke each](https://github.com/Kanompung1988/gha-trust-boundary-audit/actions/runs/40258709081) | [gha-trust-boundary-audit](https://github.com/Kanompung1988/gha-trust-boundary-audit) |
 | Env contract | Offline code/example env-key name comparison | [Python 3.10/3.12 — 25 unit tests + CLI smoke each](https://github.com/Kanompung1988/env-contract-audit/actions/runs/40258713283) | [env-contract-audit](https://github.com/Kanompung1988/env-contract-audit) |
+
+| PostgreSQL migration risk | Offline SQL schema/data migration review | [Python 3.10/3.12 — 33 unit tests + fixture smoke each](https://github.com/Kanompung1988/pg-migration-risk-audit/actions/runs/40437637025) | [pg-migration-risk-audit](https://github.com/Kanompung1988/pg-migration-risk-audit) |
+| Docker build context | Offline Dockerfile, .dockerignore and filenames review | [Python 3.10/3.12 — 26 unit tests + fixture smoke each](https://github.com/Kanompung1988/docker-context-guard/actions/runs/40437682390) | [docker-context-guard](https://github.com/Kanompung1988/docker-context-guard) |
 
 ## How to install
 
@@ -102,11 +121,11 @@ flowchart LR
 
 **Release gate:** Quality ≥85/100 is an internal editorial filter, not a claim of external adoption. A project ships only when tests pass, the source is public, and documentation is complete. No obligation to release a weak skill every day. **Skill Lab social publishing is OFF by owner instruction (2026-10-25)**, including Instagram and Facebook. Code releases continue normally; no marketing posts are queued by this workflow.
 
-The technical runbook is [Skill Lab operations](docs/SKILL_LAB_OPERATIONS.md); verified episode history is [EPISODES.md](docs/EPISODES.md). Historic candidate research is [CANDIDATES-AND-SOURCES.md](CANDIDATES-AND-SOURCES.md); [EP.02's scored eight-candidate research](docs/CANDIDATE_RESEARCH_2026-10-26.md).
+The technical runbook is [Skill Lab operations](docs/SKILL_LAB_OPERATIONS.md); verified episode history is [EPISODES.md](docs/EPISODES.md). Historic candidate research is [CANDIDATES-AND-SOURCES.md](CANDIDATES-AND-SOURCES.md); [EP.02's scored eight-candidate research](docs/CANDIDATE_RESEARCH_2026-10-26.md); [EP.03 research](docs/CANDIDATE_RESEARCH_2026-10-27.md).
 
 ## Reproducible evidence, not vanity metrics
 
-The two EP.01 standalones passed **16 unit checks and 1 deterministic CLI demo** on both Python 3.10 and 3.12; follow the exact per-repository CI links above. We do **not** claim external user results, independent security audit, or the official `skills-ref` validator. EP.02 adds GHA Trust Boundary Audit (23 tests) and Env Contract Audit (25 tests), each green on Python 3.10 and 3.12 in its own PR CI. These static checks are heuristics, not a professional security certification. Tests cover selected synthetic edge cases and cannot guarantee full OpenAPI or CI failure diagnosis.
+The two EP.01 standalones passed **16 unit checks and 1 deterministic CLI demo** on both Python 3.10 and 3.12; follow the exact per-repository CI links above. We do **not** claim external user results, independent security audit, or the official `skills-ref` validator. EP.02 adds GHA Trust Boundary Audit (23 tests) and Env Contract Audit (25 tests), each green on Python 3.10 and 3.12 in its own PR CI. EP.03 adds PG Migration Risk Audit (33 tests) and Docker Context Guard (26 tests), both independently green on Python 3.10 and 3.12 in their own PR CI. [EP.03's eight scored pain points and exact verification](docs/CANDIDATE_RESEARCH_2026-10-27.md). These static checks are heuristics, not a professional security certification. Tests cover selected synthetic edge cases and cannot guarantee full OpenAPI or CI failure diagnosis.
 
 ## Roadmap and collaboration
 
