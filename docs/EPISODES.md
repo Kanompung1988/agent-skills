@@ -7,11 +7,12 @@
 | **EP.01 — 2026-10-24** | [OpenAPI Compatibility Audit](https://github.com/Kanompung1988/openapi-compat-audit) · [CI Log Triage](https://github.com/Kanompung1988/ci-log-triage) | [OpenAPI: 16+1 × Python 3.10/3.12](https://github.com/Kanompung1988/openapi-compat-audit/actions/runs/40093092063) · [CI: 16+1 × Python 3.10/3.12](https://github.com/Kanompung1988/ci-log-triage/actions/runs/40093094810) | **HISTORICAL QUEUE RECORD**, posting paused by owner since 2026-10-25, [Metricool publication record](https://github.com/Kanompung1988/Bot_new_areazero/blob/areazero-social-assets/posts/2026-10-25/open-source-lab-publication.json) |
 | **EP.02 — 2026-10-26** | [GHA Trust Boundary Audit](https://github.com/Kanompung1988/gha-trust-boundary-audit) · [Env Contract Audit](https://github.com/Kanompung1988/env-contract-audit) | [GHA: 23 + CLI smoke × Python 3.10/3.12](https://github.com/Kanompung1988/gha-trust-boundary-audit/actions/runs/40258709081) · [Env: 25 + CLI smoke × Python 3.10/3.12](https://github.com/Kanompung1988/env-contract-audit/actions/runs/40258713283) | **OFF — no Instagram/Facebook posting or scheduling** |
 | **EP.03 — 2026-10-27** | [PG Migration Risk Audit](https://github.com/Kanompung1988/pg-migration-risk-audit) · [Docker Context Guard](https://github.com/Kanompung1988/docker-context-guard) | [PostgreSQL: 33 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/pg-migration-risk-audit/actions/runs/40437637025) · [Docker: 26 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/docker-context-guard/actions/runs/40437682390) | **OFF — no Instagram/Facebook posting or scheduling** |
+| **EP.04 — 2026-10-28** | [Python Artifact Audit](https://github.com/Kanompung1988/python-artifact-audit) · [Kubernetes RBAC Rights Audit](https://github.com/Kanompung1988/k8s-rbac-rights-audit) | [Python artifact: 27 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/python-artifact-audit/actions/runs/40620229042) · [RBAC: 33 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/k8s-rbac-rights-audit/actions/runs/40620234811) | **OFF — no Instagram/Facebook posting or scheduling** |
 
 
-## EP.03 research
+## EP.03 and EP.04 research
 
-[Eight screened developer pain points, scoring rubric, primary evidence and CI verification](CANDIDATE_RESEARCH_2026-10-27.md).
+[EP.03: eight screened developer pain points](CANDIDATE_RESEARCH_2026-10-27.md) · [EP.04: eight screened developer pain points and public CI evidence](CANDIDATE_RESEARCH_2026-10-28.md).
 
 ## History and provenance
 
