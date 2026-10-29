@@ -8,11 +8,11 @@
 | **EP.02 — 2026-10-26** | [GHA Trust Boundary Audit](https://github.com/Kanompung1988/gha-trust-boundary-audit) · [Env Contract Audit](https://github.com/Kanompung1988/env-contract-audit) | [GHA: 23 + CLI smoke × Python 3.10/3.12](https://github.com/Kanompung1988/gha-trust-boundary-audit/actions/runs/40258709081) · [Env: 25 + CLI smoke × Python 3.10/3.12](https://github.com/Kanompung1988/env-contract-audit/actions/runs/40258713283) | **OFF — no Instagram/Facebook posting or scheduling** |
 | **EP.03 — 2026-10-27** | [PG Migration Risk Audit](https://github.com/Kanompung1988/pg-migration-risk-audit) · [Docker Context Guard](https://github.com/Kanompung1988/docker-context-guard) | [PostgreSQL: 33 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/pg-migration-risk-audit/actions/runs/40437637025) · [Docker: 26 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/docker-context-guard/actions/runs/40437682390) | **OFF — no Instagram/Facebook posting or scheduling** |
 | **EP.04 — 2026-10-28** | [Python Artifact Audit](https://github.com/Kanompung1988/python-artifact-audit) · [Kubernetes RBAC Rights Audit](https://github.com/Kanompung1988/k8s-rbac-rights-audit) | [Python artifact: 27 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/python-artifact-audit/actions/runs/40620229042) · [RBAC: 33 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/k8s-rbac-rights-audit/actions/runs/40620234811) | **OFF — no Instagram/Facebook posting or scheduling** |
+| **EP.05 — 2026-10-29** | [Terraform Plan Impact Audit](https://github.com/Kanompung1988/terraform-plan-impact-audit) · [Kubernetes NetworkPolicy Scope Audit](https://github.com/Kanompung1988/k8s-netpol-scope-audit) | [Terraform: 22 tests + safe/review fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/terraform-plan-impact-audit/actions/runs/40805302365) · [NetworkPolicy: 26 tests + safe/review fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/k8s-netpol-scope-audit/actions/runs/40805308144) | **OFF — no Instagram/Facebook posting or scheduling** |
 
+## EP.03–EP.05 research
 
-## EP.03 and EP.04 research
-
-[EP.03: eight screened developer pain points](CANDIDATE_RESEARCH_2026-10-27.md) · [EP.04: eight screened developer pain points and public CI evidence](CANDIDATE_RESEARCH_2026-10-28.md).
+[EP.03: eight screened developer pain points](CANDIDATE_RESEARCH_2026-10-27.md) · [EP.04: eight screened developer pain points and public CI evidence](CANDIDATE_RESEARCH_2026-10-28.md) · [EP.05: eight screened developer problems, repo and main CI proof](CANDIDATE_RESEARCH_2026-10-29.md).
 
 ## History and provenance
 
