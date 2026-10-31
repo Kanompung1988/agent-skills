@@ -12,9 +12,11 @@
 
 | **EP.06 — 2026-10-30** | [CODEOWNERS Review Gap Audit](https://github.com/Kanompung1988/codeowners-review-gap-audit) · [Kubernetes Image Pin Audit](https://github.com/Kanompung1988/k8s-image-pin-audit) | [CODEOWNERS: 30 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/codeowners-review-gap-audit/actions/runs/40992122453) · [K8s Image: 38 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/k8s-image-pin-audit/actions/runs/40992129587) | **OFF — no Instagram/Facebook posting or scheduling** |
 
-## EP.03–EP.06 research
+| **EP.07 — 2026-10-31** | [Compose Port Exposure Audit](https://github.com/Kanompung1988/compose-port-exposure-audit) · [Helm Values Contract Audit](https://github.com/Kanompung1988/helm-values-contract-audit) | [Compose: 30 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/compose-port-exposure-audit/actions/runs/41158191035) · [Helm: 30 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/helm-values-contract-audit/actions/runs/41158196325) | **OFF — no Instagram/Facebook posting or scheduling** |
 
-[EP.03: eight screened developer pain points](CANDIDATE_RESEARCH_2026-10-27.md) · [EP.04: eight screened developer pain points and public CI evidence](CANDIDATE_RESEARCH_2026-10-28.md) · [EP.05: eight screened developer problems, repo and main CI proof](CANDIDATE_RESEARCH_2026-10-29.md) · [EP.06: eight screened problems, security boundaries and verified CI](CANDIDATE_RESEARCH_2026-10-30.md).
+## EP.03–EP.07 research
+
+[EP.03: eight screened developer pain points](CANDIDATE_RESEARCH_2026-10-27.md) · [EP.04: eight screened developer pain points and public CI evidence](CANDIDATE_RESEARCH_2026-10-28.md) · [EP.05: eight screened developer problems, repo and main CI proof](CANDIDATE_RESEARCH_2026-10-29.md) · [EP.06: eight screened problems, security boundaries and verified CI](CANDIDATE_RESEARCH_2026-10-30.md) · [EP.07: eight candidate decisions and verified two-skill CI](CANDIDATE_RESEARCH_2026-10-31.md).
 
 ## History and provenance
 

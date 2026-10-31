@@ -6,7 +6,7 @@ import unittest
 import xml.etree.ElementTree as ET
 
 ROOT=Path(__file__).resolve().parents[1]
-REPOS=['openapi-compat-audit','ci-log-triage','gha-trust-boundary-audit','env-contract-audit']
+REPOS=['openapi-compat-audit','ci-log-triage','gha-trust-boundary-audit','env-contract-audit','pg-migration-risk-audit','docker-context-guard','python-artifact-audit','k8s-rbac-rights-audit','terraform-plan-impact-audit','k8s-netpol-scope-audit','codeowners-review-gap-audit','k8s-image-pin-audit','compose-port-exposure-audit','helm-values-contract-audit']
 EXPECTED={
  'area-zero-logo-full.svg':'89b459e6a4e61748d2d56d54da2cd17ff2b55deafbbc90e45e43d4c319462d16',
  'area-zero-logo-icon.svg':'f566816db1f90656499b5e8377b04cc96584c45b2a62c8113895f3f24eeb0c68'

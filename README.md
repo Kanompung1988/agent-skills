@@ -9,7 +9,7 @@
 <p align="center">
 <a href="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml"><img alt="Index QA status" src="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml/badge.svg"></a>
 <a href="https://agentskills.io/specification"><img src="https://img.shields.io/badge/Agent%20Skills-open%20spec-00D9FF?style=flat-square" alt="Agent Skills specification"></a>
-<img src="https://img.shields.io/badge/independent%20skill%20repos-12-00FFA3?style=flat-square" alt="Twelve independent skills">
+<img src="https://img.shields.io/badge/independent%20skill%20repos-14-00FFA3?style=flat-square" alt="Fourteen independent skills">
 <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-0A1929?style=flat-square" alt="Code MIT License"></a>
 </p>
 
@@ -122,6 +122,22 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 <p><a href="https://github.com/Kanompung1988/k8s-image-pin-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/k8s-image-pin-audit/actions/workflows/ci.yml/badge.svg" alt="Kubernetes image pin CI"></a></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<h3>13 · Compose Port Exposure Audit</h3>
+<p><b>Review published Docker Compose ports before opening host interfaces.</b></p>
+<p>Offline, line-neutral service/port mapping review for default/all-interface binds, published data service ports, explicit loopback, host networking and unresolved interpolation. This is not a live port scan.</p>
+<p><a href="https://github.com/Kanompung1988/compose-port-exposure-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/compose-port-exposure-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/compose-port-exposure-audit/actions/workflows/ci.yml/badge.svg" alt="Compose Port Exposure CI"></a></p>
+</td>
+<td width="50%" valign="top">
+<h3>14 · Helm Values Contract Audit</h3>
+<p><b>Find Helm template references absent from local values.yaml defaults.</b></p>
+<p>Conservative Go-template text scanner for literal .Values/index lookups. Missing defaults are review signals, not certain deployment failures; dynamic expressions are flagged.</p>
+<p><a href="https://github.com/Kanompung1988/helm-values-contract-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/helm-values-contract-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/helm-values-contract-audit/actions/workflows/ci.yml/badge.svg" alt="Helm Values Contract CI"></a></p>
+</td>
+</tr>
 </table>
 
 | Skill | CLI | Verified QA evidence | Repository |
@@ -140,6 +156,10 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 
 | CODEOWNERS review gap | Offline selected critical-path owner matching and precedence review | [Python 3.10/3.12 — 30 tests + synthetic CLI smoke per version](https://github.com/Kanompung1988/codeowners-review-gap-audit/actions/runs/40992122453) | [codeowners-review-gap-audit](https://github.com/Kanompung1988/codeowners-review-gap-audit) |
 | Kubernetes image pinning | Offline rendered manifest image tag/digest and pull-policy inspection | [Python 3.10/3.12 — 38 tests + synthetic CLI smoke per version](https://github.com/Kanompung1988/k8s-image-pin-audit/actions/runs/40992129587) | [k8s-image-pin-audit](https://github.com/Kanompung1988/k8s-image-pin-audit) |
+
+| Compose port exposure | Read-only Compose YAML port and host-network heuristic | [Python 3.10/3.12 — 30 unit tests + safe/review fixture smoke each](https://github.com/Kanompung1988/compose-port-exposure-audit/actions/runs/41158191035) | [compose-port-exposure-audit](https://github.com/Kanompung1988/compose-port-exposure-audit) |
+| Helm values contract | Literal Helm .Values/index paths vs. local defaults | [Python 3.10/3.12 — 30 unit tests + safe/review fixture smoke each](https://github.com/Kanompung1988/helm-values-contract-audit/actions/runs/41158196325) | [helm-values-contract-audit](https://github.com/Kanompung1988/helm-values-contract-audit) |
+
 
 ## How to install
 
@@ -186,6 +206,8 @@ The two EP.01 standalones passed **16 unit checks and 1 deterministic CLI demo**
 EP.05 adds Terraform Plan Impact Audit (22 tests) and Kubernetes NetworkPolicy Scope Audit (26 tests), both individually green on Python 3.10 and 3.12 in PR and public-main CI. These are read-only, bounded review aids, not security or availability guarantees. [EP.05's eight screened problems, rule boundaries and CI evidence](docs/CANDIDATE_RESEARCH_2026-10-29.md). Social distribution remains **OFF**.
 
 EP.06 adds CODEOWNERS Review Gap Audit (30 tests) and Kubernetes Image Pin Audit (38 tests), each validated on Python 3.10 and 3.12 with successful separate PR and public-main CI. Both are offline review helpers with explicitly bounded matching, input, and registry-related limitations, not evidence of protection settings or container image integrity. [EP.06's eight screened problems, test evidence and release links](docs/CANDIDATE_RESEARCH_2026-10-30.md). **Skill Lab social remains OFF.**
+
+EP.07 adds **Compose Port Exposure Audit** (30 tests) and **Helm Values Contract Audit** (30 tests), both with clean PR CI and independent post-merge public-main CI on Python 3.10 and 3.12. This episode uses deliberately bounded static heuristics with clearly labeled unresolved cases; no live network exposure or Helm deployment success is asserted. [Read the 8-candidate research and exact release evidence](docs/CANDIDATE_RESEARCH_2026-10-31.md). **Skill Lab social remains OFF.**
 
 ## Roadmap and collaboration
 
