@@ -14,9 +14,11 @@
 
 | **EP.07 — 2026-10-31** | [Compose Port Exposure Audit](https://github.com/Kanompung1988/compose-port-exposure-audit) · [Helm Values Contract Audit](https://github.com/Kanompung1988/helm-values-contract-audit) | [Compose: 30 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/compose-port-exposure-audit/actions/runs/41158191035) · [Helm: 30 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/helm-values-contract-audit/actions/runs/41158196325) | **OFF — no Instagram/Facebook posting or scheduling** |
 
-## EP.03–EP.07 research
+| **EP.08 — 2026-11-01** | [AWS GitHub OIDC Trust Audit](https://github.com/Kanompung1988/aws-github-oidc-trust-audit) · [npm Export Map Audit](https://github.com/Kanompung1988/npm-export-map-audit) | [AWS OIDC: 27 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/aws-github-oidc-trust-audit/actions/runs/41263922125) · [npm exports: 32 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/npm-export-map-audit/actions/runs/41263928023) | **OFF — no Instagram/Facebook posting or scheduling** |
 
-[EP.03: eight screened developer pain points](CANDIDATE_RESEARCH_2026-10-27.md) · [EP.04: eight screened developer pain points and public CI evidence](CANDIDATE_RESEARCH_2026-10-28.md) · [EP.05: eight screened developer problems, repo and main CI proof](CANDIDATE_RESEARCH_2026-10-29.md) · [EP.06: eight screened problems, security boundaries and verified CI](CANDIDATE_RESEARCH_2026-10-30.md) · [EP.07: eight candidate decisions and verified two-skill CI](CANDIDATE_RESEARCH_2026-10-31.md).
+## EP.03–EP.08 research
+
+[EP.03: eight screened developer pain points](CANDIDATE_RESEARCH_2026-10-27.md) · [EP.04: eight screened developer pain points and public CI evidence](CANDIDATE_RESEARCH_2026-10-28.md) · [EP.05: eight screened developer problems, repo and main CI proof](CANDIDATE_RESEARCH_2026-10-29.md) · [EP.06: eight screened problems, security boundaries and verified CI](CANDIDATE_RESEARCH_2026-10-30.md) · [EP.07: eight candidate decisions and verified two-skill CI](CANDIDATE_RESEARCH_2026-10-31.md) · [EP.08: AWS OIDC and npm export-map decisions, 8 scores and verified release CI](CANDIDATE_RESEARCH_2026-11-01.md).
 
 ## History and provenance
 
