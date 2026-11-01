@@ -1,0 +1,8 @@
+{
+  "name": "sample-package-review",
+  "version": "0.0.0",
+  "exports": {
+    ".": "../outside.js",
+    "./feature": "./src/feature.js"
+  }
+}
