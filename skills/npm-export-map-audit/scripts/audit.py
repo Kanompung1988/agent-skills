@@ -25,11 +25,12 @@ def _finding(code, severity, location, detail):
 def _invalid_segment(text):
     tail = text[2:] if text.startswith("./") else text
     lower = unquote(tail).lower()
+    encoded = tail.lower()
     segments = lower.split("/")
     return (
         "\\" in lower
         or any(segment in (".", "..", "node_modules", "") for segment in segments)
-        or any(character in lower for character in ("%2f", "%5c", "\x00"))
+        or "%2f" in encoded or "%5c" in encoded or "\x00" in lower
     )
 
 def _safe_under_root(root, value):

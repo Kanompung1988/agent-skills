@@ -82,7 +82,8 @@ def inspect_policy(payload, file_name):
     for index, statement in enumerate(statements):
         if statement.get("Effect") != "Allow" or not _github_provider(statement.get("Principal")):
             continue
-        if ACTION not in _strings(statement.get("Action")) and "*" not in _strings(statement.get("Action")):
+        actions = {name.lower() for name in _strings(statement.get("Action"))}
+        if ACTION.lower() not in actions and "*" not in actions and "sts:*" not in actions:
             continue
         matched += 1
         condition = statement.get("Condition", {})
@@ -129,7 +130,7 @@ def inspect_policy(payload, file_name):
         elif any(a != "sts.amazonaws.com" for a in audiences):
             findings.append(_finding("MULTIPLE_AUDIENCES", "REVIEW", file_name, index,
                                      "Audience restriction also accepts an additional value."))
-        if "*" in _strings(statement.get("Action")):
+        if "*" in actions or "sts:*" in actions:
             findings.append(_finding("WILDCARD_ACTION", "REVIEW", file_name, index,
                                      "Trust statement accepts an unrestricted action name."))
     return findings, matched

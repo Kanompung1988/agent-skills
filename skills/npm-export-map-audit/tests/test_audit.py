@@ -48,6 +48,10 @@ class ExportsAuditTests(unittest.TestCase):
         self.assertIn("INVALID_TARGET_SEGMENT", codes("./a/%2e%2e/secret.js"))
     def test_url_encoded_node_modules(self):
         self.assertIn("INVALID_TARGET_SEGMENT", codes("./%6eode_modules/x.js"))
+    def test_url_encoded_forward_slash(self):
+        self.assertIn("INVALID_TARGET_SEGMENT", codes("./a%2fb.js"))
+    def test_url_encoded_backslash(self):
+        self.assertIn("INVALID_TARGET_SEGMENT", codes("./a%5cb.js"))
     def test_backslash(self):
         self.assertIn("INVALID_TARGET_SEGMENT", codes("./a\\b.js"))
     def test_mixed_map(self):

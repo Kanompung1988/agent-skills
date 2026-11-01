@@ -53,6 +53,15 @@ class TrustAuditTests(unittest.TestCase):
         doc["Statement"][0]["Condition"] = {"StringNotLike": {audit.SUB: "repo:other/*"}}
         self.assertIn("UNSUPPORTED_OPERATOR", codes(doc))
         self.assertIn("MISSING_POSITIVE_SUB", codes(doc))
+    def test_sts_wildcard_action_is_audited(self):
+        doc = policy()
+        doc["Statement"][0]["Action"] = "sts:*"
+        self.assertIn("WILDCARD_ACTION", codes(doc))
+        self.assertEqual(audit.inspect_policy(doc, "x")[1], 1)
+    def test_case_insensitive_action_is_audited(self):
+        doc = policy()
+        doc["Statement"][0]["Action"] = "sts:assumerolewithwebidentity"
+        self.assertEqual(audit.inspect_policy(doc, "x")[1], 1)
     def test_bare_star_sub(self):
         self.assertIn("BROAD_REPOSITORY_SUB", codes(policy(sub="*")))
     def test_unknown_subject(self):
