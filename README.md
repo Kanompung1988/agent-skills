@@ -9,7 +9,7 @@
 <p align="center">
 <a href="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml"><img alt="Index QA status" src="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml/badge.svg"></a>
 <a href="https://agentskills.io/specification"><img src="https://img.shields.io/badge/Agent%20Skills-open%20spec-00D9FF?style=flat-square" alt="Agent Skills specification"></a>
-<img src="https://img.shields.io/badge/independent%20skill%20repos-14-00FFA3?style=flat-square" alt="Fourteen independent skills">
+<img src="https://img.shields.io/badge/independent%20skill%20repos-16-00FFA3?style=flat-square" alt="Sixteen independent skills">
 <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-0A1929?style=flat-square" alt="Code MIT License"></a>
 </p>
 
@@ -138,6 +138,23 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 <p><a href="https://github.com/Kanompung1988/helm-values-contract-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/helm-values-contract-audit/actions/workflows/ci.yml/badge.svg" alt="Helm Values Contract CI"></a></p>
 </td>
 </tr>
+
+<tr>
+<td width="50%" valign="top">
+<h3>15 · AWS GitHub OIDC Trust Audit</h3>
+<p><b>Review which repository, branch and audience an AWS trust policy really accepts.</b></p>
+<p>Offline, bounded IAM trust-policy JSON assessment of GitHub OIDC sub/aud claims and operators. Not a live IAM effective-permission evaluator.</p>
+<p><a href="https://github.com/Kanompung1988/aws-github-oidc-trust-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/aws-github-oidc-trust-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/aws-github-oidc-trust-audit/actions/workflows/ci.yml/badge.svg" alt="AWS OIDC trust CI"></a></p>
+</td>
+<td width="50%" valign="top">
+<h3>16 · npm Export Map Audit</h3>
+<p><b>Spot broken public Node.js package entrypoints before publishing.</b></p>
+<p>Offline package.json exports target path, condition/subpath shape, encoding and optional built-file review. Not a complete Node.js resolver.</p>
+<p><a href="https://github.com/Kanompung1988/npm-export-map-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/npm-export-map-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/npm-export-map-audit/actions/workflows/ci.yml/badge.svg" alt="npm export map CI"></a></p>
+</td>
+</tr>
 </table>
 
 | Skill | CLI | Verified QA evidence | Repository |
@@ -159,6 +176,8 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 
 | Compose port exposure | Read-only Compose YAML port and host-network heuristic | [Python 3.10/3.12 — 30 unit tests + safe/review fixture smoke each](https://github.com/Kanompung1988/compose-port-exposure-audit/actions/runs/41158191035) | [compose-port-exposure-audit](https://github.com/Kanompung1988/compose-port-exposure-audit) |
 | Helm values contract | Literal Helm .Values/index paths vs. local defaults | [Python 3.10/3.12 — 30 unit tests + safe/review fixture smoke each](https://github.com/Kanompung1988/helm-values-contract-audit/actions/runs/41158196325) | [helm-values-contract-audit](https://github.com/Kanompung1988/helm-values-contract-audit) |
+| AWS GitHub OIDC trust | Read-only IAM role trust-policy JSON subject/audience review | [Python 3.10/3.12 — 27 tests + synthetic fixture smoke each](https://github.com/Kanompung1988/aws-github-oidc-trust-audit/actions/runs/41263922125) | [aws-github-oidc-trust-audit](https://github.com/Kanompung1988/aws-github-oidc-trust-audit) |
+| npm export map | Offline Node.js package.json exports target contract check | [Python 3.10/3.12 — 32 tests + synthetic fixture smoke each](https://github.com/Kanompung1988/npm-export-map-audit/actions/runs/41263928023) | [npm-export-map-audit](https://github.com/Kanompung1988/npm-export-map-audit) |
 
 
 ## How to install
@@ -208,6 +227,8 @@ EP.05 adds Terraform Plan Impact Audit (22 tests) and Kubernetes NetworkPolicy S
 EP.06 adds CODEOWNERS Review Gap Audit (30 tests) and Kubernetes Image Pin Audit (38 tests), each validated on Python 3.10 and 3.12 with successful separate PR and public-main CI. Both are offline review helpers with explicitly bounded matching, input, and registry-related limitations, not evidence of protection settings or container image integrity. [EP.06's eight screened problems, test evidence and release links](docs/CANDIDATE_RESEARCH_2026-10-30.md). **Skill Lab social remains OFF.**
 
 EP.07 adds **Compose Port Exposure Audit** (30 tests) and **Helm Values Contract Audit** (30 tests), both with clean PR CI and independent post-merge public-main CI on Python 3.10 and 3.12. This episode uses deliberately bounded static heuristics with clearly labeled unresolved cases; no live network exposure or Helm deployment success is asserted. [Read the 8-candidate research and exact release evidence](docs/CANDIDATE_RESEARCH_2026-10-31.md). **Skill Lab social remains OFF.**
+
+EP.08 adds **AWS GitHub OIDC Trust Audit** (27 tests) and **npm Export Map Audit** (32 tests), each with green Python 3.10 and 3.12 PR CI and independently green public-main CI. These tools are offline, purposely conservative static analyzers, not proof of AWS authorization security or Node runtime import success. The code was reviewed for OIDC wildcard actions and percent-encoded export separator edge cases and re-tested on the latest head. [See the eight-candidate research, scored decisions, exact GitHub CI and provenance](docs/CANDIDATE_RESEARCH_2026-11-01.md). **Skill Lab social distribution remains OFF.**
 
 ## Roadmap and collaboration
 
