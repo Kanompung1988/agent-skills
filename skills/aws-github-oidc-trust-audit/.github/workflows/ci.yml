@@ -1,0 +1,44 @@
+name: Verify Agent Skill
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Unit and CLI regression tests
+        run: python -m unittest discover -s tests -v
+      - name: Compile scripts
+        run: python -m compileall -q scripts tests
+      - name: Synthetic safe and risky fixtures
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/audit.py examples/safe.json --format json > /tmp/safe.json
+          python -c 'import json; assert json.load(open("/tmp/safe.json"))["findings"] == []'
+          python scripts/audit.py examples/review.json --format json --fail-on never > /tmp/risky.json
+          python -c 'import json; assert any(x["code"]=="BROAD_REPOSITORY_SUB" for x in json.load(open("/tmp/risky.json"))["findings"])'
+      - name: Metadata and original logo verification
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib, re
+          text = Path("SKILL.md").read_text()
+          assert text.startswith("---\n")
+          assert re.search(r"^name: aws-github-oidc-trust-audit$", text, re.M)
+          assert "## Procedure" in text
+          assert Path("assets/hero.svg").exists()
+          logo = Path("assets/area-zero-logo-full.svg").read_bytes()
+          assert hashlib.sha1(b"blob " + str(len(logo)).encode() + b"\0" + logo).hexdigest() == "e1d2a0686010b251a530f9ad7eaf9afddf6a706b"
+          PY

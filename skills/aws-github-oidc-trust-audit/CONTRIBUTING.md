@@ -1,0 +1,3 @@
+# Contributing
+
+Open a focused issue with a **synthetic** IAM trust policy and the expected severity. Do not share secrets, customer trust policies, access keys, or internal identities. Changes require regression tests for both safe and review outcomes, and CI green on Python 3.10/3.12. This is a conservative static reviewer; new detection logic should explicitly describe unsupported IAM operators.
