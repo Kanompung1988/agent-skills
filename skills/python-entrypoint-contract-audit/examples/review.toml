@@ -1,0 +1,8 @@
+[project]
+name = "sample-cli"
+version = "0.1.0"
+[project.scripts]
+sample = "sample.cli"
+ui = "sample.gui:_main"
+[project.gui-scripts]
+sample = "sample.gui:run"

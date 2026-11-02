@@ -1,0 +1,28 @@
+name: Tests and offline CLI fixtures
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install 'tomli>=2'  # tomllib built-in on 3.11+
+      - run: python -m unittest discover -s tests -v
+      - run: python scripts/audit.py examples/safe.toml --no-target-check --strict
+      - run: python scripts/audit.py examples/review.toml --no-target-check --format json
+      - name: Expected strict failure for review fixture
+        run: |
+          if python scripts/audit.py examples/review.toml --no-target-check --strict; then
+            echo 'Expected nonzero for malformed fixture' >&2
+            exit 1
+          fi
