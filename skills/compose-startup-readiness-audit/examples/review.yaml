@@ -1,0 +1,9 @@
+services:
+  web:
+    depends_on:
+      - db
+      - missing
+  db:
+    depends_on:
+      web:
+        condition: service_healthy
