@@ -9,7 +9,7 @@
 <p align="center">
 <a href="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml"><img alt="Index QA status" src="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml/badge.svg"></a>
 <a href="https://agentskills.io/specification"><img src="https://img.shields.io/badge/Agent%20Skills-open%20spec-00D9FF?style=flat-square" alt="Agent Skills specification"></a>
-<img src="https://img.shields.io/badge/independent%20skill%20repos-16-00FFA3?style=flat-square" alt="Sixteen independent skills">
+<img src="https://img.shields.io/badge/independent%20skill%20repos-18-00FFA3?style=flat-square" alt="Eighteen independent skills">
 <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-0A1929?style=flat-square" alt="Code MIT License"></a>
 </p>
 
@@ -155,6 +155,22 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 <p><a href="https://github.com/Kanompung1988/npm-export-map-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/npm-export-map-audit/actions/workflows/ci.yml/badge.svg" alt="npm export map CI"></a></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<h3>17 · Compose Startup Readiness Audit</h3>
+<p><b>Stop mistaking a started container for a ready service.</b></p>
+<p>Offline Compose depends_on, healthcheck and dependency-cycle review; no Docker daemon or multi-file merge simulation.</p>
+<p><a href="https://github.com/Kanompung1988/compose-startup-readiness-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/compose-startup-readiness-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/compose-startup-readiness-audit/actions/workflows/ci.yml/badge.svg" alt="Compose startup readiness CI"></a></p>
+</td>
+<td width="50%" valign="top">
+<h3>18 · Python Entry-point Contract Audit</h3>
+<p><b>Catch broken pyproject CLI command metadata before release.</b></p>
+<p>Offline PEP 621 entrypoint reference and local Python target checks; no import execution or dynamic backend resolution.</p>
+<p><a href="https://github.com/Kanompung1988/python-entrypoint-contract-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/python-entrypoint-contract-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/python-entrypoint-contract-audit/actions/workflows/ci.yml/badge.svg" alt="Python entry-point contract CI"></a></p>
+</td>
+</tr>
 </table>
 
 | Skill | CLI | Verified QA evidence | Repository |
@@ -179,6 +195,8 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 | AWS GitHub OIDC trust | Read-only IAM role trust-policy JSON subject/audience review | [Python 3.10/3.12 — 27 tests + synthetic fixture smoke each](https://github.com/Kanompung1988/aws-github-oidc-trust-audit/actions/runs/41263922125) | [aws-github-oidc-trust-audit](https://github.com/Kanompung1988/aws-github-oidc-trust-audit) |
 | npm export map | Offline Node.js package.json exports target contract check | [Python 3.10/3.12 — 32 tests + synthetic fixture smoke each](https://github.com/Kanompung1988/npm-export-map-audit/actions/runs/41263928023) | [npm-export-map-audit](https://github.com/Kanompung1988/npm-export-map-audit) |
 
+| Compose startup readiness | Offline service graph, healthcheck and depends_on contract review | [Python 3.10/3.12 — 26 tests + synthetic fixture smoke each](https://github.com/Kanompung1988/compose-startup-readiness-audit/actions/runs/41376691671) | [compose-startup-readiness-audit](https://github.com/Kanompung1988/compose-startup-readiness-audit) |
+| Python entry-point contract | Offline pyproject CLI metadata and local module/attribute presence analysis | [Python 3.10/3.12 — 28 tests + synthetic fixture smoke each](https://github.com/Kanompung1988/python-entrypoint-contract-audit/actions/runs/41376699733) | [python-entrypoint-contract-audit](https://github.com/Kanompung1988/python-entrypoint-contract-audit) |
 
 ## How to install
 
@@ -205,7 +223,7 @@ Read the specific repository's README and [Agent Skills specification](https://a
 ```mermaid
 flowchart LR
     A[Real developer pain point] --> B[8 ideas, scored and deduplicated]
-    B --> C[Build 1 focused skill]
+    B --> C[Build up to 2 focused skills]
     C --> D[Python tests and real CLI fixture]
     D --> E[Independent public repository and PR]
     E --> F{CI green on both versions?}
@@ -229,6 +247,8 @@ EP.06 adds CODEOWNERS Review Gap Audit (30 tests) and Kubernetes Image Pin Audit
 EP.07 adds **Compose Port Exposure Audit** (30 tests) and **Helm Values Contract Audit** (30 tests), both with clean PR CI and independent post-merge public-main CI on Python 3.10 and 3.12. This episode uses deliberately bounded static heuristics with clearly labeled unresolved cases; no live network exposure or Helm deployment success is asserted. [Read the 8-candidate research and exact release evidence](docs/CANDIDATE_RESEARCH_2026-10-31.md). **Skill Lab social remains OFF.**
 
 EP.08 adds **AWS GitHub OIDC Trust Audit** (27 tests) and **npm Export Map Audit** (32 tests), each with green Python 3.10 and 3.12 PR CI and independently green public-main CI. These tools are offline, purposely conservative static analyzers, not proof of AWS authorization security or Node runtime import success. The code was reviewed for OIDC wildcard actions and percent-encoded export separator edge cases and re-tested on the latest head. [See the eight-candidate research, scored decisions, exact GitHub CI and provenance](docs/CANDIDATE_RESEARCH_2026-11-01.md). **Skill Lab social distribution remains OFF.**
+
+EP.09 adds **Compose Startup Readiness Audit** (26 local unit tests) and **Python Entry-point Contract Audit** (28 local unit tests); each released in its own public repository with Python 3.10 and 3.12 PR and post-merge main CI jobs passing. The analyzers deliberately avoid executing application code or querying live Docker; they are read-only static review aids and cannot guarantee deployment readiness or package installation success. [Read the eight scored candidates, sources and exact CI evidence](docs/CANDIDATE_RESEARCH_2026-11-02.md). **Skill Lab social remains OFF.**
 
 ## Roadmap and collaboration
 
