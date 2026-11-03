@@ -1,0 +1,4 @@
+--index-url https://pypi.org/simple
+--extra-index-url https://packages.example.invalid/simple
+--trusted-host packages.example.invalid
+acme-private==1.2.3

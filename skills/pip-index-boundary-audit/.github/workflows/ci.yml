@@ -1,0 +1,41 @@
+name: CI
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Dependencies
+        run: |
+          if [ -f requirements.txt ]; then python -m pip install -r requirements.txt; fi
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: CLI fixture expected safe
+        run: |
+          if [ -f examples/safe.yaml ]; then python audit.py examples/safe.yaml; else python audit.py examples/safe.txt; fi
+      - name: CLI fixture expected warnings
+        run: |
+          set +e
+          if [ -f examples/review.yaml ]; then python audit.py examples/review.yaml; else python audit.py examples/review.txt; fi
+          code=$?
+          [ "$code" -eq 1 ]
+      - name: Validate skill frontmatter
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          text=Path('SKILL.md').read_text()
+          slug=Path.cwd().name
+          assert text.startswith('---\n')
+          assert re.search(r'(?m)^name: '+re.escape(slug)+r'$',text)
+          assert re.search(r'(?m)^description: .+',text)
+          PY
