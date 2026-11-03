@@ -18,9 +18,13 @@
 
 | **EP.09 — 2026-11-02** | [Compose Startup Readiness Audit](https://github.com/Kanompung1988/compose-startup-readiness-audit) · [Python Entry-point Contract Audit](https://github.com/Kanompung1988/python-entrypoint-contract-audit) | [Compose: 26 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/compose-startup-readiness-audit/actions/runs/41376691671) · [Python entrypoint: 28 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/python-entrypoint-contract-audit/actions/runs/41376699733) | **OFF — no Instagram/Facebook posting or scheduling** |
 
-## EP.03–EP.09 research
+| **EP.10 — 2026-11-03** | [Kubernetes PDB Scope Audit](https://github.com/Kanompung1988/k8s-pdb-scope-audit) · [pip Index Boundary Audit](https://github.com/Kanompung1988/pip-index-boundary-audit) | [PDB: 20 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/k8s-pdb-scope-audit/actions/runs/41565658589) · [pip: 20 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/pip-index-boundary-audit/actions/runs/41565665585) | **OFF — no Instagram/Facebook posting or scheduling** |
+
+## EP.03–EP.10 research
 
 [EP.03: eight screened developer pain points](CANDIDATE_RESEARCH_2026-10-27.md) · [EP.04: eight screened developer pain points and public CI evidence](CANDIDATE_RESEARCH_2026-10-28.md) · [EP.05: eight screened developer problems, repo and main CI proof](CANDIDATE_RESEARCH_2026-10-29.md) · [EP.06: eight screened problems, security boundaries and verified CI](CANDIDATE_RESEARCH_2026-10-30.md) · [EP.07: eight candidate decisions and verified two-skill CI](CANDIDATE_RESEARCH_2026-10-31.md) · [EP.08: AWS OIDC and npm export-map decisions, 8 scores and verified release CI](CANDIDATE_RESEARCH_2026-11-01.md). · [EP.09: Docker Compose startup and Python CLI entry-point contracts, 8 scored candidates and verified public CI](CANDIDATE_RESEARCH_2026-11-02.md).
+
+[EP.10: 8 screened problems, scoring, source references and verified independent PR/main CI](CANDIDATE_RESEARCH_2026-11-03.md).
 
 ## History and provenance
 
