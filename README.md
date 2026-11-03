@@ -9,7 +9,7 @@
 <p align="center">
 <a href="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml"><img alt="Index QA status" src="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml/badge.svg"></a>
 <a href="https://agentskills.io/specification"><img src="https://img.shields.io/badge/Agent%20Skills-open%20spec-00D9FF?style=flat-square" alt="Agent Skills specification"></a>
-<img src="https://img.shields.io/badge/independent%20skill%20repos-18-00FFA3?style=flat-square" alt="Eighteen independent skills">
+<img src="https://img.shields.io/badge/independent%20skill%20repos-20-00FFA3?style=flat-square" alt="Twenty independent skills">
 <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-0A1929?style=flat-square" alt="Code MIT License"></a>
 </p>
 
@@ -171,6 +171,22 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 <p><a href="https://github.com/Kanompung1988/python-entrypoint-contract-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/python-entrypoint-contract-audit/actions/workflows/ci.yml/badge.svg" alt="Python entry-point contract CI"></a></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<h3>19 · Kubernetes PDB Scope Audit</h3>
+<p><b>Review pod disruption budget selectors before voluntary evictions.</b></p>
+<p>Offline policy/v1 PDB checks for all-pod/null selectors, explicit Pod overlap and risky availability fields; no cluster API calls or eviction predictions.</p>
+<p><a href="https://github.com/Kanompung1988/k8s-pdb-scope-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/k8s-pdb-scope-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/k8s-pdb-scope-audit/actions/workflows/ci.yml/badge.svg" alt="K8s PDB independent CI"></a></p>
+</td>
+<td width="50%" valign="top">
+<h3>20 · pip Index Boundary Audit</h3>
+<p><b>Keep package-origin assumptions visible before pip install.</b></p>
+<p>Read-only requirements file inspection for extra indexes, trusted hosts, HTTP transport and include-boundary escapes; credentials never echoed.</p>
+<p><a href="https://github.com/Kanompung1988/pip-index-boundary-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/pip-index-boundary-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/pip-index-boundary-audit/actions/workflows/ci.yml/badge.svg" alt="pip Index independent CI"></a></p>
+</td>
+</tr>
 </table>
 
 | Skill | CLI | Verified QA evidence | Repository |
@@ -197,6 +213,9 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 
 | Compose startup readiness | Offline service graph, healthcheck and depends_on contract review | [Python 3.10/3.12 — 26 tests + synthetic fixture smoke each](https://github.com/Kanompung1988/compose-startup-readiness-audit/actions/runs/41376691671) | [compose-startup-readiness-audit](https://github.com/Kanompung1988/compose-startup-readiness-audit) |
 | Python entry-point contract | Offline pyproject CLI metadata and local module/attribute presence analysis | [Python 3.10/3.12 — 28 tests + synthetic fixture smoke each](https://github.com/Kanompung1988/python-entrypoint-contract-audit/actions/runs/41376699733) | [python-entrypoint-contract-audit](https://github.com/Kanompung1988/python-entrypoint-contract-audit) |
+
+| Kubernetes PDB scope | Read-only policy/v1 selector and supplied Pod-overlap review | [Python 3.10/3.12 — 20 tests + fixtures](https://github.com/Kanompung1988/k8s-pdb-scope-audit/actions/runs/41565658589) | [k8s-pdb-scope-audit](https://github.com/Kanompung1988/k8s-pdb-scope-audit) |
+| pip index boundary | Read-only requirements/index boundary, include and credential-safe diagnostics | [Python 3.10/3.12 — 20 tests + fixtures](https://github.com/Kanompung1988/pip-index-boundary-audit/actions/runs/41565665585) | [pip-index-boundary-audit](https://github.com/Kanompung1988/pip-index-boundary-audit) |
 
 ## How to install
 
@@ -249,6 +268,8 @@ EP.07 adds **Compose Port Exposure Audit** (30 tests) and **Helm Values Contract
 EP.08 adds **AWS GitHub OIDC Trust Audit** (27 tests) and **npm Export Map Audit** (32 tests), each with green Python 3.10 and 3.12 PR CI and independently green public-main CI. These tools are offline, purposely conservative static analyzers, not proof of AWS authorization security or Node runtime import success. The code was reviewed for OIDC wildcard actions and percent-encoded export separator edge cases and re-tested on the latest head. [See the eight-candidate research, scored decisions, exact GitHub CI and provenance](docs/CANDIDATE_RESEARCH_2026-11-01.md). **Skill Lab social distribution remains OFF.**
 
 EP.09 adds **Compose Startup Readiness Audit** (26 local unit tests) and **Python Entry-point Contract Audit** (28 local unit tests); each released in its own public repository with Python 3.10 and 3.12 PR and post-merge main CI jobs passing. The analyzers deliberately avoid executing application code or querying live Docker; they are read-only static review aids and cannot guarantee deployment readiness or package installation success. [Read the eight scored candidates, sources and exact CI evidence](docs/CANDIDATE_RESEARCH_2026-11-02.md). **Skill Lab social remains OFF.**
+
+EP.10 adds **Kubernetes PDB Scope Audit** and **pip Index Boundary Audit** (20 local unit tests each), independently green on Python 3.10 and 3.12 in PR and post-merge main CI. These are bounded offline review aids, not proof of live Kubernetes evictions or package index provenance. [Read the eight scored candidates and verified release evidence](docs/CANDIDATE_RESEARCH_2026-11-03.md). **Skill Lab social remains OFF.**
 
 ## Roadmap and collaboration
 
