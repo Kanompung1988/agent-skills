@@ -18,7 +18,7 @@
 
 | **EP.09 — 2026-11-02** | [Compose Startup Readiness Audit](https://github.com/Kanompung1988/compose-startup-readiness-audit) · [Python Entry-point Contract Audit](https://github.com/Kanompung1988/python-entrypoint-contract-audit) | [Compose: 26 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/compose-startup-readiness-audit/actions/runs/41376691671) · [Python entrypoint: 28 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/python-entrypoint-contract-audit/actions/runs/41376699733) | **OFF — no Instagram/Facebook posting or scheduling** |
 
-| **EP.10 — 2026-11-03** | [Kubernetes PDB Scope Audit](https://github.com/Kanompung1988/k8s-pdb-scope-audit) · [pip Index Boundary Audit](https://github.com/Kanompung1988/pip-index-boundary-audit) | [PDB: 20 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/k8s-pdb-scope-audit/actions/runs/41565658589) · [pip: 20 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/pip-index-boundary-audit/actions/runs/41565665585) | **OFF — no Instagram/Facebook posting or scheduling** |
+| **EP.10 — 2026-11-03** | [Kubernetes PDB Scope Audit](https://github.com/Kanompung1988/k8s-pdb-scope-audit) · [pip Index Boundary Audit](https://github.com/Kanompung1988/pip-index-boundary-audit) | [PDB: 20 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/k8s-pdb-scope-audit/actions/runs/41566232466) · [pip: 20 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/pip-index-boundary-audit/actions/runs/41566240807) | **OFF — no Instagram/Facebook posting or scheduling** |
 
 ## EP.03–EP.10 research
 
