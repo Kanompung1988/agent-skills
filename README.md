@@ -9,7 +9,7 @@
 <p align="center">
 <a href="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml"><img alt="Index QA status" src="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml/badge.svg"></a>
 <a href="https://agentskills.io/specification"><img src="https://img.shields.io/badge/Agent%20Skills-open%20spec-00D9FF?style=flat-square" alt="Agent Skills specification"></a>
-<img src="https://img.shields.io/badge/independent%20skill%20repos-20-00FFA3?style=flat-square" alt="Twenty independent skills">
+<img src="https://img.shields.io/badge/independent%20skill%20repos-22-00FFA3?style=flat-square" alt="Twenty-two independent skills">
 <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-0A1929?style=flat-square" alt="Code MIT License"></a>
 </p>
 
@@ -187,6 +187,22 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 <p><a href="https://github.com/Kanompung1988/pip-index-boundary-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/pip-index-boundary-audit/actions/workflows/ci.yml/badge.svg" alt="pip Index independent CI"></a></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<h3>21 · Python Dependency Group Audit</h3>
+<p><b>Keep PEP 735 dependency-group declarations consistent without installing dependencies.</b></p>
+<p>Offline review of normalized group-name collisions, invalid PEP 508 specifiers, malformed/missing include-group references and cycles. Produces stable rule IDs and JSON evidence, not dependency resolution.</p>
+<p><a href="https://github.com/Kanompung1988/py-dependency-group-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/py-dependency-group-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/py-dependency-group-audit/actions/workflows/ci.yml/badge.svg" alt="Python dependency group audit independent CI"></a></p>
+</td>
+<td width="50%" valign="top">
+<h3>22 · PostgreSQL RLS Policy Audit</h3>
+<p><b>Review row security DDL before a table is exposed to the wrong role.</b></p>
+<p>Offline inspection of PostgreSQL ENABLE/DISABLE/FORCE RLS, CREATE POLICY, PUBLIC grants and literal-true policy predicates. Static source review, not an effective-permission check of a live database.</p>
+<p><a href="https://github.com/Kanompung1988/pg-rls-policy-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/pg-rls-policy-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/pg-rls-policy-audit/actions/workflows/ci.yml/badge.svg" alt="PostgreSQL RLS policy audit independent CI"></a></p>
+</td>
+</tr>
 </table>
 
 | Skill | CLI | Verified QA evidence | Repository |
@@ -216,6 +232,8 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 
 | Kubernetes PDB scope | Read-only policy/v1 selector and supplied Pod-overlap review | [Python 3.10/3.12 — 20 tests + fixtures](https://github.com/Kanompung1988/k8s-pdb-scope-audit/actions/runs/41566232466) | [k8s-pdb-scope-audit](https://github.com/Kanompung1988/k8s-pdb-scope-audit) |
 | pip index boundary | Read-only requirements/index boundary, include and credential-safe diagnostics | [Python 3.10/3.12 — 20 tests + fixtures](https://github.com/Kanompung1988/pip-index-boundary-audit/actions/runs/41566240807) | [pip-index-boundary-audit](https://github.com/Kanompung1988/pip-index-boundary-audit) |
+| Python dependency groups | Read-only PEP 735 group declarations, PEP 508 specifiers and include graph | [Python 3.10/3.12 — 25 tests + safe/review fixture smoke](https://github.com/Kanompung1988/py-dependency-group-audit/actions/runs/41759153448) | [py-dependency-group-audit](https://github.com/Kanompung1988/py-dependency-group-audit) |
+| PostgreSQL RLS policy | Read-only RLS DDL intent and literal policy scope review | [Python 3.10/3.12 — 26 tests + safe/review fixture smoke](https://github.com/Kanompung1988/pg-rls-policy-audit/actions/runs/41759161864) | [pg-rls-policy-audit](https://github.com/Kanompung1988/pg-rls-policy-audit) |
 
 ## How to install
 
@@ -270,6 +288,8 @@ EP.08 adds **AWS GitHub OIDC Trust Audit** (27 tests) and **npm Export Map Audit
 EP.09 adds **Compose Startup Readiness Audit** (26 local unit tests) and **Python Entry-point Contract Audit** (28 local unit tests); each released in its own public repository with Python 3.10 and 3.12 PR and post-merge main CI jobs passing. The analyzers deliberately avoid executing application code or querying live Docker; they are read-only static review aids and cannot guarantee deployment readiness or package installation success. [Read the eight scored candidates, sources and exact CI evidence](docs/CANDIDATE_RESEARCH_2026-11-02.md). **Skill Lab social remains OFF.**
 
 EP.10 adds **Kubernetes PDB Scope Audit** and **pip Index Boundary Audit** (20 local unit tests each), independently green on Python 3.10 and 3.12 in PR and post-merge main CI. These are bounded offline review aids, not proof of live Kubernetes evictions or package index provenance. [Read the eight scored candidates and verified release evidence](docs/CANDIDATE_RESEARCH_2026-11-03.md). **Skill Lab social remains OFF.**
+
+EP.11 adds **Python Dependency Group Audit** (25 unit tests) and **PostgreSQL RLS Policy Audit** (26 unit tests), both in separate PUBLIC repositories with Python 3.10 and 3.12 PR/main CI green. The tools inspect local manifests and SQL without executing input or contacting production; checks are deliberately bounded, and not third-party security attestations. [Read the eight scored candidates and reproducible release evidence](docs/CANDIDATE_RESEARCH_2026-11-04.md). **Skill Lab Instagram/Facebook distribution remains OFF.**
 
 ## Roadmap and collaboration
 
