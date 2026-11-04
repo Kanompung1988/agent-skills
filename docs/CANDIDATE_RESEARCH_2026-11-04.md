@@ -33,6 +33,12 @@ Score dimensions are utility (25), originality relative to the 20 previously rel
 - Both independent repo default branches were read back: README.md and SKILL.md confirmed. Exact official Area Zero logo file was preserved from owner repository (`public/logo-full.svg`, Git blob `e1d2a0686010b251a530f9ad7eaf9afddf6a706b`).
 - PR CI used current Node 24-based `actions/checkout@v6` and `actions/setup-python@v6`. Standalone docs contain synthetic fixtures, original hero SVG, README, contributor instructions, MIT code licensing and honest limitations.
 
+### Post-release independent regression follow-up (2026-11-04)
+After the initial two repository merges, the release was independently checked for edge-case correctness. Both repositories received fix PR #2, verified with **new head** Python 3.10 and Python 3.12 CI and re-verified on public `main`.
+- **Python dependency groups:** [fix PR #2](https://github.com/Kanompung1988/py-dependency-group-audit/pull/2) adds explicit invalid-group-name checks (including TOML quoted names containing whitespace or leading separators), 3 regression cases. [Final main CI SUCCESS #41759829260](https://github.com/Kanompung1988/py-dependency-group-audit/actions/runs/41759829260), 28/28 unit tests per matrix version. **Final public main commit `e23e4d231fcea719ddda37b39c2a136fa4b5bd24`.**
+- **PostgreSQL RLS:** [fix PR #2](https://github.com/Kanompung1988/pg-rls-policy-audit/pull/2) attributes findings to actual starting SQL token lines after comments/leading whitespace and multiple statements; added 2 regression cases. [Final main CI SUCCESS #41759837243](https://github.com/Kanompung1988/pg-rls-policy-audit/actions/runs/41759837243), 28/28 unit tests per matrix version. **Final public main commit `c9638dd06752b08763639379117c3dff9126e5bd`.**
+These supersede the initial main SHA and test-count snapshots above. Both new CI workflows use current `checkout@v6` and `setup-python@v6` and both were verified successful on the exact latest public main commit.
+
 ## Safety, uncertainty and social restriction
 - Python group audit is a static PEP 735 declaration checker; it never resolves, installs or queries package indexes. Its 'clear' result is not a successful dependency install.
 - PostgreSQL RLS audit is a static **supplied-input-only** DDL reviewer, not a full PostgreSQL SQL parser or live effective-permission evaluator. It does not inspect database owners, roles/BYPASSRLS, catalogs, grants, policies in other migrations or actual tenant data.

@@ -232,8 +232,8 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 
 | Kubernetes PDB scope | Read-only policy/v1 selector and supplied Pod-overlap review | [Python 3.10/3.12 — 20 tests + fixtures](https://github.com/Kanompung1988/k8s-pdb-scope-audit/actions/runs/41566232466) | [k8s-pdb-scope-audit](https://github.com/Kanompung1988/k8s-pdb-scope-audit) |
 | pip index boundary | Read-only requirements/index boundary, include and credential-safe diagnostics | [Python 3.10/3.12 — 20 tests + fixtures](https://github.com/Kanompung1988/pip-index-boundary-audit/actions/runs/41566240807) | [pip-index-boundary-audit](https://github.com/Kanompung1988/pip-index-boundary-audit) |
-| Python dependency groups | Read-only PEP 735 group declarations, PEP 508 specifiers and include graph | [Python 3.10/3.12 — 25 tests + safe/review fixture smoke](https://github.com/Kanompung1988/py-dependency-group-audit/actions/runs/41759153448) | [py-dependency-group-audit](https://github.com/Kanompung1988/py-dependency-group-audit) |
-| PostgreSQL RLS policy | Read-only RLS DDL intent and literal policy scope review | [Python 3.10/3.12 — 26 tests + safe/review fixture smoke](https://github.com/Kanompung1988/pg-rls-policy-audit/actions/runs/41759161864) | [pg-rls-policy-audit](https://github.com/Kanompung1988/pg-rls-policy-audit) |
+| Python dependency groups | Read-only PEP 735 group declarations, PEP 508 specifiers and include graph | [Python 3.10/3.12 — 28 tests + safe/review fixture smoke](https://github.com/Kanompung1988/py-dependency-group-audit/actions/runs/41759829260) | [py-dependency-group-audit](https://github.com/Kanompung1988/py-dependency-group-audit) |
+| PostgreSQL RLS policy | Read-only RLS DDL intent and literal policy scope review | [Python 3.10/3.12 — 28 tests + safe/review fixture smoke](https://github.com/Kanompung1988/pg-rls-policy-audit/actions/runs/41759837243) | [pg-rls-policy-audit](https://github.com/Kanompung1988/pg-rls-policy-audit) |
 
 ## How to install
 
@@ -289,7 +289,7 @@ EP.09 adds **Compose Startup Readiness Audit** (26 local unit tests) and **Pytho
 
 EP.10 adds **Kubernetes PDB Scope Audit** and **pip Index Boundary Audit** (20 local unit tests each), independently green on Python 3.10 and 3.12 in PR and post-merge main CI. These are bounded offline review aids, not proof of live Kubernetes evictions or package index provenance. [Read the eight scored candidates and verified release evidence](docs/CANDIDATE_RESEARCH_2026-11-03.md). **Skill Lab social remains OFF.**
 
-EP.11 adds **Python Dependency Group Audit** (25 unit tests) and **PostgreSQL RLS Policy Audit** (26 unit tests), both in separate PUBLIC repositories with Python 3.10 and 3.12 PR/main CI green. The tools inspect local manifests and SQL without executing input or contacting production; checks are deliberately bounded, and not third-party security attestations. [Read the eight scored candidates and reproducible release evidence](docs/CANDIDATE_RESEARCH_2026-11-04.md). **Skill Lab Instagram/Facebook distribution remains OFF.**
+EP.11 adds **Python Dependency Group Audit** (28 unit tests) and **PostgreSQL RLS Policy Audit** (28 unit tests), both in separate PUBLIC repositories with Python 3.10 and 3.12 PR/main CI green. The tools inspect local manifests and SQL without executing input or contacting production; checks are deliberately bounded, and not third-party security attestations. [Read the eight scored candidates and reproducible release evidence](docs/CANDIDATE_RESEARCH_2026-11-04.md). **Skill Lab Instagram/Facebook distribution remains OFF.**
 
 ## Roadmap and collaboration
 
