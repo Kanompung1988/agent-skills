@@ -1,0 +1,3 @@
+[dependency-groups]
+lint = ["ruff>=0.8"]
+test = ["pytest>=8", {include-group="lint"}]
