@@ -20,7 +20,7 @@
 
 | **EP.10 — 2026-11-03** | [Kubernetes PDB Scope Audit](https://github.com/Kanompung1988/k8s-pdb-scope-audit) · [pip Index Boundary Audit](https://github.com/Kanompung1988/pip-index-boundary-audit) | [PDB: 20 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/k8s-pdb-scope-audit/actions/runs/41566232466) · [pip: 20 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/pip-index-boundary-audit/actions/runs/41566240807) | **OFF — no Instagram/Facebook posting or scheduling** |
 
-| **EP.11 — 2026-11-04** | [Python Dependency Group Audit](https://github.com/Kanompung1988/py-dependency-group-audit) · [PostgreSQL RLS Policy Audit](https://github.com/Kanompung1988/pg-rls-policy-audit) | [Python PEP 735: 25 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/py-dependency-group-audit/actions/runs/41759153448) · [PostgreSQL RLS: 26 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/pg-rls-policy-audit/actions/runs/41759161864) | **OFF — no Instagram/Facebook posting or scheduling** |
+| **EP.11 — 2026-11-04** | [Python Dependency Group Audit](https://github.com/Kanompung1988/py-dependency-group-audit) · [PostgreSQL RLS Policy Audit](https://github.com/Kanompung1988/pg-rls-policy-audit) | [Python PEP 735: 28 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/py-dependency-group-audit/actions/runs/41759829260) · [PostgreSQL RLS: 28 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/pg-rls-policy-audit/actions/runs/41759837243) | **OFF — no Instagram/Facebook posting or scheduling** |
 
 ## EP.03–EP.11 research
 
