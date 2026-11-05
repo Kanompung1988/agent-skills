@@ -9,7 +9,7 @@
 <p align="center">
 <a href="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml"><img alt="Index QA status" src="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml/badge.svg"></a>
 <a href="https://agentskills.io/specification"><img src="https://img.shields.io/badge/Agent%20Skills-open%20spec-00D9FF?style=flat-square" alt="Agent Skills specification"></a>
-<img src="https://img.shields.io/badge/independent%20skill%20repos-22-00FFA3?style=flat-square" alt="Twenty-two independent skills">
+<img src="https://img.shields.io/badge/independent%20skill%20repos-24-00FFA3?style=flat-square" alt="Twenty-four independent skills">
 <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-0A1929?style=flat-square" alt="Code MIT License"></a>
 </p>
 
@@ -203,6 +203,23 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 <p><a href="https://github.com/Kanompung1988/pg-rls-policy-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/pg-rls-policy-audit/actions/workflows/ci.yml/badge.svg" alt="PostgreSQL RLS policy audit independent CI"></a></p>
 </td>
 </tr>
+
+<tr>
+<td width="50%" valign="top">
+<h3>23 · NGINX Header Inheritance Audit</h3>
+<p><b>Prevent accidental security-header loss in nested NGINX blocks.</b></p>
+<p>Offline, read-only check of add_header replacement/inheritance, add_header_inherit merge/off and missing always; includes are flagged as unresolved. No live NGINX inspection.</p>
+<p><a href="https://github.com/Kanompung1988/nginx-header-inheritance-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/nginx-header-inheritance-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/nginx-header-inheritance-audit/actions/workflows/ci.yml/badge.svg" alt="NGINX header inheritance CI"></a></p>
+</td>
+<td width="50%" valign="top">
+<h3>24 · npm Lifecycle Script Policy Audit</h3>
+<p><b>Know which npm hooks may run during install, ci, pack and publish.</b></p>
+<p>Offline package.json lifecycle-hook mapping and implicit binding.gyp detection without executing npm or showing script bodies; one supplied package at a time.</p>
+<p><a href="https://github.com/Kanompung1988/npm-lifecycle-policy-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/npm-lifecycle-policy-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/npm-lifecycle-policy-audit/actions/workflows/ci.yml/badge.svg" alt="npm Lifecycle Policy CI"></a></p>
+</td>
+</tr>
 </table>
 
 | Skill | CLI | Verified QA evidence | Repository |
@@ -234,6 +251,9 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 | pip index boundary | Read-only requirements/index boundary, include and credential-safe diagnostics | [Python 3.10/3.12 — 20 tests + fixtures](https://github.com/Kanompung1988/pip-index-boundary-audit/actions/runs/41566240807) | [pip-index-boundary-audit](https://github.com/Kanompung1988/pip-index-boundary-audit) |
 | Python dependency groups | Read-only PEP 735 group declarations, PEP 508 specifiers and include graph | [Python 3.10/3.12 — 28 tests + safe/review fixture smoke](https://github.com/Kanompung1988/py-dependency-group-audit/actions/runs/41759829260) | [py-dependency-group-audit](https://github.com/Kanompung1988/py-dependency-group-audit) |
 | PostgreSQL RLS policy | Read-only RLS DDL intent and literal policy scope review | [Python 3.10/3.12 — 28 tests + safe/review fixture smoke](https://github.com/Kanompung1988/pg-rls-policy-audit/actions/runs/41759837243) | [pg-rls-policy-audit](https://github.com/Kanompung1988/pg-rls-policy-audit) |
+
+| NGINX header inheritance | Read-only local NGINX add_header and add_header_inherit scope review | [Python 3.10/3.12 — 26 tests + safe/review fixture smoke](https://github.com/Kanompung1988/nginx-header-inheritance-audit/actions/runs/41952808524) | [nginx-header-inheritance-audit](https://github.com/Kanompung1988/nginx-header-inheritance-audit) |
+| npm lifecycle script policy | Read-only package.json install/pack/publish hook contract review | [Python 3.10/3.12 — 27 tests + safe/review fixture smoke](https://github.com/Kanompung1988/npm-lifecycle-policy-audit/actions/runs/41952826099) | [npm-lifecycle-policy-audit](https://github.com/Kanompung1988/npm-lifecycle-policy-audit) |
 
 ## How to install
 
@@ -300,3 +320,6 @@ Contribute to a **specific skill repository** using its Issues or Pull Requests.
 Built in public by **AREAZERO Skill Lab** · [GitHub @Kanompung1988](https://github.com/Kanompung1988) · Thai social series: **ทำให้ AI เก่งขึ้นทุกวัน**. Source/docs under MIT unless a repository says otherwise; the exact Area Zero brand logos are excluded from the software license. See [BRAND.md](BRAND.md) and each skill's own license.
 
 <p align="center"><sub>AREAZERO Skill Lab · Build useful tools. Test honestly. Publish independently.</sub></p>
+
+
+EP.12 adds **NGINX Header Inheritance Audit** (26 unit tests) and **npm Lifecycle Script Policy Audit** (27 unit tests), each independently passing PR and post-merge main CI on Python 3.10 and 3.12. [View eight scored candidates, primary sources, PR/main CI and release provenance](docs/CANDIDATE_RESEARCH_2026-11-05.md). Both are bounded offline review tools, not full nginx/npm emulation or production security audits. **Skill Lab social remains OFF; Daily AI Scout unaffected.**
