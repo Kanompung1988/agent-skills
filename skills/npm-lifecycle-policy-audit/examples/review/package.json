@@ -1,0 +1,12 @@
+{
+  "name": "synthetic-review-demo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "preinstall": "node scripts/bootstrap.js",
+    "prepare": "npm run build",
+    "prepublish": "echo legacy",
+    "prepack": "npm run build",
+    "test": "node --test"
+  }
+}
