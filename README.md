@@ -9,7 +9,7 @@
 <p align="center">
 <a href="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml"><img alt="Index QA status" src="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml/badge.svg"></a>
 <a href="https://agentskills.io/specification"><img src="https://img.shields.io/badge/Agent%20Skills-open%20spec-00D9FF?style=flat-square" alt="Agent Skills specification"></a>
-<img src="https://img.shields.io/badge/independent%20skill%20repos-24-00FFA3?style=flat-square" alt="Twenty-four independent skills">
+<img src="https://img.shields.io/badge/independent%20skill%20repos-26-00FFA3?style=flat-square" alt="Twenty-six independent skills">
 <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-0A1929?style=flat-square" alt="Code MIT License"></a>
 </p>
 
@@ -220,6 +220,22 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 <p><a href="https://github.com/Kanompung1988/npm-lifecycle-policy-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/npm-lifecycle-policy-audit/actions/workflows/ci.yml/badge.svg" alt="npm Lifecycle Policy CI"></a></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<h3>25 · Compose Mount Write Audit</h3>
+<p><b>Review writable host bind mounts and Docker socket exposure before deployment.</b></p>
+<p>Offline, single-file Compose inspection; distinguishes named volumes, readonly mounts and unresolved sources. No Docker daemon calls.</p>
+<p><a href="https://github.com/Kanompung1988/compose-mount-write-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/compose-mount-write-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/compose-mount-write-audit/actions/workflows/ci.yml/badge.svg" alt="Compose Mount Write Audit CI"></a></p>
+</td>
+<td width="50%" valign="top">
+<h3>26 · GitHub Actions Reusable Permission Audit</h3>
+<p><b>Review caller-to-reusable-workflow token and secret trust boundaries.</b></p>
+<p>Offline caller YAML inspection for mutable refs, inherited secrets, missing explicit token permissions, and dangerous event combinations.</p>
+<p><a href="https://github.com/Kanompung1988/gha-reusable-permission-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/gha-reusable-permission-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/gha-reusable-permission-audit/actions/workflows/ci.yml/badge.svg" alt="Reusable Permission Audit CI"></a></p>
+</td>
+</tr>
 </table>
 
 | Skill | CLI | Verified QA evidence | Repository |
@@ -254,6 +270,9 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 
 | NGINX header inheritance | Read-only local NGINX add_header and add_header_inherit scope review | [Python 3.10/3.12 — 26 tests + safe/review fixture smoke](https://github.com/Kanompung1988/nginx-header-inheritance-audit/actions/runs/41952808524) | [nginx-header-inheritance-audit](https://github.com/Kanompung1988/nginx-header-inheritance-audit) |
 | npm lifecycle script policy | Read-only package.json install/pack/publish hook contract review | [Python 3.10/3.12 — 27 tests + safe/review fixture smoke](https://github.com/Kanompung1988/npm-lifecycle-policy-audit/actions/runs/41952826099) | [npm-lifecycle-policy-audit](https://github.com/Kanompung1988/npm-lifecycle-policy-audit) |
+
+| Compose Mount Write Audit | Local Docker Compose YAML bind review | [Python 3.10/3.12 — 20 tests + safe/review fixtures](https://github.com/Kanompung1988/compose-mount-write-audit/actions/runs/42150375137) | [compose-mount-write-audit](https://github.com/Kanompung1988/compose-mount-write-audit) |
+| GitHub reusable caller permissions | Local GitHub workflow YAML, token and secret boundary review | [Python 3.10/3.12 — 19 tests + safe/review fixtures](https://github.com/Kanompung1988/gha-reusable-permission-audit/actions/runs/42150383349) | [gha-reusable-permission-audit](https://github.com/Kanompung1988/gha-reusable-permission-audit) |
 
 ## How to install
 
@@ -323,3 +342,5 @@ Built in public by **AREAZERO Skill Lab** · [GitHub @Kanompung1988](https://git
 
 
 EP.12 adds **NGINX Header Inheritance Audit** (26 unit tests) and **npm Lifecycle Script Policy Audit** (27 unit tests), each independently passing PR and post-merge main CI on Python 3.10 and 3.12. [View eight scored candidates, primary sources, PR/main CI and release provenance](docs/CANDIDATE_RESEARCH_2026-11-05.md). Both are bounded offline review tools, not full nginx/npm emulation or production security audits. **Skill Lab social remains OFF; Daily AI Scout unaffected.**
+
+EP.13 adds **Compose Mount Write Audit** (20 unit tests) and **GitHub Actions Reusable Permission Audit** (19 unit tests), separately verified on public `main` with Python 3.10/3.12 and safe/review CLI fixtures. Both tools are bounded offline static reviewers; neither validates effective runtime permissions. [Read 8 scored pain points, primary sources and real CI evidence](docs/CANDIDATE_RESEARCH_2026-11-06.md). **Skill Lab social remains OFF; Daily AI Scout unchanged.**
