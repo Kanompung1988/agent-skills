@@ -24,7 +24,9 @@
 
 | **EP.12 — 2026-11-05** | [NGINX Header Inheritance Audit](https://github.com/Kanompung1988/nginx-header-inheritance-audit) · [npm Lifecycle Script Policy Audit](https://github.com/Kanompung1988/npm-lifecycle-policy-audit) | [NGINX: 26 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/nginx-header-inheritance-audit/actions/runs/41952808524) · [npm: 27 tests + fixture smoke × Python 3.10/3.12](https://github.com/Kanompung1988/npm-lifecycle-policy-audit/actions/runs/41952826099) | **OFF — no Instagram/Facebook posting or scheduling** |
 
-## EP.03–EP.12 research
+| **EP.13 — 2026-11-06** | [Compose Mount Write Audit](https://github.com/Kanompung1988/compose-mount-write-audit) · [GHA Reusable Permission Audit](https://github.com/Kanompung1988/gha-reusable-permission-audit) | [Compose: 20 tests + fixtures × Python 3.10/3.12](https://github.com/Kanompung1988/compose-mount-write-audit/actions/runs/42150375137) · [GHA caller: 19 tests + fixtures × Python 3.10/3.12](https://github.com/Kanompung1988/gha-reusable-permission-audit/actions/runs/42150383349) | **OFF — no Instagram/Facebook posting or scheduling** |
+
+## EP.03–EP.13 research
 
 [EP.03: eight screened developer pain points](CANDIDATE_RESEARCH_2026-10-27.md) · [EP.04: eight screened developer pain points and public CI evidence](CANDIDATE_RESEARCH_2026-10-28.md) · [EP.05: eight screened developer problems, repo and main CI proof](CANDIDATE_RESEARCH_2026-10-29.md) · [EP.06: eight screened problems, security boundaries and verified CI](CANDIDATE_RESEARCH_2026-10-30.md) · [EP.07: eight candidate decisions and verified two-skill CI](CANDIDATE_RESEARCH_2026-10-31.md) · [EP.08: AWS OIDC and npm export-map decisions, 8 scores and verified release CI](CANDIDATE_RESEARCH_2026-11-01.md). · [EP.09: Docker Compose startup and Python CLI entry-point contracts, 8 scored candidates and verified public CI](CANDIDATE_RESEARCH_2026-11-02.md).
 
@@ -33,6 +35,8 @@
 [EP.11: 8 screened developer problems, scored decisions, primary sources and verified PR/main CI](CANDIDATE_RESEARCH_2026-11-04.md).
 
 [EP.12: eight evaluated developer problems, release PRs and main CI evidence](CANDIDATE_RESEARCH_2026-11-05.md).
+
+[EP.13: eight screened developer pain points, new independent releases and verified CI](CANDIDATE_RESEARCH_2026-11-06.md).
 
 ## History and provenance
 
