@@ -1,0 +1,6 @@
+name: Safe caller
+on: push
+permissions: read-all
+jobs:
+  check:
+    uses: example/ci/.github/workflows/test.yml@aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

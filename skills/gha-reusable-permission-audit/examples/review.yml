@@ -1,0 +1,7 @@
+name: Review caller
+on: pull_request_target
+permissions: write-all
+jobs:
+  deploy:
+    uses: example/release/.github/workflows/deploy.yml@main
+    secrets: inherit
