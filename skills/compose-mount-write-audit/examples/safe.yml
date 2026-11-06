@@ -1,0 +1,9 @@
+services:
+  web:
+    image: python:3.12-slim
+    read_only: true
+    volumes:
+      - ./public:/app/public:ro
+      - cache:/cache
+volumes:
+  cache: {}

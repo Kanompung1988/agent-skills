@@ -1,0 +1,41 @@
+name: Independent Skill CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install 'PyYAML>=6.0,<7'
+      - run: python -m unittest discover -s tests -v
+      - run: python scripts/audit.py examples/safe.yml --json
+      - name: Review fixture
+        shell: bash
+        run: |
+          set +e
+          python scripts/audit.py examples/review.yml --json > /tmp/review.json
+          code=$?
+          test "$code" -eq 1
+          python -c 'import json; x=json.load(open("/tmp/review.json")); assert x["count"] > 0'
+      - name: Spec smoke
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import yaml,re
+          s=Path('SKILL.md').read_text()
+          m=yaml.safe_load(s.split('---',2)[1])
+          assert m['name']=='compose-mount-write-audit'
+          assert re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',m['name'])
+          assert 1<=len(m['description'])<=1024 and len(s.splitlines())<500
+          PY
