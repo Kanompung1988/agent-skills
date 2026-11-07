@@ -9,7 +9,7 @@
 <p align="center">
 <a href="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml"><img alt="Index QA status" src="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml/badge.svg"></a>
 <a href="https://agentskills.io/specification"><img src="https://img.shields.io/badge/Agent%20Skills-open%20spec-00D9FF?style=flat-square" alt="Agent Skills specification"></a>
-<img src="https://img.shields.io/badge/independent%20skill%20repos-26-00FFA3?style=flat-square" alt="Twenty-six independent skills">
+<img src="https://img.shields.io/badge/independent%20skill%20repos-28-00FFA3?style=flat-square" alt="Twenty-eight independent skills">
 <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-0A1929?style=flat-square" alt="Code MIT License"></a>
 </p>
 
@@ -236,6 +236,22 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 <p><a href="https://github.com/Kanompung1988/gha-reusable-permission-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/gha-reusable-permission-audit/actions/workflows/ci.yml/badge.svg" alt="Reusable Permission Audit CI"></a></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<h3>27 · Kubernetes SecurityContext Audit</h3>
+<p><b>Review effective Pod and per-container hardening settings before deployment.</b></p>
+<p>Offline, read-only review of rendered Linux/Windows workload YAML for privilege escalation, non-root inheritance, capabilities, seccomp and host namespaces. Advice is not a full Pod Security Standards admission verdict.</p>
+<p><a href="https://github.com/Kanompung1988/k8s-securitycontext-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/k8s-securitycontext-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/k8s-securitycontext-audit/actions/workflows/ci.yml/badge.svg" alt="Kubernetes SecurityContext CI"></a></p>
+</td>
+<td width="50%" valign="top">
+<h3>28 · Git Submodule Boundary Audit</h3>
+<p><b>Check staged gitlinks against .gitmodules without fetching unknown code.</b></p>
+<p>Read-only Git index audit: orphaned submodule gitlinks, unsafe source URLs, duplicate paths and branch/update advisory. Gitlinks are commit-pinned; remote identity is not verified.</p>
+<p><a href="https://github.com/Kanompung1988/git-submodule-boundary-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/git-submodule-boundary-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/git-submodule-boundary-audit/actions/workflows/ci.yml/badge.svg" alt="Git Submodule Boundary CI"></a></p>
+</td>
+</tr>
 </table>
 
 | Skill | CLI | Verified QA evidence | Repository |
@@ -329,6 +345,8 @@ EP.09 adds **Compose Startup Readiness Audit** (26 local unit tests) and **Pytho
 EP.10 adds **Kubernetes PDB Scope Audit** and **pip Index Boundary Audit** (20 local unit tests each), independently green on Python 3.10 and 3.12 in PR and post-merge main CI. These are bounded offline review aids, not proof of live Kubernetes evictions or package index provenance. [Read the eight scored candidates and verified release evidence](docs/CANDIDATE_RESEARCH_2026-11-03.md). **Skill Lab social remains OFF.**
 
 EP.11 adds **Python Dependency Group Audit** (28 unit tests) and **PostgreSQL RLS Policy Audit** (28 unit tests), both in separate PUBLIC repositories with Python 3.10 and 3.12 PR/main CI green. The tools inspect local manifests and SQL without executing input or contacting production; checks are deliberately bounded, and not third-party security attestations. [Read the eight scored candidates and reproducible release evidence](docs/CANDIDATE_RESEARCH_2026-11-04.md). **Skill Lab Instagram/Facebook distribution remains OFF.**
+
+EP.14 (2026-11-07) adds **Kubernetes SecurityContext Audit** (23 unit tests) and **Git Submodule Boundary Audit** (24 unit tests). Each independent public repository passed Python 3.10/3.12 PR and post-merge `main` CI plus safe/review fixtures as applicable; no runtime security certification is claimed. [Review eight scored pain points and actual release evidence](docs/CANDIDATE_RESEARCH_2026-11-07.md). **Skill Lab social distribution remains OFF, and Daily AI Scout is unchanged.**
 
 ## Roadmap and collaboration
 
