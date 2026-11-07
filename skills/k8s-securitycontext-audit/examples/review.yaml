@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: legacy-worker
+spec:
+  template:
+    spec:
+      containers:
+        - name: worker
+          image: example.invalid/worker:latest
+          securityContext:
+            privileged: true
+            runAsUser: 0
+            capabilities:
+              add: [SYS_ADMIN]
