@@ -1,0 +1,15 @@
+name: Review artifact flow example
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/attest@v4
+        with:
+          subject-name: ghcr.io/example/demo
+  consume:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+      - run: gh attestation verify release.zip || true
+        continue-on-error: true

@@ -1,0 +1,19 @@
+name: Safe artifact flow example
+on: workflow_dispatch
+permissions:
+  contents: read
+  attestations: write
+  id-token: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/attest@v4
+        with:
+          subject-path: dist/demo.tar.gz
+  consume:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+      - run: gh attestation verify dist/demo.tar.gz --repo example/repo
