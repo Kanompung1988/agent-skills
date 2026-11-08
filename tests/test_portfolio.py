@@ -6,19 +6,19 @@ import unittest
 import xml.etree.ElementTree as ET
 
 ROOT=Path(__file__).resolve().parents[1]
-REPOS=['openapi-compat-audit','ci-log-triage','gha-trust-boundary-audit','env-contract-audit','pg-migration-risk-audit','docker-context-guard','python-artifact-audit','k8s-rbac-rights-audit','terraform-plan-impact-audit','k8s-netpol-scope-audit','codeowners-review-gap-audit','k8s-image-pin-audit','compose-port-exposure-audit','helm-values-contract-audit','aws-github-oidc-trust-audit','npm-export-map-audit','compose-startup-readiness-audit','python-entrypoint-contract-audit','k8s-pdb-scope-audit','pip-index-boundary-audit','py-dependency-group-audit','pg-rls-policy-audit','nginx-header-inheritance-audit','npm-lifecycle-policy-audit','compose-mount-write-audit','gha-reusable-permission-audit','k8s-securitycontext-audit','git-submodule-boundary-audit']
+REPOS=['openapi-compat-audit','ci-log-triage','gha-trust-boundary-audit','env-contract-audit','pg-migration-risk-audit','docker-context-guard','python-artifact-audit','k8s-rbac-rights-audit','terraform-plan-impact-audit','k8s-netpol-scope-audit','codeowners-review-gap-audit','k8s-image-pin-audit','compose-port-exposure-audit','helm-values-contract-audit','aws-github-oidc-trust-audit','npm-export-map-audit','compose-startup-readiness-audit','python-entrypoint-contract-audit','k8s-pdb-scope-audit','pip-index-boundary-audit','py-dependency-group-audit','pg-rls-policy-audit','nginx-header-inheritance-audit','npm-lifecycle-policy-audit','compose-mount-write-audit','gha-reusable-permission-audit','k8s-securitycontext-audit','git-submodule-boundary-audit','gha-attestation-gate-audit','k8s-vap-binding-audit']
 EXPECTED={
  'area-zero-logo-full.svg':'89b459e6a4e61748d2d56d54da2cd17ff2b55deafbbc90e45e43d4c319462d16',
  'area-zero-logo-icon.svg':'f566816db1f90656499b5e8377b04cc96584c45b2a62c8113895f3f24eeb0c68'
 }
 class PortfolioTests(unittest.TestCase):
- def test_directory_is_exactly_28_unique_skill_links(self):
-  self.assertEqual(len(REPOS),28)
+ def test_directory_is_exactly_30_unique_skill_links(self):
+  self.assertEqual(len(REPOS),30)
   self.assertEqual(len(REPOS),len(set(REPOS)))
   text=(ROOT/'README.md').read_text(encoding='utf-8')
-  self.assertIn('independent%20skill%20repos-28-',text)
-  self.assertIn('docs/CANDIDATE_RESEARCH_2026-11-07.md',text)
-  self.assertIn('**EP.14 — 2026-11-07**',(ROOT/'docs/EPISODES.md').read_text(encoding='utf-8'))
+  self.assertIn('independent%20skill%20repos-30-',text)
+  self.assertIn('docs/CANDIDATE_RESEARCH_2026-11-08.md',text)
+  self.assertIn('**EP.15 — 2026-11-08**',(ROOT/'docs/EPISODES.md').read_text(encoding='utf-8'))
 
  def test_all_standalone_repos_linked(self):
   readme=(ROOT/'README.md').read_text(encoding='utf-8')

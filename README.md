@@ -9,7 +9,7 @@
 <p align="center">
 <a href="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml"><img alt="Index QA status" src="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml/badge.svg"></a>
 <a href="https://agentskills.io/specification"><img src="https://img.shields.io/badge/Agent%20Skills-open%20spec-00D9FF?style=flat-square" alt="Agent Skills specification"></a>
-<img src="https://img.shields.io/badge/independent%20skill%20repos-28-00FFA3?style=flat-square" alt="Twenty-eight independent skills">
+<img src="https://img.shields.io/badge/independent%20skill%20repos-30-00FFA3?style=flat-square" alt="Thirty independent skills">
 <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-0A1929?style=flat-square" alt="Code MIT License"></a>
 </p>
 
@@ -252,6 +252,22 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 <p><a href="https://github.com/Kanompung1988/git-submodule-boundary-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/git-submodule-boundary-audit/actions/workflows/ci.yml/badge.svg" alt="Git Submodule Boundary CI"></a></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<h3>29 · GitHub Actions Attestation Gate Audit</h3>
+<p><b>Check attestation producer permissions and fail-open consumer verification.</b></p>
+<p>Offline analysis of actions/attest inputs, effective job permissions, gh attestation verify trust scope, bypass patterns and job-local ordering. Does not verify signatures.</p>
+<p><a href="https://github.com/Kanompung1988/gha-attestation-gate-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/gha-attestation-gate-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/gha-attestation-gate-audit/actions/workflows/ci.yml/badge.svg" alt="Artifact attestation CI"></a></p>
+</td>
+<td width="50%" valign="top">
+<h3>30 · Kubernetes VAP Binding Audit</h3>
+<p><b>Review admission policy binding relationships and fail-open parameters.</b></p>
+<p>Offline policy/binding bundle checks for Warn-only actions, missing local policy refs, paramRef ambiguity and parameterNotFoundAction choices. Not a cluster/CEL evaluation.</p>
+<p><a href="https://github.com/Kanompung1988/k8s-vap-binding-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/k8s-vap-binding-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/k8s-vap-binding-audit/actions/workflows/ci.yml/badge.svg" alt="VAP binding CI"></a></p>
+</td>
+</tr>
 </table>
 
 | Skill | CLI | Verified QA evidence | Repository |
@@ -289,6 +305,9 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 
 | Compose Mount Write Audit | Local Docker Compose YAML bind review | [Python 3.10/3.12 — 20 tests + safe/review fixtures](https://github.com/Kanompung1988/compose-mount-write-audit/actions/runs/42150375137) | [compose-mount-write-audit](https://github.com/Kanompung1988/compose-mount-write-audit) |
 | GitHub reusable caller permissions | Local GitHub workflow YAML, token and secret boundary review | [Python 3.10/3.12 — 19 tests + safe/review fixtures](https://github.com/Kanompung1988/gha-reusable-permission-audit/actions/runs/42150383349) | [gha-reusable-permission-audit](https://github.com/Kanompung1988/gha-reusable-permission-audit) |
+
+| GitHub Actions attestation gate | Offline provenance creation/consumer verification flow review, not cryptographic verification | [Python 3.10/3.12 — 22 tests + safe/review fixtures](https://github.com/Kanompung1988/gha-attestation-gate-audit/actions/runs/42437469431) | [gha-attestation-gate-audit](https://github.com/Kanompung1988/gha-attestation-gate-audit) |
+| Kubernetes VAP binding | Read-only v1 ValidatingAdmissionPolicy + Binding param/action contract review | [Python 3.10/3.12 — 25 tests + safe/review fixtures](https://github.com/Kanompung1988/k8s-vap-binding-audit/actions/runs/42437474848) | [k8s-vap-binding-audit](https://github.com/Kanompung1988/k8s-vap-binding-audit) |
 
 ## How to install
 
@@ -347,6 +366,8 @@ EP.10 adds **Kubernetes PDB Scope Audit** and **pip Index Boundary Audit** (20 l
 EP.11 adds **Python Dependency Group Audit** (28 unit tests) and **PostgreSQL RLS Policy Audit** (28 unit tests), both in separate PUBLIC repositories with Python 3.10 and 3.12 PR/main CI green. The tools inspect local manifests and SQL without executing input or contacting production; checks are deliberately bounded, and not third-party security attestations. [Read the eight scored candidates and reproducible release evidence](docs/CANDIDATE_RESEARCH_2026-11-04.md). **Skill Lab Instagram/Facebook distribution remains OFF.**
 
 EP.14 (2026-11-07) adds **Kubernetes SecurityContext Audit** (23 unit tests) and **Git Submodule Boundary Audit** (24 unit tests). Each independent public repository passed Python 3.10/3.12 PR and post-merge `main` CI plus safe/review fixtures as applicable; no runtime security certification is claimed. [Review eight scored pain points and actual release evidence](docs/CANDIDATE_RESEARCH_2026-11-07.md). **Skill Lab social distribution remains OFF, and Daily AI Scout is unchanged.**
+
+EP.15 (2026-11-08) adds **GitHub Actions Artifact Attestation Gate Audit** (22 unit tests) and **Kubernetes ValidatingAdmissionPolicy Binding Audit** (25 unit tests), each independently green with real Python 3.10/3.12 PR and public-main CI plus safe/review fixtures. Both remain bounded static review aids—not Sigstore validation, live Kubernetes admission results, or production certification. [Read all eight scored pain points and provenance](docs/CANDIDATE_RESEARCH_2026-11-08.md). **Skill Lab social stays OFF; Daily AI Scout unchanged.**
 
 ## Roadmap and collaboration
 
