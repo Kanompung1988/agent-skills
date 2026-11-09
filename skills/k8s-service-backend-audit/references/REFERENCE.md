@@ -1,0 +1,3 @@
+# Review rules and boundaries
+
+SV001 malformed selector; SV002 no matching supplied same-namespace Pod or workload template (scope-limited); SV003 named targetPort not declared on one or more matching workloads; SV004 invalid targetPort. Selectorless and ExternalName Services are intentionally not flagged. Numeric targetPorts do not require a containerPort declaration. Kubernetes actual endpoints also depend on readiness and live Pods. Offline static inputs do not show controllers, actual EndpointSlices, CNI networking or sidecars injected at admission. Up to 500 YAML files of 2 MB each; safe-load only; no shell or input mutation.

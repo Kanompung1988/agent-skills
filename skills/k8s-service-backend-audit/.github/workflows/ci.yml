@@ -1,0 +1,45 @@
+name: Independent Skill CI
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install -r requirements.txt
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Safe fixture
+        run: |
+          python scripts/audit.py examples/safe.yaml --json > /tmp/safe.json
+          python -c 'import json; assert json.load(open("/tmp/safe.json"))["count"] == 0'
+      - name: Review fixture
+        shell: bash
+        run: |
+          set +e
+          python scripts/audit.py examples/review.yaml --json > /tmp/review.json
+          result=$?
+          test "$result" -eq 1 || exit 1
+          python -c 'import json; assert json.load(open("/tmp/review.json"))["count"] >= 2'
+      - name: Frontmatter smoke
+        run: |
+          python - <<'PY'
+          import re, yaml
+          from pathlib import Path
+          s=Path("SKILL.md").read_text()
+          assert s.startswith("---\n")
+          m=yaml.safe_load(s.split("---",2)[1]);assert m["name"]=="k8s-service-backend-audit"
+          assert re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*",m["name"])
+          assert 1<=len(m["description"])<=1024
+          PY
