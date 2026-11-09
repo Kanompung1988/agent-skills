@@ -30,7 +30,9 @@
 
 | **EP.15 — 2026-11-08** | [GHA Artifact Attestation Gate Audit](https://github.com/Kanompung1988/gha-attestation-gate-audit) · [K8s VAP Binding Audit](https://github.com/Kanompung1988/k8s-vap-binding-audit) | [Attestation: 22 tests + safe/review × Python 3.10/3.12](https://github.com/Kanompung1988/gha-attestation-gate-audit/actions/runs/42437469431) · [VAP: 25 tests + safe/review × Python 3.10/3.12](https://github.com/Kanompung1988/k8s-vap-binding-audit/actions/runs/42437474848) | **OFF — owner override; no Instagram/Facebook write** |
 
-## EP.03–EP.15 research
+| **EP.16 — 2026-11-09** | [Kubernetes HPA Request Contract Audit](https://github.com/Kanompung1988/k8s-hpa-request-contract-audit) · [Kubernetes Service Backend Audit](https://github.com/Kanompung1988/k8s-service-backend-audit) | [HPA: 21 tests + safe/review × Python 3.10/3.12](https://github.com/Kanompung1988/k8s-hpa-request-contract-audit/actions/runs/42549809750) · [Service: 21 tests + safe/review × Python 3.10/3.12](https://github.com/Kanompung1988/k8s-service-backend-audit/actions/runs/42549816521) | **OFF — owner override; no Instagram/Facebook posts or scheduling** |
+
+## EP.03–EP.16 research
 
 [EP.03: eight screened developer pain points](CANDIDATE_RESEARCH_2026-10-27.md) · [EP.04: eight screened developer pain points and public CI evidence](CANDIDATE_RESEARCH_2026-10-28.md) · [EP.05: eight screened developer problems, repo and main CI proof](CANDIDATE_RESEARCH_2026-10-29.md) · [EP.06: eight screened problems, security boundaries and verified CI](CANDIDATE_RESEARCH_2026-10-30.md) · [EP.07: eight candidate decisions and verified two-skill CI](CANDIDATE_RESEARCH_2026-10-31.md) · [EP.08: AWS OIDC and npm export-map decisions, 8 scores and verified release CI](CANDIDATE_RESEARCH_2026-11-01.md). · [EP.09: Docker Compose startup and Python CLI entry-point contracts, 8 scored candidates and verified public CI](CANDIDATE_RESEARCH_2026-11-02.md).
 
@@ -45,6 +47,8 @@
 [EP.14: eight scored pain points, K8s securityContext and git submodule independent CI evidence](CANDIDATE_RESEARCH_2026-11-07.md).
 
 [EP.15: eight scored developer problems, two scoped independent tool releases, real CI and social OFF](CANDIDATE_RESEARCH_2026-11-08.md).
+
+[EP.16: eight scored problems, autoscaler and Service backend contracts, public CI verification and social OFF](CANDIDATE_RESEARCH_2026-11-09.md).
 
 ## History and provenance
 
