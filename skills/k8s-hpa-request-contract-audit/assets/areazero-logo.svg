@@ -48,6 +48,9 @@
       <line x1="80" y1="80" x2="57" y2="103">
         <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" begin="1s" repeatCount="indefinite"/>
       </line>
+      <line x1="80" y1="80" x2="103" y2="103">
+        <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+      </line>
     </g>
   </g>
   

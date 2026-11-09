@@ -1,0 +1,3 @@
+# Scope and rules
+
+HP000 unsupported HPA apiVersion; HP001 invalid replica bounds; HP002 incomplete scaleTargetRef; HP003 two supplied HPAs target same workload; HP004 target not supplied; HP005 containers not inspectable; HP006 unknown ContainerResource container; HP007 CPU/memory Utilization lacks container request. HP004 is not evidence a live resource is missing. Missing resource requests may be injected by admission; live metrics behavior requires manual checks. Only autoscaling/v2 is evaluated. No custom/external metrics, runtime APIs or Helm templating. At most 500 files, 2MB each; YAML safe loader; symlinks ignored.
