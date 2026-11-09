@@ -9,7 +9,7 @@
 <p align="center">
 <a href="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml"><img alt="Index QA status" src="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml/badge.svg"></a>
 <a href="https://agentskills.io/specification"><img src="https://img.shields.io/badge/Agent%20Skills-open%20spec-00D9FF?style=flat-square" alt="Agent Skills specification"></a>
-<img src="https://img.shields.io/badge/independent%20skill%20repos-30-00FFA3?style=flat-square" alt="Thirty independent skills">
+<img src="https://img.shields.io/badge/independent%20skill%20repos-32-00FFA3?style=flat-square" alt="Thirty-two independent skills">
 <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-0A1929?style=flat-square" alt="Code MIT License"></a>
 </p>
 
@@ -268,6 +268,23 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 <p><a href="https://github.com/Kanompung1988/k8s-vap-binding-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/k8s-vap-binding-audit/actions/workflows/ci.yml/badge.svg" alt="VAP binding CI"></a></p>
 </td>
 </tr>
+
+<tr>
+<td width="50%" valign="top">
+<h3>31 · Kubernetes HPA Request Contract Audit</h3>
+<p><b>Detect autoscalers whose resource-utilization targets lack CPU or memory requests.</b></p>
+<p>Offline comparison of autoscaling/v2 HPA and workload Pod templates. Explains request gaps, duplicate HPA target references and missing local companion objects without claiming live cluster failures.</p>
+<p><a href="https://github.com/Kanompung1988/k8s-hpa-request-contract-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/k8s-hpa-request-contract-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/k8s-hpa-request-contract-audit/actions/workflows/ci.yml/badge.svg" alt="HPA Request Audit independent CI"></a></p>
+</td>
+<td width="50%" valign="top">
+<h3>32 · Kubernetes Service Backend Audit</h3>
+<p><b>Catch Service selector mismatch and missing named targetPorts before apply.</b></p>
+<p>Compares Service selectors with same-namespace Pods/workload templates; skips legitimate selectorless Services. Does not test live EndpointSlices, readiness or actual network paths.</p>
+<p><a href="https://github.com/Kanompung1988/k8s-service-backend-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/k8s-service-backend-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/k8s-service-backend-audit/actions/workflows/ci.yml/badge.svg" alt="Service Backend Audit independent CI"></a></p>
+</td>
+</tr>
 </table>
 
 | Skill | CLI | Verified QA evidence | Repository |
@@ -368,6 +385,8 @@ EP.11 adds **Python Dependency Group Audit** (28 unit tests) and **PostgreSQL RL
 EP.14 (2026-11-07) adds **Kubernetes SecurityContext Audit** (23 unit tests) and **Git Submodule Boundary Audit** (24 unit tests). Each independent public repository passed Python 3.10/3.12 PR and post-merge `main` CI plus safe/review fixtures as applicable; no runtime security certification is claimed. [Review eight scored pain points and actual release evidence](docs/CANDIDATE_RESEARCH_2026-11-07.md). **Skill Lab social distribution remains OFF, and Daily AI Scout is unchanged.**
 
 EP.15 (2026-11-08) adds **GitHub Actions Artifact Attestation Gate Audit** (22 unit tests) and **Kubernetes ValidatingAdmissionPolicy Binding Audit** (25 unit tests), each independently green with real Python 3.10/3.12 PR and public-main CI plus safe/review fixtures. Both remain bounded static review aids—not Sigstore validation, live Kubernetes admission results, or production certification. [Read all eight scored pain points and provenance](docs/CANDIDATE_RESEARCH_2026-11-08.md). **Skill Lab social stays OFF; Daily AI Scout unchanged.**
+
+EP.16 (2026-11-09) adds **Kubernetes HPA Request Contract Audit** and **Kubernetes Service Backend Audit** (21 unit tests each), independently verified on Python 3.10/3.12 PR and public-main CI with passing safe/review fixture smoke tests. Both are bounded, read-only manifest reviewers; they cannot prove live cluster behavior or EndpointSlice readiness. [See the eight scored candidate evaluations, primary sources and verifiable release evidence](docs/CANDIDATE_RESEARCH_2026-11-09.md). **Skill Lab social distribution is OFF; Daily AI Scout unchanged.**
 
 ## Roadmap and collaboration
 
