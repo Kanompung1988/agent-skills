@@ -1,0 +1,6 @@
+name: Release
+concurrency: {group: PROD, queue: max, cancel-in-progress: true}
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    concurrency: {group: prod, cancel-in-progress: true}
