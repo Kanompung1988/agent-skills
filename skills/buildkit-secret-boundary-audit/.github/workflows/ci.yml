@@ -1,0 +1,39 @@
+name: CI
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "${{ matrix.python }}"
+      - run: python -m unittest discover -s tests -v
+      - name: Validate Agent Skill frontmatter
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          text=Path("SKILL.md").read_text()
+          assert text.startswith("---\nname: buildkit-secret-boundary-audit\n")
+          assert "description:" in text.split("---",2)[1]
+          assert Path("assets/areazero-logo.svg").is_file()
+          PY
+      - run: python scripts/audit.py examples/Dockerfile.safe --json
+      - name: Review fixture (must exit one)
+        shell: bash
+        run: |
+          set +e
+          python scripts/audit.py examples/Dockerfile.review --json > /tmp/review.json
+          code=$?
+          set -e
+          test "$code" = 1
+          python -c 'import json; assert json.load(open("/tmp/review.json"))["findings"]'
