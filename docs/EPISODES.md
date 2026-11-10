@@ -32,7 +32,10 @@
 
 | **EP.16 — 2026-11-09** | [Kubernetes HPA Request Contract Audit](https://github.com/Kanompung1988/k8s-hpa-request-contract-audit) · [Kubernetes Service Backend Audit](https://github.com/Kanompung1988/k8s-service-backend-audit) | [HPA: 21 tests + safe/review × Python 3.10/3.12](https://github.com/Kanompung1988/k8s-hpa-request-contract-audit/actions/runs/42549809750) · [Service: 21 tests + safe/review × Python 3.10/3.12](https://github.com/Kanompung1988/k8s-service-backend-audit/actions/runs/42549816521) | **OFF — owner override; no Instagram/Facebook posts or scheduling** |
 
-## EP.03–EP.16 research
+| **EP.17 — 2026-11-10** | [GitHub Actions Concurrency Scope Audit](https://github.com/Kanompung1988/gha-concurrency-scope-audit) · [BuildKit Secret Boundary Audit](https://github.com/Kanompung1988/buildkit-secret-boundary-audit) | [GHA: 25 tests + safe/review × Python 3.10/3.12](https://github.com/Kanompung1988/gha-concurrency-scope-audit/actions/runs/42747180233) · [BuildKit: 26 tests + safe/review × Python 3.10/3.12](https://github.com/Kanompung1988/buildkit-secret-boundary-audit/actions/runs/42747186319) | **OFF — owner override, no Instagram/Facebook writes or scheduling** |
+
+
+## EP.03–EP.17 research
 
 [EP.03: eight screened developer pain points](CANDIDATE_RESEARCH_2026-10-27.md) · [EP.04: eight screened developer pain points and public CI evidence](CANDIDATE_RESEARCH_2026-10-28.md) · [EP.05: eight screened developer problems, repo and main CI proof](CANDIDATE_RESEARCH_2026-10-29.md) · [EP.06: eight screened problems, security boundaries and verified CI](CANDIDATE_RESEARCH_2026-10-30.md) · [EP.07: eight candidate decisions and verified two-skill CI](CANDIDATE_RESEARCH_2026-10-31.md) · [EP.08: AWS OIDC and npm export-map decisions, 8 scores and verified release CI](CANDIDATE_RESEARCH_2026-11-01.md). · [EP.09: Docker Compose startup and Python CLI entry-point contracts, 8 scored candidates and verified public CI](CANDIDATE_RESEARCH_2026-11-02.md).
 
@@ -49,6 +52,8 @@
 [EP.15: eight scored developer problems, two scoped independent tool releases, real CI and social OFF](CANDIDATE_RESEARCH_2026-11-08.md).
 
 [EP.16: eight scored problems, autoscaler and Service backend contracts, public CI verification and social OFF](CANDIDATE_RESEARCH_2026-11-09.md).
+
+[EP.17: eight screened problems, two standalone public releases and independent PR/main CI](CANDIDATE_RESEARCH_2026-11-10.md).
 
 ## History and provenance
 

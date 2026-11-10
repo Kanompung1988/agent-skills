@@ -9,7 +9,7 @@
 <p align="center">
 <a href="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml"><img alt="Index QA status" src="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml/badge.svg"></a>
 <a href="https://agentskills.io/specification"><img src="https://img.shields.io/badge/Agent%20Skills-open%20spec-00D9FF?style=flat-square" alt="Agent Skills specification"></a>
-<img src="https://img.shields.io/badge/independent%20skill%20repos-32-00FFA3?style=flat-square" alt="Thirty-two independent skills">
+<img src="https://img.shields.io/badge/independent%20skill%20repos-34-00FFA3?style=flat-square" alt="Thirty-four independent skills">
 <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-0A1929?style=flat-square" alt="Code MIT License"></a>
 </p>
 
@@ -285,6 +285,22 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 <p><a href="https://github.com/Kanompung1988/k8s-service-backend-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/k8s-service-backend-audit/actions/workflows/ci.yml/badge.svg" alt="Service Backend Audit independent CI"></a></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<h3>33 · GitHub Actions Concurrency Scope Audit</h3>
+<p><b>Spot CI concurrency collisions before release workflows cancel each other.</b></p>
+<p>Read-only case-insensitive literal group review across workflow and job scopes. Flags invalid queue combinations and release cancellation heuristics without interpreting runtime expressions.</p>
+<p><a href="https://github.com/Kanompung1988/gha-concurrency-scope-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/gha-concurrency-scope-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/gha-concurrency-scope-audit/actions/workflows/ci.yml/badge.svg" alt="Concurrency scope independent CI"></a></p>
+</td>
+<td width="50%" valign="top">
+<h3>34 · BuildKit Secret Boundary Audit</h3>
+<p><b>Review build-time credential handling without executing Docker.</b></p>
+<p>Offline checks of Dockerfile secret-like ARG/ENV, suspicious COPY/ADD paths, RUN variables and optional BuildKit secret mounts. Static heuristics are not image-layer proof.</p>
+<p><a href="https://github.com/Kanompung1988/buildkit-secret-boundary-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/buildkit-secret-boundary-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/buildkit-secret-boundary-audit/actions/workflows/ci.yml/badge.svg" alt="BuildKit secret boundary independent CI"></a></p>
+</td>
+</tr>
 </table>
 
 | Skill | CLI | Verified QA evidence | Repository |
@@ -325,6 +341,9 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 
 | GitHub Actions attestation gate | Offline provenance creation/consumer verification flow review, not cryptographic verification | [Python 3.10/3.12 — 22 tests + safe/review fixtures](https://github.com/Kanompung1988/gha-attestation-gate-audit/actions/runs/42437469431) | [gha-attestation-gate-audit](https://github.com/Kanompung1988/gha-attestation-gate-audit) |
 | Kubernetes VAP binding | Read-only v1 ValidatingAdmissionPolicy + Binding param/action contract review | [Python 3.10/3.12 — 25 tests + safe/review fixtures](https://github.com/Kanompung1988/k8s-vap-binding-audit/actions/runs/42437474848) | [k8s-vap-binding-audit](https://github.com/Kanompung1988/k8s-vap-binding-audit) |
+
+| GitHub Actions concurrency scope | Offline literal group and cancellation review | [Python 3.10/3.12 — 25 tests + safe/review fixtures each](https://github.com/Kanompung1988/gha-concurrency-scope-audit/actions/runs/42747180233) | [gha-concurrency-scope-audit](https://github.com/Kanompung1988/gha-concurrency-scope-audit) |
+| BuildKit secret boundary | Offline Dockerfile secret exposure heuristic | [Python 3.10/3.12 — 26 tests + safe/review fixtures each](https://github.com/Kanompung1988/buildkit-secret-boundary-audit/actions/runs/42747186319) | [buildkit-secret-boundary-audit](https://github.com/Kanompung1988/buildkit-secret-boundary-audit) |
 
 ## How to install
 
@@ -387,6 +406,8 @@ EP.14 (2026-11-07) adds **Kubernetes SecurityContext Audit** (23 unit tests) and
 EP.15 (2026-11-08) adds **GitHub Actions Artifact Attestation Gate Audit** (22 unit tests) and **Kubernetes ValidatingAdmissionPolicy Binding Audit** (25 unit tests), each independently green with real Python 3.10/3.12 PR and public-main CI plus safe/review fixtures. Both remain bounded static review aids—not Sigstore validation, live Kubernetes admission results, or production certification. [Read all eight scored pain points and provenance](docs/CANDIDATE_RESEARCH_2026-11-08.md). **Skill Lab social stays OFF; Daily AI Scout unchanged.**
 
 EP.16 (2026-11-09) adds **Kubernetes HPA Request Contract Audit** and **Kubernetes Service Backend Audit** (21 unit tests each), independently verified on Python 3.10/3.12 PR and public-main CI with passing safe/review fixture smoke tests. Both are bounded, read-only manifest reviewers; they cannot prove live cluster behavior or EndpointSlice readiness. [See the eight scored candidate evaluations, primary sources and verifiable release evidence](docs/CANDIDATE_RESEARCH_2026-11-09.md). **Skill Lab social distribution is OFF; Daily AI Scout unchanged.**
+
+EP.17 (2026-11-10) adds **GitHub Actions Concurrency Scope Audit** (25 tests) and **BuildKit Secret Boundary Audit** (26 tests), separately validated on Python 3.10/3.12 with real PR and public-main CI plus safe/review CLI fixtures. They are bounded read-only static reviewers and are not real workflow scheduler or Docker image safety certification. [Research the eight scored developer problems, official sources, PR/main CI and release provenance](docs/CANDIDATE_RESEARCH_2026-11-10.md). **Skill Lab social distribution remains OFF, Daily AI Scout unchanged.**
 
 ## Roadmap and collaboration
 
