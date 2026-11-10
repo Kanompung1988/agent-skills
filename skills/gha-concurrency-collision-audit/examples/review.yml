@@ -1,0 +1,10 @@
+name: Release
+on: push
+concurrency:
+  group: ${{ github.head_ref }}
+  queue: max
+  cancel-in-progress: true
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    concurrency: ${{ github.head_ref }}
