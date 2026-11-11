@@ -1,0 +1,18 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: payroll
+spec:
+  schedule: "0 2 * * *"
+  timeZone: America/New_York
+  concurrencyPolicy: Replace
+  startingDeadlineSeconds: 5
+  failedJobsHistoryLimit: 0
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: Never
+          containers:
+            - name: payroll
+              image: example.invalid/payroll:latest

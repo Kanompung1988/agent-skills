@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: risky-sync
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+      allowEmpty: true
+    syncOptions:
+      - Replace=true
+      - ServerSideApply=true
+      - Validate=false
+  ignoreDifferences:
+    - kind: Deployment
+      jsonPointers:
+        - /spec/replicas
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: destructive-job
+  annotations:
+    argocd.argoproj.io/sync-options: "Force=true,Replace=true"
