@@ -1,0 +1,13 @@
+name: deploy
+on:
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - run: echo 'review fixture only'
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'missing environment'

@@ -1,0 +1,1 @@
+{"environments":{"production":{"required_reviewers":2,"prevent_self_review":true,"can_admins_bypass":false,"deployment_branch_policy":{"protected_branches":true}},"prod":{"required_reviewers":0,"prevent_self_review":false,"can_admins_bypass":true,"deployment_branch_policy":{"protected_branches":false}}}}
