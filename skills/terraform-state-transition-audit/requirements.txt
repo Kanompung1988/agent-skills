@@ -1,1 +1,1 @@
-# Standard library only (no runtime dependencies)
+PyYAML>=6.0,<7  # CI frontmatter validation only; runtime analyzer uses Python standard library
