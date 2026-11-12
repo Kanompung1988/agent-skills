@@ -9,7 +9,7 @@
 <p align="center">
 <a href="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml"><img alt="Index QA status" src="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml/badge.svg"></a>
 <a href="https://agentskills.io/specification"><img src="https://img.shields.io/badge/Agent%20Skills-open%20spec-00D9FF?style=flat-square" alt="Agent Skills specification"></a>
-<img src="https://img.shields.io/badge/independent%20skill%20repos-36-00FFA3?style=flat-square" alt="Thirty-six independent skills">
+<img src="https://img.shields.io/badge/independent%20skill%20repos-38-00FFA3?style=flat-square" alt="Thirty-eight independent skills">
 <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-0A1929?style=flat-square" alt="Code MIT License"></a>
 </p>
 
@@ -317,6 +317,22 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 <p><a href="https://github.com/Kanompung1988/argocd-sync-option-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/argocd-sync-option-audit/actions/workflows/ci.yml/badge.svg" alt="Argo CD sync option independent CI"></a></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<h3>37 · GitHub Actions Environment Gate Audit</h3>
+<p><b>Review deployment job environment bindings against a reviewed protection-settings inventory.</b></p>
+<p>Offline YAML inspection flags missing environment gates, unlisted environments, absent reviewer/branch rules, dynamic names and potential self-approval; it cannot authenticate effective GitHub settings.</p>
+<p><a href="https://github.com/Kanompung1988/gha-environment-gate-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/gha-environment-gate-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/gha-environment-gate-audit/actions/workflows/ci.yml/badge.svg" alt="Environment gate audit CI"></a></p>
+</td>
+<td width="50%" valign="top">
+<h3>38 · Terraform State Transition Audit</h3>
+<p><b>Review moved/removed HCL declarations before an infrastructure refactor.</b></p>
+<p>Read-only lexical checks for missing fields, duplicate move sources/targets, cycles and missing explicit destroy=false on state handoffs. Not a Terraform plan or full HCL interpreter.</p>
+<p><a href="https://github.com/Kanompung1988/terraform-state-transition-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/terraform-state-transition-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/terraform-state-transition-audit/actions/workflows/ci.yml/badge.svg" alt="Terraform state transition audit CI"></a></p>
+</td>
+</tr>
 </table>
 
 | Skill | CLI | Verified QA evidence | Repository |
@@ -363,6 +379,9 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 
 | Kubernetes CronJob timezone | Local CronJob YAML schedule/deadline review | [Python 3.10/3.12 — 25 tests + safe/review fixtures](https://github.com/Kanompung1988/k8s-cronjob-timezone-audit/actions/runs/42944255705) | [k8s-cronjob-timezone-audit](https://github.com/Kanompung1988/k8s-cronjob-timezone-audit) |
 | Argo CD sync option review | Local Application/resource sync option review | [Python 3.10/3.12 — 24 tests + safe/review fixtures](https://github.com/Kanompung1988/argocd-sync-option-audit/actions/runs/42944262402) | [argocd-sync-option-audit](https://github.com/Kanompung1988/argocd-sync-option-audit) |
+
+| GHA environment gate | Local workflow YAML + manually reviewed environment inventory | [Python 3.10/3.12 — 29 tests + safe/review fixtures](https://github.com/Kanompung1988/gha-environment-gate-audit/actions/runs/43141649976) | [gha-environment-gate-audit](https://github.com/Kanompung1988/gha-environment-gate-audit) |
+| Terraform state transitions | Local moved/removed HCL static review | [Python 3.10/3.12 — 37 tests + safe/review fixtures](https://github.com/Kanompung1988/terraform-state-transition-audit/actions/runs/43141655483) | [terraform-state-transition-audit](https://github.com/Kanompung1988/terraform-state-transition-audit) |
 
 ## How to install
 
@@ -429,6 +448,8 @@ EP.16 (2026-11-09) adds **Kubernetes HPA Request Contract Audit** and **Kubernet
 EP.17 (2026-11-10) adds **GitHub Actions Concurrency Scope Audit** (25 tests) and **BuildKit Secret Boundary Audit** (26 tests), separately validated on Python 3.10/3.12 with real PR and public-main CI plus safe/review CLI fixtures. They are bounded read-only static reviewers and are not real workflow scheduler or Docker image safety certification. [Research the eight scored developer problems, official sources, PR/main CI and release provenance](docs/CANDIDATE_RESEARCH_2026-11-10.md). **Skill Lab social distribution remains OFF, Daily AI Scout unchanged.**
 
 EP.18 (2026-11-11) adds **Kubernetes CronJob Timezone & Schedule Audit** (25 tests) and **Argo CD Sync Option Boundary Audit** (24 tests), with independent public-main Python 3.10/3.12 CI, PR checks and safe/review CLI fixtures. These are bounded offline heuristics: not cron simulation, not proof of Argo CD reconciliation or Kubernetes runtime behavior. [See eight scored developer problems and verified PR/main CI evidence](docs/CANDIDATE_RESEARCH_2026-11-11.md). **Skill Lab social remains OFF; Daily AI Scout is unaffected.**
+
+EP.19 (2026-11-12) adds **GitHub Actions Environment Gate Audit** (29 tests) and **Terraform State Transition Audit** (37 tests), each separately verified through public-main Python 3.10/3.12 CI after independent PRs. Both are bounded, read-only reviews; environment inventory and HCL lexical checks cannot certify effective production behavior. [See the eight screened developer problems, primary references and verified release provenance](docs/CANDIDATE_RESEARCH_2026-11-12.md). **Skill Lab social OFF; Daily AI Scout unchanged.**
 
 ## Roadmap and collaboration
 
