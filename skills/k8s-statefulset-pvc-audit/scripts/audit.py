@@ -15,7 +15,7 @@ def paths(target):
     return sorted(p for p in target.rglob("*") if p.is_file() and not p.is_symlink() and p.suffix.lower() in (".yml",".yaml"))
 
 def inspect(doc,p):
-    if doc is None: return []
+    if doc is None or doc == "": return []
     if not isinstance(doc,dict): raise ValueError("Kubernetes manifest root must be a mapping")
     if doc.get("kind")!="StatefulSet": return []
     meta=doc.get("metadata") if isinstance(doc.get("metadata"),dict) else {}
