@@ -39,7 +39,9 @@
 
 | **EP.19 — 2026-11-12** | [GitHub Actions Environment Gate Audit](https://github.com/Kanompung1988/gha-environment-gate-audit) · [Terraform State Transition Audit](https://github.com/Kanompung1988/terraform-state-transition-audit) | [GHA: 29 tests + safe/review × Python 3.10/3.12](https://github.com/Kanompung1988/gha-environment-gate-audit/actions/runs/43141649976) · [Terraform: 37 tests + safe/review × Python 3.10/3.12](https://github.com/Kanompung1988/terraform-state-transition-audit/actions/runs/43141655483) | **OFF — no Skill Lab Instagram/Facebook writes, Daily AI Scout untouched** |
 
-## EP.03–EP.19 research
+| **EP.20 — 2026-11-13** | [GitHub Actions Cache Mode Boundary Audit](https://github.com/Kanompung1988/gha-cache-mode-boundary-audit) · [Kubernetes StatefulSet PVC Retention Audit](https://github.com/Kanompung1988/k8s-statefulset-pvc-audit) | [Cache-mode: 20 tests + fixtures × Python 3.10/3.12](https://github.com/Kanompung1988/gha-cache-mode-boundary-audit/actions/runs/43350410352) · [StatefulSet PVC: 24 tests + fixtures × Python 3.10/3.12](https://github.com/Kanompung1988/k8s-statefulset-pvc-audit/actions/runs/43350416986) | **OFF — no Skill Lab IG/FB write; Daily AI Scout unchanged** |
+
+## EP.03–EP.20 research
 
 [EP.03: eight screened developer pain points](CANDIDATE_RESEARCH_2026-10-27.md) · [EP.04: eight screened developer pain points and public CI evidence](CANDIDATE_RESEARCH_2026-10-28.md) · [EP.05: eight screened developer problems, repo and main CI proof](CANDIDATE_RESEARCH_2026-10-29.md) · [EP.06: eight screened problems, security boundaries and verified CI](CANDIDATE_RESEARCH_2026-10-30.md) · [EP.07: eight candidate decisions and verified two-skill CI](CANDIDATE_RESEARCH_2026-10-31.md) · [EP.08: AWS OIDC and npm export-map decisions, 8 scores and verified release CI](CANDIDATE_RESEARCH_2026-11-01.md). · [EP.09: Docker Compose startup and Python CLI entry-point contracts, 8 scored candidates and verified public CI](CANDIDATE_RESEARCH_2026-11-02.md).
 
@@ -62,6 +64,8 @@
 [EP.18: eight scored developer problems; separate CronJob and Argo CD public CI](CANDIDATE_RESEARCH_2026-11-11.md).
 
 [EP.19: 8 scored candidates, GitHub deployment-environment and Terraform state-transition review, CI proof](CANDIDATE_RESEARCH_2026-11-12.md).
+
+[EP.20: eight scored developer pain points, new cache-mode trust boundaries and StatefulSet PVC deletion review, independently verified PR/main CI](CANDIDATE_RESEARCH_2026-11-13.md).
 
 ## History and provenance
 
