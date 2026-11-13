@@ -1,0 +1,13 @@
+name: High-risk cache write
+on:
+  pull_request_target:
+    types: [opened, synchronize]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    cache-mode: write
+    steps:
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache
+          key: project-cache

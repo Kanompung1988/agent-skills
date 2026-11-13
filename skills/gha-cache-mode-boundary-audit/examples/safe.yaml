@@ -1,0 +1,9 @@
+name: Cache safety
+on: [push, pull_request_target]
+cache-mode: write
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    cache-mode: read
+    steps:
+      - uses: actions/checkout@v4

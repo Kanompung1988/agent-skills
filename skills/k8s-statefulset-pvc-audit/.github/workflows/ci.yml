@@ -1,0 +1,45 @@
+name: Tests and CLI smoke
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v
+      - run: python scripts/audit.py examples/safe.yaml --json
+      - name: Verify review fixture exit and JSON
+        shell: bash
+        run: |
+          set +e
+          python scripts/audit.py examples/review.yaml --json > /tmp/report.json
+          status=$?
+          set -e
+          test "$status" -eq 1
+          python -c 'import json; j=json.load(open("/tmp/report.json")); assert j["count"] > 0 and len(j["findings"]) == j["count"]'
+      - name: Skill metadata checks
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re, yaml
+          text=Path('SKILL.md').read_text()
+          m=re.match(r'^---\n(.*?)\n---\n',text,re.S)
+          assert m
+          data=yaml.safe_load(m.group(1))
+          assert data['name']==Path.cwd().name
+          assert re.fullmatch(r'[a-z][a-z0-9]*(?:-[a-z0-9]+)*',data['name'])
+          assert 1<=len(data['description'])<=1024
+          assert all(Path(p).exists() for p in ('README.md','LICENSE','scripts/audit.py','references/SOURCES.md','assets/areazero-logo.svg'))
+          PY
