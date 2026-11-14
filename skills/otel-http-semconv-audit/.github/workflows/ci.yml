@@ -1,0 +1,47 @@
+name: Test OTel HTTP semconv audit
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10','3.12']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m unittest discover -s tests -v
+      - run: python scripts/audit.py examples/safe.json --json
+      - name: Expected finding fixture
+        shell: bash
+        run: |
+          set +e
+          python scripts/audit.py examples/review.json --json > /tmp/review.json
+          status=$?
+          set -e
+          test "$status" -eq 1
+          python -c 'import json; j=json.load(open("/tmp/review.json")); assert j["count"] >= 2 and j["count"] == len(j["findings"])'
+      - name: Verify skill frontmatter
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          t=Path("SKILL.md").read_text()
+          m=re.match(r"^---\n(.*?)\n---\n",t,re.S)
+          assert m
+          name=re.search(r"^name:\s*(\S+)$",m.group(1),re.M).group(1)
+          description=re.search(r"^description:\s*(.+)$",m.group(1),re.M).group(1)
+          assert name==Path.cwd().name
+          assert re.fullmatch(r"[a-z][a-z0-9]*(?:-[a-z0-9]+)*",name)
+          assert 1<=len(description)<=1024
+          assert all(Path(p).exists() for p in ["README.md","LICENSE","references/SOURCES.md","assets/areazero-logo.svg"])
+          PY
