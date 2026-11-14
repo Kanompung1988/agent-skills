@@ -9,7 +9,7 @@
 <p align="center">
 <a href="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml"><img alt="Index QA status" src="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml/badge.svg"></a>
 <a href="https://agentskills.io/specification"><img src="https://img.shields.io/badge/Agent%20Skills-open%20spec-00D9FF?style=flat-square" alt="Agent Skills specification"></a>
-<img src="https://img.shields.io/badge/independent%20skill%20repos-40-00FFA3?style=flat-square" alt="Forty independent skills">
+<img src="https://img.shields.io/badge/independent%20skill%20repos-42-00FFA3?style=flat-square" alt="Forty-two independent skills">
 <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-0A1929?style=flat-square" alt="Code MIT License"></a>
 </p>
 
@@ -349,6 +349,22 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 <p><a href="https://github.com/Kanompung1988/k8s-statefulset-pvc-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/k8s-statefulset-pvc-audit/actions/workflows/ci.yml/badge.svg" alt="StatefulSet PVC retention CI"></a></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<h3>41 · npm Trusted Publisher Audit</h3>
+<p><b>Review workflow identity and OIDC prerequisites before publishing a package.</b></p>
+<p>Offline checks on package.json, GitHub Actions publish jobs, hosted runners, id-token permissions, token fallback, provenance settings, and a manually maintained publisher inventory. Never claims to verify npm registry configuration.</p>
+<p><a href="https://github.com/Kanompung1988/npm-trusted-publisher-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/npm-trusted-publisher-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/npm-trusted-publisher-audit/actions/workflows/ci.yml/badge.svg" alt="npm trusted publisher CI"></a></p>
+</td>
+<td width="50%" valign="top">
+<h3>42 · OpenTelemetry HTTP Semconv Audit</h3>
+<p><b>Catch HTTP span attribute migration mistakes without leaking trace values.</b></p>
+<p>Inspect sanitized OTLP JSON for legacy and stable HTTP attributes, dual-emission conflicts, declared stability opt-in modes, and possible high-cardinality route templates. No attribute values in output and no live telemetry connections.</p>
+<p><a href="https://github.com/Kanompung1988/otel-http-semconv-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/otel-http-semconv-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/otel-http-semconv-audit/actions/workflows/ci.yml/badge.svg" alt="OTel HTTP semconv CI"></a></p>
+</td>
+</tr>
 </table>
 
 | Skill | CLI | Verified QA evidence | Repository |
@@ -401,6 +417,9 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 
 | GitHub Actions cache mode | Offline workflow cache-mode security review | [Python 3.10/3.12 — 20 tests + safe/review fixtures](https://github.com/Kanompung1988/gha-cache-mode-boundary-audit/actions/runs/43350410352) | [gha-cache-mode-boundary-audit](https://github.com/Kanompung1988/gha-cache-mode-boundary-audit) |
 | StatefulSet PVC retention | Local volumeClaimTemplates and deletion-policy audit | [Python 3.10/3.12 — 24 tests + safe/review fixtures](https://github.com/Kanompung1988/k8s-statefulset-pvc-audit/actions/runs/43350416986) | [k8s-statefulset-pvc-audit](https://github.com/Kanompung1988/k8s-statefulset-pvc-audit) |
+
+| npm Trusted Publisher Audit | Local package.json, workflow YAML and optional publisher inventory | [Python 3.10/3.12 — 20 tests + safe/review CLI fixtures](https://github.com/Kanompung1988/npm-trusted-publisher-audit/actions/runs/43545264327) | [npm-trusted-publisher-audit](https://github.com/Kanompung1988/npm-trusted-publisher-audit) |
+| OpenTelemetry HTTP Semconv Audit | Sanitized OTLP JSON span analysis | [Python 3.10/3.12 — 24 tests + safe/review CLI fixtures](https://github.com/Kanompung1988/otel-http-semconv-audit/actions/runs/43544891749) | [otel-http-semconv-audit](https://github.com/Kanompung1988/otel-http-semconv-audit) |
 
 ## How to install
 
@@ -471,6 +490,8 @@ EP.18 (2026-11-11) adds **Kubernetes CronJob Timezone & Schedule Audit** (25 tes
 EP.19 (2026-11-12) adds **GitHub Actions Environment Gate Audit** (29 tests) and **Terraform State Transition Audit** (37 tests), each separately verified through public-main Python 3.10/3.12 CI after independent PRs. Both are bounded, read-only reviews; environment inventory and HCL lexical checks cannot certify effective production behavior. [See the eight screened developer problems, primary references and verified release provenance](docs/CANDIDATE_RESEARCH_2026-11-12.md). **Skill Lab social OFF; Daily AI Scout unchanged.**
 
 EP.20 (2026-11-13) adds **GitHub Actions Cache Mode Boundary Audit** (20 unit tests) and **Kubernetes StatefulSet PVC Retention Audit** (24 unit tests) in separate PUBLIC repos, each with GitHub Actions Python 3.10/3.12 PR and post-merge main CI, safe/review fixtures, MIT code license and original logo. One PVC regression initially failed on an empty YAML document and was fixed and rerun before merge. These are bounded offline reviews; not a security certification, cache-token evaluation, or Kubernetes data loss guarantee. [See eight scored problems, primary references and verifiable release evidence](docs/CANDIDATE_RESEARCH_2026-11-13.md). **Skill Lab social OFF; Daily AI Scout unchanged.**
+
+EP.21 (2026-11-14) adds **npm Trusted Publisher Audit** (20 unit tests) and **OpenTelemetry HTTP Semantic Convention Audit** (24 unit tests), each in a separate PUBLIC repository. Both pass independent GitHub Actions Python 3.10 and 3.12 post-merge `main` tests and safe/review CLI fixtures. The npm analyzer does not check the live npm registry; the OTel analyzer only evaluates sanitized trace samples, not real-time telemetry. [Review eight scored developer problems, primary documentation and exact public PR/main CI evidence](docs/CANDIDATE_RESEARCH_2026-11-14.md). **Skill Lab social OFF, Daily AI Scout unchanged.**
 
 ## Roadmap and collaboration
 
