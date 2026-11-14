@@ -1,0 +1,13 @@
+name: Release
+on:
+  pull_request_target:
+permissions:
+  contents: read
+jobs:
+  publish:
+    runs-on: self-hosted
+    permissions:
+      contents: read
+      id-token: read
+    steps:
+      - run: npm publish

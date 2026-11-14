@@ -1,0 +1,4 @@
+{
+  "repository": "acme/release",
+  "workflow": "release.yml"
+}
