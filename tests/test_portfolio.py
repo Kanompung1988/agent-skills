@@ -12,7 +12,7 @@ EXPECTED={
  'area-zero-logo-icon.svg':'f566816db1f90656499b5e8377b04cc96584c45b2a62c8113895f3f24eeb0c68'
 }
 class PortfolioTests(unittest.TestCase):
- def test_directory_is_exactly_40_unique_skill_links(self):
+ def test_directory_is_exactly_42_unique_skill_links(self):
   self.assertEqual(len(REPOS),42)
   self.assertEqual(len(REPOS),len(set(REPOS)))
   text=(ROOT/'README.md').read_text(encoding='utf-8')
