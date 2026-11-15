@@ -43,7 +43,7 @@
 
 | **EP.21 — 2026-11-14** | [npm Trusted Publisher Audit](https://github.com/Kanompung1988/npm-trusted-publisher-audit) · [OpenTelemetry HTTP Semconv Audit](https://github.com/Kanompung1988/otel-http-semconv-audit) | [npm: 20 tests + fixtures × Python 3.10/3.12](https://github.com/Kanompung1988/npm-trusted-publisher-audit/actions/runs/43545264327) · [OTel: 24 tests + fixtures × Python 3.10/3.12](https://github.com/Kanompung1988/otel-http-semconv-audit/actions/runs/43544891749) | **OFF — no Skill Lab IG/FB writes; Daily AI Scout unchanged** |
 
-| **EP.22 — 2026-11-15** | [Gateway API ReferenceGrant Audit](https://github.com/Kanompung1988/gateway-referencegrant-audit) · [Argo Rollouts Analysis Audit](https://github.com/Kanompung1988/argo-rollouts-analysis-audit) | [Gateway: 26 tests + safe/review × Python 3.10/3.12](https://github.com/Kanompung1988/gateway-referencegrant-audit/actions/runs/43666124285) · [Rollouts: 35 tests + safe/review × Python 3.10/3.12](https://github.com/Kanompung1988/argo-rollouts-analysis-audit/actions/runs/43666129929) | **OFF — no Skill Lab social writes; Daily AI Scout untouched** |
+| **EP.22 — 2026-11-15** | [Gateway API ReferenceGrant Audit](https://github.com/Kanompung1988/gateway-referencegrant-audit) · [Argo Rollouts Analysis Audit](https://github.com/Kanompung1988/argo-rollouts-analysis-audit) | [Gateway: 26 tests + safe/review × Python 3.10/3.12](https://github.com/Kanompung1988/gateway-referencegrant-audit/actions/runs/43666573492) · [Rollouts: 35 tests + safe/review × Python 3.10/3.12](https://github.com/Kanompung1988/argo-rollouts-analysis-audit/actions/runs/43666578616) | **OFF — no Skill Lab social writes; Daily AI Scout untouched** |
 
 ## EP.03–EP.22 research
 

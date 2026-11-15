@@ -37,8 +37,8 @@ Eight concrete developer issues were checked against official technical sources 
 - **Staging source:** `agent-skills` non-default branch `skill-lab/ep22-2026-11-15-gateway`; never copied to portfolio main.
 - **PR #1:** https://github.com/Kanompung1988/gateway-referencegrant-audit/pull/1 — **MERGED**.
 - **PR CI (Python 3.10 + 3.12):** https://github.com/Kanompung1988/gateway-referencegrant-audit/actions/runs/43666045811 — SUCCESS.
-- **Merged public main commit:** `f43d31467746a65df1635fad26288a8589a5bc70`.
-- **Post-merge main CI (Python 3.10 + 3.12):** https://github.com/Kanompung1988/gateway-referencegrant-audit/actions/runs/43666124285 — SUCCESS.
+- **Merged public main commit:** `fd8be8eaf928d0d2eb909b8bb999a900d39403a9`.
+- **Post-merge main CI (Python 3.10 + 3.12):** https://github.com/Kanompung1988/gateway-referencegrant-audit/actions/runs/43666573492 — SUCCESS.
 - **Actual test count per version:** **26/26** from workflow job logs. Separate safe/review CLI fixtures and frontmatter checks PASS.
 - Scope: offline static inspection only, not an effective cluster Gateway policy proof. Special mesh Route exceptions are not certified.
 
@@ -48,8 +48,8 @@ Eight concrete developer issues were checked against official technical sources 
 - **Staging source:** `agent-skills` non-default branch `skill-lab/ep22-2026-11-15-rollouts`.
 - **PR #1:** https://github.com/Kanompung1988/argo-rollouts-analysis-audit/pull/1 — **MERGED**.
 - **PR CI (Python 3.10 + 3.12):** https://github.com/Kanompung1988/argo-rollouts-analysis-audit/actions/runs/43666072646 — SUCCESS.
-- **Merged public main commit:** `fdac3c703db0f727e967c1c53806974e170c38e4`.
-- **Post-merge main CI (Python 3.10 + 3.12):** https://github.com/Kanompung1988/argo-rollouts-analysis-audit/actions/runs/43666129929 — SUCCESS.
+- **Merged public main commit:** `cf8a77103c9fabb76ccc542da50f3476e3ed4519`.
+- **Post-merge main CI (Python 3.10 + 3.12):** https://github.com/Kanompung1988/argo-rollouts-analysis-audit/actions/runs/43666578616 — SUCCESS.
 - **Actual test count per version:** **35/35** from workflow job logs. Separate safe/review CLI fixtures and frontmatter checks PASS.
 - **Honest correction before release:** Initial staging code incorrectly flagged `count: 0` as invalid. Official Argo Rollouts documentation confirms zero is valid with distinct background vs step behavior. Corrected analyzer, tests, fixture and README on the staging branch *before* opening the standalone PR; the green CI tested the corrected version.
 - Scope: no CEL evaluation, metric-provider execution or real AnalysisRun simulation.
@@ -62,3 +62,12 @@ Eight concrete developer issues were checked against official technical sources 
 - Both PR and post-merge CI verified green for Python 3.10/3.12; no claims about actual production traffic or security.
 - Official `skills-ref` validator: **NOT_RUN**. Independent third-party audit: **NOT_DONE**. The GitHub Actions frontmatter smoke tests are not substitutes for official validation.
 - **SOCIAL: OFF** (Instagram @areazero.ai / Facebook AreaZero). No Metricool/social write, schedule, reactivation or changes to old drafts. Daily AI Scout untouched.
+
+## Final post-release quality enhancement (PR #2 in each standalone repository)
+
+Both repositories subsequently received **original SVG hero artwork**, a contributor guide, and a real CI check that the supplied official Area Zero logo matches the known source SHA256 `89b459e6a4e61748d2d56d54da2cd17ff2b55deafbbc90e45e43d4c319462d16` and that both SVG assets parse as XML. These are public code/docs changes, not marketing/social publication.
+
+- Gateway enhancement [PR #2](https://github.com/Kanompung1988/gateway-referencegrant-audit/pull/2) **MERGED**. Final public main `fd8be8eaf928d0d2eb909b8bb999a900d39403a9`; [post-merge CI SUCCESS](https://github.com/Kanompung1988/gateway-referencegrant-audit/actions/runs/43666573492), Python 3.10/3.12 both passed unit, fixture, frontmatter, original logo SHA256 and hero parse checks.
+- Argo Rollouts enhancement [PR #2](https://github.com/Kanompung1988/argo-rollouts-analysis-audit/pull/2) **MERGED**. Final public main `cf8a77103c9fabb76ccc542da50f3476e3ed4519`; [post-merge CI SUCCESS](https://github.com/Kanompung1988/argo-rollouts-analysis-audit/actions/runs/43666578616), Python 3.10/3.12 both passed unit, fixture, frontmatter, original logo SHA256 and hero parse checks.
+
+No production cluster/controller integration or independent audit was performed. Official `skills-ref` validation remains **NOT_RUN**. Skill Lab social remains OFF, Daily AI Scout unchanged.

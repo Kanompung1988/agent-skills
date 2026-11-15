@@ -437,8 +437,8 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 | npm Trusted Publisher Audit | Local package.json, workflow YAML and optional publisher inventory | [Python 3.10/3.12 — 20 tests + safe/review CLI fixtures](https://github.com/Kanompung1988/npm-trusted-publisher-audit/actions/runs/43545264327) | [npm-trusted-publisher-audit](https://github.com/Kanompung1988/npm-trusted-publisher-audit) |
 | OpenTelemetry HTTP Semconv Audit | Sanitized OTLP JSON span analysis | [Python 3.10/3.12 — 24 tests + safe/review CLI fixtures](https://github.com/Kanompung1988/otel-http-semconv-audit/actions/runs/43544891749) | [otel-http-semconv-audit](https://github.com/Kanompung1988/otel-http-semconv-audit) |
 
-| Gateway API ReferenceGrant Audit | Rendered Gateway API YAML and ReferenceGrant trust matching | [Python 3.10/3.12 — 26 tests + safe/review CLI fixtures](https://github.com/Kanompung1988/gateway-referencegrant-audit/actions/runs/43666124285) | [gateway-referencegrant-audit](https://github.com/Kanompung1988/gateway-referencegrant-audit) |
-| Argo Rollouts Analysis Audit | Rendered AnalysisTemplate and Rollout YAML threshold/reference review | [Python 3.10/3.12 — 35 tests + safe/review CLI fixtures](https://github.com/Kanompung1988/argo-rollouts-analysis-audit/actions/runs/43666129929) | [argo-rollouts-analysis-audit](https://github.com/Kanompung1988/argo-rollouts-analysis-audit) |
+| Gateway API ReferenceGrant Audit | Rendered Gateway API YAML and ReferenceGrant trust matching | [Python 3.10/3.12 — 26 tests + safe/review CLI fixtures](https://github.com/Kanompung1988/gateway-referencegrant-audit/actions/runs/43666573492) | [gateway-referencegrant-audit](https://github.com/Kanompung1988/gateway-referencegrant-audit) |
+| Argo Rollouts Analysis Audit | Rendered AnalysisTemplate and Rollout YAML threshold/reference review | [Python 3.10/3.12 — 35 tests + safe/review CLI fixtures](https://github.com/Kanompung1988/argo-rollouts-analysis-audit/actions/runs/43666578616) | [argo-rollouts-analysis-audit](https://github.com/Kanompung1988/argo-rollouts-analysis-audit) |
 
 ## How to install
 
