@@ -57,8 +57,10 @@ class MetricContracts(unittest.TestCase):
         self.assertIn("AR003", {f["code"] for f in audit(template([metric(consecutiveSuccessLimit=-1)]))})
     def test_bool_limit_invalid(self):
         self.assertIn("AR003", {f["code"] for f in audit(template([metric(failureLimit=True)]))})
-    def test_zero_count_invalid(self):
-        self.assertIn("AR005", {f["code"] for f in audit(template([metric(count=0)]))})
+    def test_zero_count_valid_for_background(self):
+        self.assertEqual(audit(template([metric(count=0)])), [])
+    def test_negative_count_invalid(self):
+        self.assertIn("AR005", {f["code"] for f in audit(template([metric(count=-2)]))})
     def test_valid_count(self):
         self.assertEqual(audit(template([metric(count=4)])), [])
     def test_missing_provider(self):
