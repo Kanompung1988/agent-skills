@@ -92,9 +92,9 @@ def audit_metric(file, resource, metric):
         add("AR002", "error", "failureLimit disabled and consecutiveSuccessLimit disabled",
             "Enable failureLimit >= 0 or consecutiveSuccessLimit >= 1.")
     count = m.get("count")
-    if count is not None and (not valid_integer(count) or count < 1):
-        add("AR005", "error", "count must be a positive integer when specified",
-            "Use count >= 1 or omit for continuous analysis.")
+    if count is not None and (not valid_integer(count) or count < 0):
+        add("AR005", "error", "count must be a non-negative integer when specified",
+            "Use count >= 0; count=0 has different behavior for inline vs background analysis.")
     for key in ("successCondition", "failureCondition"):
         if key in m and (not isinstance(m[key], str) or not m[key].strip()):
             add("AR010", "warning", f"{key} is blank or not a CEL expression string",
