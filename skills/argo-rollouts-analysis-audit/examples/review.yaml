@@ -6,7 +6,7 @@ spec:
   metrics:
     - name: quality
       failureLimit: -1
-      count: 0
+      count: -2
       provider:
         prometheus:
           address: https://prometheus.example.invalid
