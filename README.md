@@ -9,7 +9,7 @@
 <p align="center">
 <a href="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml"><img alt="Index QA status" src="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml/badge.svg"></a>
 <a href="https://agentskills.io/specification"><img src="https://img.shields.io/badge/Agent%20Skills-open%20spec-00D9FF?style=flat-square" alt="Agent Skills specification"></a>
-<img src="https://img.shields.io/badge/independent%20skill%20repos-42-00FFA3?style=flat-square" alt="Forty-two independent skills">
+<img src="https://img.shields.io/badge/independent%20skill%20repos-44-00FFA3?style=flat-square" alt="Forty-four independent skills">
 <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-0A1929?style=flat-square" alt="Code MIT License"></a>
 </p>
 
@@ -365,6 +365,22 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 <p><a href="https://github.com/Kanompung1988/otel-http-semconv-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/otel-http-semconv-audit/actions/workflows/ci.yml/badge.svg" alt="OTel HTTP semconv CI"></a></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<h3>43 · Gateway API ReferenceGrant Audit</h3>
+<p><b>Find missing trust grants across namespace boundaries.</b></p>
+<p>Read-only Gateway API route backend, HTTP request-mirror and Gateway TLS certificate checks against target-namespace ReferenceGrant from/to permissions. Reports missing grants with traceable remediation, never contacts Kubernetes.</p>
+<p><a href="https://github.com/Kanompung1988/gateway-referencegrant-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/gateway-referencegrant-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/gateway-referencegrant-audit/actions/workflows/ci.yml/badge.svg" alt="Gateway ReferenceGrant independent CI"></a></p>
+</td>
+<td width="50%" valign="top">
+<h3>44 · Argo Rollouts Analysis Audit</h3>
+<p><b>Review progressive-delivery metric thresholds and template references.</b></p>
+<p>Offline AnalysisTemplate/ClusterAnalysisTemplate and Rollout YAML checks for disabled gates, missing conditions, duplicate metrics, missing analysis templates and unfulfilled required args. Distinguishes valid count=0 behavior from invalid negative counts.</p>
+<p><a href="https://github.com/Kanompung1988/argo-rollouts-analysis-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/argo-rollouts-analysis-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/argo-rollouts-analysis-audit/actions/workflows/ci.yml/badge.svg" alt="Argo Rollouts independent CI"></a></p>
+</td>
+</tr>
 </table>
 
 | Skill | CLI | Verified QA evidence | Repository |
@@ -420,6 +436,9 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 
 | npm Trusted Publisher Audit | Local package.json, workflow YAML and optional publisher inventory | [Python 3.10/3.12 — 20 tests + safe/review CLI fixtures](https://github.com/Kanompung1988/npm-trusted-publisher-audit/actions/runs/43545264327) | [npm-trusted-publisher-audit](https://github.com/Kanompung1988/npm-trusted-publisher-audit) |
 | OpenTelemetry HTTP Semconv Audit | Sanitized OTLP JSON span analysis | [Python 3.10/3.12 — 24 tests + safe/review CLI fixtures](https://github.com/Kanompung1988/otel-http-semconv-audit/actions/runs/43544891749) | [otel-http-semconv-audit](https://github.com/Kanompung1988/otel-http-semconv-audit) |
+
+| Gateway API ReferenceGrant Audit | Rendered Gateway API YAML and ReferenceGrant trust matching | [Python 3.10/3.12 — 26 tests + safe/review CLI fixtures](https://github.com/Kanompung1988/gateway-referencegrant-audit/actions/runs/43666124285) | [gateway-referencegrant-audit](https://github.com/Kanompung1988/gateway-referencegrant-audit) |
+| Argo Rollouts Analysis Audit | Rendered AnalysisTemplate and Rollout YAML threshold/reference review | [Python 3.10/3.12 — 35 tests + safe/review CLI fixtures](https://github.com/Kanompung1988/argo-rollouts-analysis-audit/actions/runs/43666129929) | [argo-rollouts-analysis-audit](https://github.com/Kanompung1988/argo-rollouts-analysis-audit) |
 
 ## How to install
 
@@ -492,6 +511,8 @@ EP.19 (2026-11-12) adds **GitHub Actions Environment Gate Audit** (29 tests) and
 EP.20 (2026-11-13) adds **GitHub Actions Cache Mode Boundary Audit** (20 unit tests) and **Kubernetes StatefulSet PVC Retention Audit** (24 unit tests) in separate PUBLIC repos, each with GitHub Actions Python 3.10/3.12 PR and post-merge main CI, safe/review fixtures, MIT code license and original logo. One PVC regression initially failed on an empty YAML document and was fixed and rerun before merge. These are bounded offline reviews; not a security certification, cache-token evaluation, or Kubernetes data loss guarantee. [See eight scored problems, primary references and verifiable release evidence](docs/CANDIDATE_RESEARCH_2026-11-13.md). **Skill Lab social OFF; Daily AI Scout unchanged.**
 
 EP.21 (2026-11-14) adds **npm Trusted Publisher Audit** (20 unit tests) and **OpenTelemetry HTTP Semantic Convention Audit** (24 unit tests), each in a separate PUBLIC repository. Both pass independent GitHub Actions Python 3.10 and 3.12 post-merge `main` tests and safe/review CLI fixtures. The npm analyzer does not check the live npm registry; the OTel analyzer only evaluates sanitized trace samples, not real-time telemetry. [Review eight scored developer problems, primary documentation and exact public PR/main CI evidence](docs/CANDIDATE_RESEARCH_2026-11-14.md). **Skill Lab social OFF, Daily AI Scout unchanged.**
+
+EP.22 (2026-11-15) adds **Gateway API ReferenceGrant Audit** (26 tests) and **Argo Rollouts Analysis Audit** (35 tests), each in its own public repository and independently green on Python 3.10/3.12 PR and post-merge `main` CI with safe/review fixtures. Cross-namespace trust checks and Rollouts threshold/reference checks are bounded offline reviews, not proofs of live Gateway routing or effective canary behavior. [See eight scored developer pain points, primary sources, a pre-release semantics correction and verified commit/CI evidence](docs/CANDIDATE_RESEARCH_2026-11-15.md). **Skill Lab social OFF; Daily AI Scout unchanged.**
 
 ## Roadmap and collaboration
 
