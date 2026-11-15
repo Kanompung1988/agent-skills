@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata: {name: risk-check, namespace: storefront}
+spec:
+  args: [{name: service}]
+  metrics:
+    - name: quality
+      failureLimit: -1
+      count: 0
+      provider:
+        prometheus:
+          address: https://prometheus.example.invalid
+          query: up
+    - name: quality
+      successCondition: ""
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata: {name: checkout, namespace: storefront}
+spec:
+  strategy:
+    canary:
+      steps: [{setWeight: 10}]
+      analysis:
+        startingStep: 3
+        templates:
+          - {templateName: risk-check}
+          - {templateName: not-in-bundle}

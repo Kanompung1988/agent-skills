@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata: {name: checkout-analysis, namespace: storefront}
+spec:
+  args:
+    - {name: service, value: checkout}
+  metrics:
+    - name: success-rate
+      interval: 1m
+      count: 5
+      successCondition: result[0] >= 0.95
+      failureLimit: 2
+      provider:
+        prometheus:
+          address: https://prometheus.example.invalid
+          query: sum(rate(http_requests_total[5m]))
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata: {name: checkout, namespace: storefront}
+spec:
+  strategy:
+    canary:
+      steps: [{setWeight: 10}]
+      analysis:
+        templates: [{templateName: checkout-analysis}]
