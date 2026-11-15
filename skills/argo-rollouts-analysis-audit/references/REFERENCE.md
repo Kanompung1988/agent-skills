@@ -6,7 +6,7 @@
 | AR002 | failureLimit=-1 and consecutiveSuccessLimit=0 | Both threshold gates disabled |
 | AR003 | Limits invalid integer or out of range | Correct failureLimit>=-1, consecutiveSuccessLimit>=0 |
 | AR004 | Provider missing or multiple provider types | Exactly one provider is expected |
-| AR005 | Invalid metric count | Count must be positive when present |
+| AR005 | Invalid metric count | Count must be non-negative; zero behaves differently for inline vs background analysis |
 | AR006 | Duplicate metric names in one template | Choose unique names |
 | AR007 | Referenced template absent from provided set | Verify separately in cluster/bundle |
 | AR008 | Required template args not supplied | Provide args or defaults |
