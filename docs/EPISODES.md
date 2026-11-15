@@ -43,7 +43,9 @@
 
 | **EP.21 — 2026-11-14** | [npm Trusted Publisher Audit](https://github.com/Kanompung1988/npm-trusted-publisher-audit) · [OpenTelemetry HTTP Semconv Audit](https://github.com/Kanompung1988/otel-http-semconv-audit) | [npm: 20 tests + fixtures × Python 3.10/3.12](https://github.com/Kanompung1988/npm-trusted-publisher-audit/actions/runs/43545264327) · [OTel: 24 tests + fixtures × Python 3.10/3.12](https://github.com/Kanompung1988/otel-http-semconv-audit/actions/runs/43544891749) | **OFF — no Skill Lab IG/FB writes; Daily AI Scout unchanged** |
 
-## EP.03–EP.21 research
+| **EP.22 — 2026-11-15** | [Gateway API ReferenceGrant Audit](https://github.com/Kanompung1988/gateway-referencegrant-audit) · [Argo Rollouts Analysis Audit](https://github.com/Kanompung1988/argo-rollouts-analysis-audit) | [Gateway: 26 tests + safe/review × Python 3.10/3.12](https://github.com/Kanompung1988/gateway-referencegrant-audit/actions/runs/43666124285) · [Rollouts: 35 tests + safe/review × Python 3.10/3.12](https://github.com/Kanompung1988/argo-rollouts-analysis-audit/actions/runs/43666129929) | **OFF — no Skill Lab social writes; Daily AI Scout untouched** |
+
+## EP.03–EP.22 research
 
 [EP.03: eight screened developer pain points](CANDIDATE_RESEARCH_2026-10-27.md) · [EP.04: eight screened developer pain points and public CI evidence](CANDIDATE_RESEARCH_2026-10-28.md) · [EP.05: eight screened developer problems, repo and main CI proof](CANDIDATE_RESEARCH_2026-10-29.md) · [EP.06: eight screened problems, security boundaries and verified CI](CANDIDATE_RESEARCH_2026-10-30.md) · [EP.07: eight candidate decisions and verified two-skill CI](CANDIDATE_RESEARCH_2026-10-31.md) · [EP.08: AWS OIDC and npm export-map decisions, 8 scores and verified release CI](CANDIDATE_RESEARCH_2026-11-01.md). · [EP.09: Docker Compose startup and Python CLI entry-point contracts, 8 scored candidates and verified public CI](CANDIDATE_RESEARCH_2026-11-02.md).
 
@@ -70,6 +72,8 @@
 [EP.20: eight scored developer pain points, new cache-mode trust boundaries and StatefulSet PVC deletion review, independently verified PR/main CI](CANDIDATE_RESEARCH_2026-11-13.md).
 
 [EP.21: eight scored problems; npm trusted publisher OIDC and OpenTelemetry HTTP semconv, independent CI and social OFF](CANDIDATE_RESEARCH_2026-11-14.md).
+
+[EP.22: eight scored problems, Gateway API cross-namespace grants and Argo Rollouts Analysis gates, verified PR and main CI](CANDIDATE_RESEARCH_2026-11-15.md).
 
 ## History and provenance
 
