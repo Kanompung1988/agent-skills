@@ -33,7 +33,7 @@ Place the entire repo at the destination to keep `SKILL.md` and `scripts/` toget
 
 ## What it does / does not do
 
-Supports `argoproj.io/v1alpha1` AnalysisTemplates and ClusterAnalysisTemplates with per-metric condition, provider, limit and count checks; Rollout inline/background canary and blue-green template references; namespace vs cluster-scoped matching; missing required arguments.
+Supports `argoproj.io/v1alpha1` AnalysisTemplates and ClusterAnalysisTemplates with per-metric condition, provider, limit and count checks (including valid count=0, whose semantics depend on analysis placement); Rollout inline/background canary and blue-green template references; namespace vs cluster-scoped matching; missing required arguments.
 
 Limitations: Does not evaluate CEL, verify measurement queries/provider credentials, predict actual traffic behavior, inspect live resources, or know installed controller version. Some warnings are **intentional manual-approval policies**, not bugs. Incomplete bundles create scope warnings. Analyzer reads only local YAML with safe parser and file size/count limits. CI runs real tests and fixture smoke on Python 3.10/3.12; official `skills-ref` validation: **NOT_RUN**, unless separately recorded.
 
