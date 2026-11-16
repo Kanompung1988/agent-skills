@@ -45,7 +45,9 @@
 
 | **EP.22 — 2026-11-15** | [Gateway API ReferenceGrant Audit](https://github.com/Kanompung1988/gateway-referencegrant-audit) · [Argo Rollouts Analysis Audit](https://github.com/Kanompung1988/argo-rollouts-analysis-audit) | [Gateway: 26 tests + safe/review × Python 3.10/3.12](https://github.com/Kanompung1988/gateway-referencegrant-audit/actions/runs/43666573492) · [Rollouts: 35 tests + safe/review × Python 3.10/3.12](https://github.com/Kanompung1988/argo-rollouts-analysis-audit/actions/runs/43666578616) | **OFF — no Skill Lab social writes; Daily AI Scout untouched** |
 
-## EP.03–EP.22 research
+| **EP.23 — 2026-11-16** | [Kubernetes Topology Spread Audit](https://github.com/Kanompung1988/k8s-topology-spread-audit) · [Helm Dependency Lock Audit](https://github.com/Kanompung1988/helm-dependency-lock-audit) | [Topology: 24 tests + fixtures × Python 3.10/3.12](https://github.com/Kanompung1988/k8s-topology-spread-audit/actions/runs/43790282199) · [Helm: 20 tests + fixtures × Python 3.10/3.12](https://github.com/Kanompung1988/helm-dependency-lock-audit/actions/runs/43790287883) | **OFF — no Skill Lab social writes; Daily AI Scout untouched** |
+
+## EP.03–EP.23 research
 
 [EP.03: eight screened developer pain points](CANDIDATE_RESEARCH_2026-10-27.md) · [EP.04: eight screened developer pain points and public CI evidence](CANDIDATE_RESEARCH_2026-10-28.md) · [EP.05: eight screened developer problems, repo and main CI proof](CANDIDATE_RESEARCH_2026-10-29.md) · [EP.06: eight screened problems, security boundaries and verified CI](CANDIDATE_RESEARCH_2026-10-30.md) · [EP.07: eight candidate decisions and verified two-skill CI](CANDIDATE_RESEARCH_2026-10-31.md) · [EP.08: AWS OIDC and npm export-map decisions, 8 scores and verified release CI](CANDIDATE_RESEARCH_2026-11-01.md). · [EP.09: Docker Compose startup and Python CLI entry-point contracts, 8 scored candidates and verified public CI](CANDIDATE_RESEARCH_2026-11-02.md).
 
@@ -74,6 +76,8 @@
 [EP.21: eight scored problems; npm trusted publisher OIDC and OpenTelemetry HTTP semconv, independent CI and social OFF](CANDIDATE_RESEARCH_2026-11-14.md).
 
 [EP.22: eight scored problems, Gateway API cross-namespace grants and Argo Rollouts Analysis gates, verified PR and main CI](CANDIDATE_RESEARCH_2026-11-15.md).
+
+[EP.23: eight screened problems, topology spread and Helm dependency lock releases, independently verified PR/main CI](CANDIDATE_RESEARCH_2026-11-16.md).
 
 ## History and provenance
 
