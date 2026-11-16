@@ -1,6 +1,6 @@
 ---
 name: k8s-topology-spread-audit
-description: Find risky topologySpreadConstraints: invalid minDomains/maxSkew, missing or mismatched self-selectors, matchLabelKeys conflicts and node inclusion policies. Use before reviewing changes to Kubernetes Pod, Deployment, StatefulSet, DaemonSet, ReplicaSet, Job and CronJob pod templates; offline read-only validation of local files.
+description: "Find risky topologySpreadConstraints: invalid minDomains/maxSkew, missing or mismatched self-selectors, matchLabelKeys conflicts and node inclusion policies. Use before reviewing changes to Kubernetes Pod, Deployment, StatefulSet, DaemonSet, ReplicaSet, Job and CronJob pod templates; offline read-only validation of local files."
 license: MIT
 compatibility: Python 3.10+; PyYAML 6.x; local inputs, no credentials or network required.
 metadata:
