@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: api}
+spec:
+  template:
+    metadata:
+      labels: {app: api, pod-template-hash: release-v1}
+    spec:
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: topology.kubernetes.io/zone
+          whenUnsatisfiable: DoNotSchedule
+          minDomains: 2
+          labelSelector: {matchLabels: {app: api}}
+          matchLabelKeys: [pod-template-hash]
+          nodeAffinityPolicy: Honor
+          nodeTaintsPolicy: Ignore
