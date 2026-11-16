@@ -9,7 +9,7 @@
 <p align="center">
 <a href="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml"><img alt="Index QA status" src="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml/badge.svg"></a>
 <a href="https://agentskills.io/specification"><img src="https://img.shields.io/badge/Agent%20Skills-open%20spec-00D9FF?style=flat-square" alt="Agent Skills specification"></a>
-<img src="https://img.shields.io/badge/independent%20skill%20repos-44-00FFA3?style=flat-square" alt="Forty-four independent skills">
+<img src="https://img.shields.io/badge/independent%20skill%20repos-46-00FFA3?style=flat-square" alt="Forty-six independent skills">
 <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-0A1929?style=flat-square" alt="Code MIT License"></a>
 </p>
 
@@ -381,6 +381,22 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 <p><a href="https://github.com/Kanompung1988/argo-rollouts-analysis-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/argo-rollouts-analysis-audit/actions/workflows/ci.yml/badge.svg" alt="Argo Rollouts independent CI"></a></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<h3>45 · Kubernetes Topology Spread Audit</h3>
+<p><b>Find unintended Pod spreading and missing scheduler selector contracts.</b></p>
+<p>Read-only topologySpreadConstraints audit across workload Pod templates: invalid skew/minDomains, selector self-mismatch, matchLabelKeys conflicts and inclusion-policy errors. Does not simulate kube-scheduler.</p>
+<p><a href="https://github.com/Kanompung1988/k8s-topology-spread-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/k8s-topology-spread-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/k8s-topology-spread-audit/actions/workflows/ci.yml/badge.svg" alt="Topology Spread independent CI"></a></p>
+</td>
+<td width="50%" valign="top">
+<h3>46 · Helm Dependency Lock Audit</h3>
+<p><b>Catch Chart.yaml / Chart.lock dependency identity drift before chart delivery.</b></p>
+<p>Offline checks for missing locks, unexpected dependencies, repository mismatch and exact version drift. Version ranges are not evaluated; Helm remains authoritative for actual dependency builds.</p>
+<p><a href="https://github.com/Kanompung1988/helm-dependency-lock-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/helm-dependency-lock-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/helm-dependency-lock-audit/actions/workflows/ci.yml/badge.svg" alt="Helm Dependency Lock independent CI"></a></p>
+</td>
+</tr>
 </table>
 
 | Skill | CLI | Verified QA evidence | Repository |
@@ -439,6 +455,9 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 
 | Gateway API ReferenceGrant Audit | Rendered Gateway API YAML and ReferenceGrant trust matching | [Python 3.10/3.12 — 26 tests + safe/review CLI fixtures](https://github.com/Kanompung1988/gateway-referencegrant-audit/actions/runs/43666573492) | [gateway-referencegrant-audit](https://github.com/Kanompung1988/gateway-referencegrant-audit) |
 | Argo Rollouts Analysis Audit | Rendered AnalysisTemplate and Rollout YAML threshold/reference review | [Python 3.10/3.12 — 35 tests + safe/review CLI fixtures](https://github.com/Kanompung1988/argo-rollouts-analysis-audit/actions/runs/43666578616) | [argo-rollouts-analysis-audit](https://github.com/Kanompung1988/argo-rollouts-analysis-audit) |
+
+| Kubernetes topology spread | Rendered Pod template selector and skew contract review | [Python 3.10/3.12 — 24 tests + safe/review fixtures](https://github.com/Kanompung1988/k8s-topology-spread-audit/actions/runs/43790282199) | [k8s-topology-spread-audit](https://github.com/Kanompung1988/k8s-topology-spread-audit) |
+| Helm dependency lock | Offline Chart.yaml/Chart.lock dependency identity and exact version review | [Python 3.10/3.12 — 20 tests + safe/review fixtures](https://github.com/Kanompung1988/helm-dependency-lock-audit/actions/runs/43790287883) | [helm-dependency-lock-audit](https://github.com/Kanompung1988/helm-dependency-lock-audit) |
 
 ## How to install
 
@@ -513,6 +532,8 @@ EP.20 (2026-11-13) adds **GitHub Actions Cache Mode Boundary Audit** (20 unit te
 EP.21 (2026-11-14) adds **npm Trusted Publisher Audit** (20 unit tests) and **OpenTelemetry HTTP Semantic Convention Audit** (24 unit tests), each in a separate PUBLIC repository. Both pass independent GitHub Actions Python 3.10 and 3.12 post-merge `main` tests and safe/review CLI fixtures. The npm analyzer does not check the live npm registry; the OTel analyzer only evaluates sanitized trace samples, not real-time telemetry. [Review eight scored developer problems, primary documentation and exact public PR/main CI evidence](docs/CANDIDATE_RESEARCH_2026-11-14.md). **Skill Lab social OFF, Daily AI Scout unchanged.**
 
 EP.22 (2026-11-15) adds **Gateway API ReferenceGrant Audit** (26 tests) and **Argo Rollouts Analysis Audit** (35 tests), each in its own public repository and independently green on Python 3.10/3.12 PR and post-merge `main` CI with safe/review fixtures. Cross-namespace trust checks and Rollouts threshold/reference checks are bounded offline reviews, not proofs of live Gateway routing or effective canary behavior. [See eight scored developer pain points, primary sources, a pre-release semantics correction and verified commit/CI evidence](docs/CANDIDATE_RESEARCH_2026-11-15.md). **Skill Lab social OFF; Daily AI Scout unchanged.**
+
+EP.23 (2026-11-16) adds **Kubernetes Topology Spread Audit** (24 tests per Python version) and **Helm Dependency Lock Audit** (20 tests per Python version), each in a separate PUBLIC repository with clean Python 3.10/3.12 PR and post-merge main CI plus safe/review fixtures. An initial invalid YAML frontmatter description caused topology PR CI to fail; it was corrected before the passing PR and main checks. Both are local advisory tools, not full kube-scheduler or Helm engine simulations. [Review all eight candidates, primary sources, scores, and verifiable release evidence](docs/CANDIDATE_RESEARCH_2026-11-16.md). **Skill Lab social OFF; Daily AI Scout unchanged.**
 
 ## Roadmap and collaboration
 
