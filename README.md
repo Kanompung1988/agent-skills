@@ -9,7 +9,7 @@
 <p align="center">
 <a href="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml"><img alt="Index QA status" src="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml/badge.svg"></a>
 <a href="https://agentskills.io/specification"><img src="https://img.shields.io/badge/Agent%20Skills-open%20spec-00D9FF?style=flat-square" alt="Agent Skills specification"></a>
-<img src="https://img.shields.io/badge/independent%20skill%20repos-46-00FFA3?style=flat-square" alt="Forty-six independent skills">
+<img src="https://img.shields.io/badge/independent%20skill%20repos-48-00FFA3?style=flat-square" alt="Forty-eight independent skills">
 <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-0A1929?style=flat-square" alt="Code MIT License"></a>
 </p>
 
@@ -397,6 +397,22 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 <p><a href="https://github.com/Kanompung1988/helm-dependency-lock-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/helm-dependency-lock-audit/actions/workflows/ci.yml/badge.svg" alt="Helm Dependency Lock independent CI"></a></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<h3>47 · Kubernetes VolumeSnapshot Contract Audit</h3>
+<p><b>Review CSI snapshot deletion policies, content bindings and PVC restore contracts.</b></p>
+<p>Offline scan of local VolumeSnapshotClass, VolumeSnapshotContent, VolumeSnapshot and PVC YAML: class default collisions, deletion risks, invalid sources, binding mismatches and restore mode restrictions. Does not query a cluster or guarantee backup safety.</p>
+<p><a href="https://github.com/Kanompung1988/k8s-volume-snapshot-contract-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/k8s-volume-snapshot-contract-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/k8s-volume-snapshot-contract-audit/actions/workflows/ci.yml/badge.svg" alt="CSI Snapshot independent CI"></a></p>
+</td>
+<td width="50%" valign="top">
+<h3>48 · Python Editable Wheel Metadata Parity Audit</h3>
+<p><b>Detect editable-wheel and regular-wheel distribution metadata drift.</b></p>
+<p>Read-only PEP 660 ZIP metadata comparison checks Name, Version, other core metadata, Requires-Dist and console script entry points, while reviewing legitimate extra editable-only mechanism dependencies. Does not install or execute wheels.</p>
+<p><a href="https://github.com/Kanompung1988/py-editable-wheel-parity-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/py-editable-wheel-parity-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/py-editable-wheel-parity-audit/actions/workflows/ci.yml/badge.svg" alt="PEP 660 metadata independent CI"></a></p>
+</td>
+</tr>
 </table>
 
 | Skill | CLI | Verified QA evidence | Repository |
@@ -458,6 +474,9 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 
 | Kubernetes topology spread | Rendered Pod template selector and skew contract review | [Python 3.10/3.12 — 24 tests + safe/review fixtures](https://github.com/Kanompung1988/k8s-topology-spread-audit/actions/runs/43790282199) | [k8s-topology-spread-audit](https://github.com/Kanompung1988/k8s-topology-spread-audit) |
 | Helm dependency lock | Offline Chart.yaml/Chart.lock dependency identity and exact version review | [Python 3.10/3.12 — 20 tests + safe/review fixtures](https://github.com/Kanompung1988/helm-dependency-lock-audit/actions/runs/43790287883) | [helm-dependency-lock-audit](https://github.com/Kanompung1988/helm-dependency-lock-audit) |
+
+| CSI snapshot contracts | Offline CSI VolumeSnapshot/Class/Content + PVC restore manifest review | [Python 3.10/3.12 — 24 tests + safe/review CLI](https://github.com/Kanompung1988/k8s-volume-snapshot-contract-audit/actions/runs/44002323168) | [k8s-volume-snapshot-contract-audit](https://github.com/Kanompung1988/k8s-volume-snapshot-contract-audit) |
+| Python PEP 660 wheel metadata | Read-only normal vs ephemeral editable wheel metadata and dependency comparison | [Python 3.10/3.12 — 16 tests + CLI fixture](https://github.com/Kanompung1988/py-editable-wheel-parity-audit/actions/runs/44002015262) | [py-editable-wheel-parity-audit](https://github.com/Kanompung1988/py-editable-wheel-parity-audit) |
 
 ## How to install
 
@@ -534,6 +553,8 @@ EP.21 (2026-11-14) adds **npm Trusted Publisher Audit** (20 unit tests) and **Op
 EP.22 (2026-11-15) adds **Gateway API ReferenceGrant Audit** (26 tests) and **Argo Rollouts Analysis Audit** (35 tests), each in its own public repository and independently green on Python 3.10/3.12 PR and post-merge `main` CI with safe/review fixtures. Cross-namespace trust checks and Rollouts threshold/reference checks are bounded offline reviews, not proofs of live Gateway routing or effective canary behavior. [See eight scored developer pain points, primary sources, a pre-release semantics correction and verified commit/CI evidence](docs/CANDIDATE_RESEARCH_2026-11-15.md). **Skill Lab social OFF; Daily AI Scout unchanged.**
 
 EP.23 (2026-11-16) adds **Kubernetes Topology Spread Audit** (24 tests per Python version) and **Helm Dependency Lock Audit** (20 tests per Python version), each in a separate PUBLIC repository with clean Python 3.10/3.12 PR and post-merge main CI plus safe/review fixtures. An initial invalid YAML frontmatter description caused topology PR CI to fail; it was corrected before the passing PR and main checks. Both are local advisory tools, not full kube-scheduler or Helm engine simulations. [Review all eight candidates, primary sources, scores, and verifiable release evidence](docs/CANDIDATE_RESEARCH_2026-11-16.md). **Skill Lab social OFF; Daily AI Scout unchanged.**
+
+EP.24 (2026-11-17) adds **Kubernetes VolumeSnapshot Contract Audit** (24 unit tests per Python version) and **Python Editable Wheel Metadata Parity Audit** (16 unit tests per Python version), each in an independently released PUBLIC repository with passing Python 3.10/3.12 PR and post-merge `main` CI. The CSI tool checks local manifest contracts only, not actual backup health; the Python tool compares regular and ephemeral PEP 660 wheel metadata without executing code or guaranteeing import behavior. [Read eight scored developer problems, official references, provisioning PRs, public main SHAs and independent CI evidence](docs/CANDIDATE_RESEARCH_2026-11-17.md). **Skill Lab social OFF indefinitely; Daily AI Scout unchanged.**
 
 ## Roadmap and collaboration
 
