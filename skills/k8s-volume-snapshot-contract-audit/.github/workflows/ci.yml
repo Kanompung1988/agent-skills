@@ -1,0 +1,45 @@
+name: Independent Agent Skill CI
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: python -m pip install 'PyYAML>=6,<7'
+      - name: Validate Agent Skill and SVG
+        run: |
+          python - <<'PYCODE'
+          import pathlib,re,yaml,xml.etree.ElementTree as ET
+          data=pathlib.Path('SKILL.md').read_text();parts=data.split('---',2)
+          assert len(parts)==3 and not parts[0].strip()
+          meta=yaml.safe_load(parts[1]);assert meta['name']==pathlib.Path.cwd().name
+          assert re.fullmatch(r'[a-z][a-z0-9]*(?:-[a-z0-9]+)*',meta['name'])
+          assert 1<=len(meta['description'])<=1024
+          ET.parse('assets/area-zero-logo-full.svg');ET.parse('assets/hero.svg')
+          PYCODE
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Clean CLI fixture
+        run: python audit.py examples/safe.yaml
+      - name: Review CLI fixture
+        run: python audit.py examples/review.yaml --format json
+      - name: Strict review exit 2
+        shell: bash
+        run: |
+          set +e
+          python audit.py examples/review.yaml --strict
+          status=$?
+          test "$status" -eq 2

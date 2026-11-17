@@ -1,0 +1,25 @@
+apiVersion: snapshot.storage.k8s.io/v1
+kind: VolumeSnapshotClass
+metadata:
+  name: backups
+driver: example.csi
+deletionPolicy: Retain
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: source
+  namespace: demo
+spec:
+  accessModes: [ReadWriteOnce]
+  resources:
+    requests: {storage: 1Gi}
+---
+apiVersion: snapshot.storage.k8s.io/v1
+kind: VolumeSnapshot
+metadata:
+  name: daily
+  namespace: demo
+spec:
+  source: {persistentVolumeClaimName: source}
+  volumeSnapshotClassName: backups

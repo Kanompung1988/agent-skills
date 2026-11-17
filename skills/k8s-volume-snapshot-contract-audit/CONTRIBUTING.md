@@ -1,0 +1,1 @@
+Contribute synthetic sanitized YAML fixtures only; never include secrets or kubeconfigs. Every new rule requires official Kubernetes documentation and positive and negative regression tests. Run unit and CLI fixtures before a PR.
