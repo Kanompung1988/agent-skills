@@ -1,0 +1,1 @@
+Contribute sanitized, reproducible synthetic wheel fixtures, tests and source references via pull requests. Do not upload real editable wheel artifacts, private packages or secrets. Run unit tests and CLI smoke before committing.
