@@ -1,0 +1,5 @@
+jobs:
+  run:
+    uses: ./.github/workflows/callee.yml
+    with:
+      typo: production

@@ -1,0 +1,10 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web
+spec:
+  tls:
+    - hosts: [other.example.com]
+      secretName: missing-secret
+  rules:
+    - host: example.com

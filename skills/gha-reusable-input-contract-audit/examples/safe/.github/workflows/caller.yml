@@ -1,0 +1,8 @@
+on: push
+jobs:
+  run:
+    uses: ./.github/workflows/callee.yml
+    with:
+      target: production
+    secrets:
+      TOKEN: ${{ secrets.TOKEN }}

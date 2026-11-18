@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web
+  namespace: app
+spec:
+  tls:
+    - hosts: [example.com]
+      secretName: web-tls
+  rules:
+    - host: example.com
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: web-tls
+  namespace: app
+type: kubernetes.io/tls
+stringData:
+  tls.crt: placeholder
+  tls.key: placeholder

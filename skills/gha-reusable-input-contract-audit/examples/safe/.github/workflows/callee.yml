@@ -1,0 +1,14 @@
+on:
+  workflow_call:
+    inputs:
+      target:
+        type: string
+        required: true
+    secrets:
+      TOKEN:
+        required: true
+jobs:
+  noop:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo safe
