@@ -9,7 +9,7 @@
 <p align="center">
 <a href="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml"><img alt="Index QA status" src="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml/badge.svg"></a>
 <a href="https://agentskills.io/specification"><img src="https://img.shields.io/badge/Agent%20Skills-open%20spec-00D9FF?style=flat-square" alt="Agent Skills specification"></a>
-<img src="https://img.shields.io/badge/independent%20skill%20repos-48-00FFA3?style=flat-square" alt="Forty-eight independent skills">
+<img src="https://img.shields.io/badge/independent%20skill%20repos-50-00FFA3?style=flat-square" alt="Fifty independent skills">
 <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-0A1929?style=flat-square" alt="Code MIT License"></a>
 </p>
 
@@ -413,6 +413,20 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 <p><a href="https://github.com/Kanompung1988/py-editable-wheel-parity-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/py-editable-wheel-parity-audit/actions/workflows/ci.yml/badge.svg" alt="PEP 660 metadata independent CI"></a></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<h3>49 · GitHub Actions Reusable Input Contract Audit</h3>
+<p><b>Detect reusable-workflow caller/callee input and secret drift.</b></p>
+<p>Offline GitHub Actions workflow_call input/secret and scalar type checks across same-repository local workflow files; never reads secrets or executes workflows.</p>
+<p><a href="https://github.com/Kanompung1988/gha-reusable-input-contract-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/gha-reusable-input-contract-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/gha-reusable-input-contract-audit/actions/workflows/ci.yml/badge.svg" alt="Reusable input independent CI"></a></p>
+</td><td width="50%" valign="top">
+<h3>50 · Kubernetes Ingress TLS Contract Audit</h3>
+<p><b>Review Ingress TLS host/rule mismatch and Secret metadata contracts.</b></p>
+<p>Offline networking.k8s.io/v1 TLS host review and supplied same-namespace TLS Secret type/key names; does not inspect certificate values or query a cluster.</p>
+<p><a href="https://github.com/Kanompung1988/k8s-ingress-tls-contract-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/k8s-ingress-tls-contract-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/k8s-ingress-tls-contract-audit/actions/workflows/ci.yml/badge.svg" alt="Ingress TLS independent CI"></a></p>
+</td></tr>
 </table>
 
 | Skill | CLI | Verified QA evidence | Repository |
@@ -555,6 +569,8 @@ EP.22 (2026-11-15) adds **Gateway API ReferenceGrant Audit** (26 tests) and **Ar
 EP.23 (2026-11-16) adds **Kubernetes Topology Spread Audit** (24 tests per Python version) and **Helm Dependency Lock Audit** (20 tests per Python version), each in a separate PUBLIC repository with clean Python 3.10/3.12 PR and post-merge main CI plus safe/review fixtures. An initial invalid YAML frontmatter description caused topology PR CI to fail; it was corrected before the passing PR and main checks. Both are local advisory tools, not full kube-scheduler or Helm engine simulations. [Review all eight candidates, primary sources, scores, and verifiable release evidence](docs/CANDIDATE_RESEARCH_2026-11-16.md). **Skill Lab social OFF; Daily AI Scout unchanged.**
 
 EP.24 (2026-11-17) adds **Kubernetes VolumeSnapshot Contract Audit** (24 unit tests per Python version) and **Python Editable Wheel Metadata Parity Audit** (16 unit tests per Python version), each in an independently released PUBLIC repository with passing Python 3.10/3.12 PR and post-merge `main` CI. The CSI tool checks local manifest contracts only, not actual backup health; the Python tool compares regular and ephemeral PEP 660 wheel metadata without executing code or guaranteeing import behavior. [Read eight scored developer problems, official references, provisioning PRs, public main SHAs and independent CI evidence](docs/CANDIDATE_RESEARCH_2026-11-17.md). **Skill Lab social OFF indefinitely; Daily AI Scout unchanged.**
+
+EP.25 (2026-11-18) adds **GitHub Actions Reusable Input Contract Audit** and **Kubernetes Ingress TLS Contract Audit**, two distinct public standalone repositories with 20 local unit tests each, 20 per version on real GitHub Actions Python 3.10/3.12, latest post-merge main CI success, safe/review CLI fixtures, and unmodified SVG logo hash checks. The tools are offline reviewers, not live runtime certification. [Eight scored candidates and release evidence](docs/CANDIDATE_RESEARCH_2026-11-18.md). **Skill Lab social OFF; Daily AI Scout unchanged.**
 
 ## Roadmap and collaboration
 
