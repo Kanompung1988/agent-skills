@@ -1,0 +1,8 @@
+services:
+  app:
+    image: sample-app:local
+    ports:
+      - "8080:80"
+      - target: 5432
+        published: "5432"
+        host_ip: "0.0.0.0"

@@ -1,0 +1,12 @@
+services:
+  app:
+    image: sample-app:local
+    ports:
+      - "127.0.0.1:8080:80"
+      - target: 3000
+        published: "3000"
+        host_ip: "::1"
+  database:
+    image: postgres:18
+    expose:
+      - "5432"
