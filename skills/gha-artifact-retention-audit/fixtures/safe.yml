@@ -1,0 +1,10 @@
+name: sample safe
+on: push
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/upload-artifact@v4
+        with:
+          path: dist/
+          retention-days: 30

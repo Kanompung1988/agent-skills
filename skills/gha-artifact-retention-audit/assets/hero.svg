@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="370" viewBox="0 0 1200 370" role="img" aria-labelledby="title desc">
+<title id="title">GitHub Actions artifact retention audit</title><desc id="desc">A visual timeline of artifact windows from workflow configuration to review policy.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#071323"/><stop offset="1" stop-color="#102f3f"/></linearGradient><linearGradient id="focus"><stop stop-color="#3adbbb"/><stop offset="1" stop-color="#59baff"/></linearGradient></defs>
+<rect width="1200" height="370" fill="url(#bg)" rx="23"/><text x="64" y="85" font-family="Arial,sans-serif" font-size="18" fill="#5de0c7" letter-spacing="3">AREAZERO SKILL LAB  /  AGENT SKILL</text>
+<text x="64" y="142" font-family="Arial,sans-serif" font-size="43" font-weight="bold" fill="#f4faff">Artifact Retention Audit</text>
+<text x="64" y="185" font-family="Arial,sans-serif" font-size="19" fill="#bbd0d9">Know which workflow artifacts may disappear before you need them.</text>
+<line x1="80" y1="269" x2="1100" y2="269" stroke="#416170" stroke-width="6" stroke-linecap="round"/>
+<line x1="80" y1="269" x2="790" y2="269" stroke="url(#focus)" stroke-width="8" stroke-linecap="round"/>
+<circle cx="80" cy="269" r="10" fill="#3adbbb"/><circle cx="440" cy="269" r="10" fill="#3adbbb"/><circle cx="790" cy="269" r="12" fill="#59baff"/><circle cx="1100" cy="269" r="10" fill="#547080"/>
+<text x="80" y="245" font-family="Arial" font-size="15" fill="#b9dee5">WORKFLOW</text><text x="440" y="302" font-family="Arial" font-size="15" fill="#b9dee5">TEAM WINDOW</text><text x="790" y="244" font-family="Arial" font-size="15" fill="#d3e9fa">RETENTION</text><text x="1100" y="302" text-anchor="end" font-family="Arial" font-size="15" fill="#b9dee5">POLICY CAP</text>
+</svg>
