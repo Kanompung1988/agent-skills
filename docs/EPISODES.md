@@ -51,7 +51,9 @@
 
 | **EP.25 — 2026-11-18** | [GHA Reusable Input Contract Audit](https://github.com/Kanompung1988/gha-reusable-input-contract-audit) · [Kubernetes Ingress TLS Contract Audit](https://github.com/Kanompung1988/k8s-ingress-tls-contract-audit) | [GHA: 20 tests + CLI × Python 3.10/3.12](https://github.com/Kanompung1988/gha-reusable-input-contract-audit/actions/runs/44221433057) · [Ingress: 20 tests + CLI × Python 3.10/3.12](https://github.com/Kanompung1988/k8s-ingress-tls-contract-audit/actions/runs/44221441998) | **OFF — no Skill Lab social actions; Daily AI Scout unchanged** |
 
-## EP.03–EP.25 research
+| **EP.26 — 2026-11-19** | [PostgreSQL SECURITY DEFINER Search Path Audit](https://github.com/Kanompung1988/pg-security-definer-path-audit) · [GitHub Actions Artifact Retention Audit](https://github.com/Kanompung1988/gha-artifact-retention-audit) | [PostgreSQL: 25 tests + CLI × Python 3.10/3.12](https://github.com/Kanompung1988/pg-security-definer-path-audit/actions/runs/44444095257) · [Artifacts: 30 tests + CLI × Python 3.10/3.12](https://github.com/Kanompung1988/gha-artifact-retention-audit/actions/runs/44446337356) | **OFF — no Skill Lab IG/FB writes; Daily AI Scout untouched** |
+
+## EP.03–EP.26 research
 
 [EP.03: eight screened developer pain points](CANDIDATE_RESEARCH_2026-10-27.md) · [EP.04: eight screened developer pain points and public CI evidence](CANDIDATE_RESEARCH_2026-10-28.md) · [EP.05: eight screened developer problems, repo and main CI proof](CANDIDATE_RESEARCH_2026-10-29.md) · [EP.06: eight screened problems, security boundaries and verified CI](CANDIDATE_RESEARCH_2026-10-30.md) · [EP.07: eight candidate decisions and verified two-skill CI](CANDIDATE_RESEARCH_2026-10-31.md) · [EP.08: AWS OIDC and npm export-map decisions, 8 scores and verified release CI](CANDIDATE_RESEARCH_2026-11-01.md). · [EP.09: Docker Compose startup and Python CLI entry-point contracts, 8 scored candidates and verified public CI](CANDIDATE_RESEARCH_2026-11-02.md).
 
@@ -86,6 +88,8 @@
 [EP.24: eight screened developer pain points; independent CSI snapshot and PEP 660 wheel metadata releases, real Python 3.10/3.12 PR/main CI and social OFF](CANDIDATE_RESEARCH_2026-11-17.md).
 
 [EP.25: eight screened problems, independent CI-verified reusable-workflow interface and Ingress TLS contract tools, no social writes](CANDIDATE_RESEARCH_2026-11-18.md).
+
+[EP.26: eight evaluated problems, search_path and artifact retention releases, overlap rejection, audited PR/CI and public SHAs](CANDIDATE_RESEARCH_2026-11-19.md).
 
 ## History and provenance
 
