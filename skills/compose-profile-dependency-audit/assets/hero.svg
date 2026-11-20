@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="Docker Compose Profile Dependency Audit">
+<defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#0A1B2D"/><stop offset="1" stop-color="#123855"/></linearGradient></defs>
+<rect width="1200" height="320" rx="22" fill="url(#g)"/>
+<path d="M72 84H1128M72 245H1128" stroke="#27506a" stroke-width="1"/>
+<circle cx="1105" cy="61" r="7" fill="#00D8BF"/><circle cx="1078" cy="61" r="7" fill="#4389AC"/>
+<text x="74" y="73" font-family="sans-serif" fill="#79D8DC" font-size="19" letter-spacing="3">AREAZERO SKILL LAB  /  EP.27</text>
+<text x="74" y="157" font-family="sans-serif" fill="#FFFFFF" font-size="38" font-weight="700">Docker Compose Profile Dependency Audit</text>
+<text x="74" y="211" font-family="sans-serif" fill="#C8E0EB" font-size="19">Offline audit  ·  Explicit evidence  ·  Reproducible tests</text>
+<text x="74" y="282" font-family="sans-serif" fill="#69CBBB" font-size="16">AGENT SKILLS  /  PYTHON 3.10+  /  READ-ONLY</text>
+</svg>

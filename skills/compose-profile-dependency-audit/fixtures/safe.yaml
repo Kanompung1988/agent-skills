@@ -1,0 +1,10 @@
+services:
+  api:
+    image: example/api:1
+    depends_on: [database]
+  database:
+    image: postgres:17
+  metrics:
+    image: example/metrics:1
+    profiles: [tools]
+    depends_on: [api]

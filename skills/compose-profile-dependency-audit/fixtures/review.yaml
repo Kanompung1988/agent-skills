@@ -1,0 +1,14 @@
+services:
+  frontend:
+    image: nginx:stable
+    depends_on: [backend]
+  backend:
+    image: example/backend:1
+    profiles: [debug]
+  debug:
+    image: example/debug:1
+    profiles: [debug]
+    depends_on: [seed]
+  seed:
+    image: example/seed:1
+    profiles: [data]
