@@ -53,7 +53,9 @@
 
 | **EP.26 — 2026-11-19** | [PostgreSQL SECURITY DEFINER Search Path Audit](https://github.com/Kanompung1988/pg-security-definer-path-audit) · [GitHub Actions Artifact Retention Audit](https://github.com/Kanompung1988/gha-artifact-retention-audit) | [PostgreSQL: 25 tests + CLI × Python 3.10/3.12](https://github.com/Kanompung1988/pg-security-definer-path-audit/actions/runs/44444095257) · [Artifacts: 30 tests + CLI × Python 3.10/3.12](https://github.com/Kanompung1988/gha-artifact-retention-audit/actions/runs/44446337356) | **OFF — no Skill Lab IG/FB writes; Daily AI Scout untouched** |
 
-## EP.03–EP.26 research
+| **EP.27 — 2026-11-20** | [Compose Profile Dependency Audit](https://github.com/Kanompung1988/compose-profile-dependency-audit) · [Kubernetes PSA Namespace Audit](https://github.com/Kanompung1988/k8s-psa-namespace-audit) | [Compose: 32 tests + CLI × Python 3.10/3.12](https://github.com/Kanompung1988/compose-profile-dependency-audit/actions/runs/44659440171) · [PSA: 36 tests + CLI × Python 3.10/3.12](https://github.com/Kanompung1988/k8s-psa-namespace-audit/actions/runs/44659474154) | **OFF — no Skill Lab IG/FB writes, Daily AI Scout untouched** |
+
+## EP.03–EP.27 research
 
 [EP.03: eight screened developer pain points](CANDIDATE_RESEARCH_2026-10-27.md) · [EP.04: eight screened developer pain points and public CI evidence](CANDIDATE_RESEARCH_2026-10-28.md) · [EP.05: eight screened developer problems, repo and main CI proof](CANDIDATE_RESEARCH_2026-10-29.md) · [EP.06: eight screened problems, security boundaries and verified CI](CANDIDATE_RESEARCH_2026-10-30.md) · [EP.07: eight candidate decisions and verified two-skill CI](CANDIDATE_RESEARCH_2026-10-31.md) · [EP.08: AWS OIDC and npm export-map decisions, 8 scores and verified release CI](CANDIDATE_RESEARCH_2026-11-01.md). · [EP.09: Docker Compose startup and Python CLI entry-point contracts, 8 scored candidates and verified public CI](CANDIDATE_RESEARCH_2026-11-02.md).
 
@@ -90,6 +92,8 @@
 [EP.25: eight screened problems, independent CI-verified reusable-workflow interface and Ingress TLS contract tools, no social writes](CANDIDATE_RESEARCH_2026-11-18.md).
 
 [EP.26: eight evaluated problems, search_path and artifact retention releases, overlap rejection, audited PR/CI and public SHAs](CANDIDATE_RESEARCH_2026-11-19.md).
+
+[EP.27: eight scored pain points, standalone Compose profile and Namespace PSA releases with PR/main CI evidence](CANDIDATE_RESEARCH_2026-11-20.md).
 
 ## History and provenance
 

@@ -9,7 +9,7 @@
 <p align="center">
 <a href="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml"><img alt="Index QA status" src="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml/badge.svg"></a>
 <a href="https://agentskills.io/specification"><img src="https://img.shields.io/badge/Agent%20Skills-open%20spec-00D9FF?style=flat-square" alt="Agent Skills specification"></a>
-<img src="https://img.shields.io/badge/independent%20skill%20repos-52-00FFA3?style=flat-square" alt="Fifty-two independent skills">
+<img src="https://img.shields.io/badge/independent%20skill%20repos-54-00FFA3?style=flat-square" alt="Fifty-four independent skills">
 <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-0A1929?style=flat-square" alt="Code MIT License"></a>
 </p>
 
@@ -443,6 +443,22 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 <p><a href="https://github.com/Kanompung1988/gha-artifact-retention-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/gha-artifact-retention-audit/actions/workflows/ci.yml/badge.svg" alt="Artifact retention CI"></a></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<h3>53 · Docker Compose Profile Dependency Audit</h3>
+<p><b>Catch dependencies excluded by active Compose profiles.</b></p>
+<p>Offline, scenario-based check for default and activated profiles, referenced service availability, unknown targets and dependency cycles. Does not run Docker Compose.</p>
+<p><a href="https://github.com/Kanompung1988/compose-profile-dependency-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/compose-profile-dependency-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/compose-profile-dependency-audit/actions/workflows/ci.yml/badge.svg" alt="Compose profile CI"></a></p>
+</td>
+<td width="50%" valign="top">
+<h3>54 · Kubernetes PSA Namespace Audit</h3>
+<p><b>Review Pod Security Admission label and policy contracts.</b></p>
+<p>Offline Namespace enforce/warn/audit level and version checks, annotation mistakes, duplicate declarations and operator-specified enforcement. No live admission claims.</p>
+<p><a href="https://github.com/Kanompung1988/k8s-psa-namespace-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/k8s-psa-namespace-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/k8s-psa-namespace-audit/actions/workflows/ci.yml/badge.svg" alt="PSA Namespace CI"></a></p>
+</td>
+</tr>
 </table>
 
 | Skill | CLI | Verified QA evidence | Repository |
@@ -510,6 +526,9 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 
 | PostgreSQL SECURITY DEFINER search_path | Offline privileged SQL routine/search-path review | [Python 3.10/3.12 — 25 tests + CLI fixtures](https://github.com/Kanompung1988/pg-security-definer-path-audit/actions/runs/44444095257) | [pg-security-definer-path-audit](https://github.com/Kanompung1988/pg-security-definer-path-audit) |
 | GHA artifact retention | Offline upload-artifact retention contract and operator-supplied policy review | [Python 3.10/3.12 — 30 tests + CLI fixtures](https://github.com/Kanompung1988/gha-artifact-retention-audit/actions/runs/44446337356) | [gha-artifact-retention-audit](https://github.com/Kanompung1988/gha-artifact-retention-audit) |
+
+| Compose profile dependency | Offline profile activation and hard-dependency scenario review | [Python 3.10/3.12 — 32 tests + CLI fixtures](https://github.com/Kanompung1988/compose-profile-dependency-audit/actions/runs/44659440171) | [compose-profile-dependency-audit](https://github.com/Kanompung1988/compose-profile-dependency-audit) |
+| Kubernetes PSA namespace | Offline Pod Security Admission namespace label review | [Python 3.10/3.12 — 36 tests + CLI fixtures](https://github.com/Kanompung1988/k8s-psa-namespace-audit/actions/runs/44659474154) | [k8s-psa-namespace-audit](https://github.com/Kanompung1988/k8s-psa-namespace-audit) |
 
 ## How to install
 
@@ -592,6 +611,8 @@ EP.24 (2026-11-17) adds **Kubernetes VolumeSnapshot Contract Audit** (24 unit te
 EP.25 (2026-11-18) adds **GitHub Actions Reusable Input Contract Audit** and **Kubernetes Ingress TLS Contract Audit**, two distinct public standalone repositories with 20 local unit tests each, 20 per version on real GitHub Actions Python 3.10/3.12, latest post-merge main CI success, safe/review CLI fixtures, and unmodified SVG logo hash checks. The tools are offline reviewers, not live runtime certification. [Eight scored candidates and release evidence](docs/CANDIDATE_RESEARCH_2026-11-18.md). **Skill Lab social OFF; Daily AI Scout unchanged.**
 
 EP.26 (2026-11-19) adds **PostgreSQL SECURITY DEFINER Search Path Audit** (25 tests per Python version) and **GitHub Actions Artifact Retention Audit** (30 tests per Python version). Both ship as independent PUBLIC repositories with Python 3.10/3.12 passing pull-request and post-merge `main` Actions. An additional Compose published-port repository was provisioned and verified but **not curated as a new Skill** because it substantially duplicates the existing Compose Port Exposure Audit; its repository and idempotency record are preserved. Neither accepted skill connects to production systems. [See the eight scored problems, duplication decision, primary docs and exact PR/CI evidence](docs/CANDIDATE_RESEARCH_2026-11-19.md). **Skill Lab social OFF; Daily AI Scout unchanged.**
+
+EP.27 (2026-11-20) adds **Docker Compose Profile Dependency Audit** (32 tests) and **Kubernetes Pod Security Admission Namespace Audit** (36 tests), each a separate PUBLIC repository with passing Python 3.10/3.12 PR and post-merge main CI and safe/review CLI fixtures. Both are deliberately bounded static reviews; neither evaluates live deployment or admission state. [Eight scored developer problems, source references, verified commits and CI](docs/CANDIDATE_RESEARCH_2026-11-20.md). **Skill Lab social OFF indefinitely; Daily AI Scout unchanged.**
 
 ## Roadmap and collaboration
 
