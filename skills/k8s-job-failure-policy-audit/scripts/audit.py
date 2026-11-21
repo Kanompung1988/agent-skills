@@ -54,7 +54,7 @@ def audit_documents(documents: list[Any], file: str="<memory>") -> list[dict[str
                         if action not in ACTIONS:
                             out.append(finding("POD_FAILURE_ACTION_INVALID","ERROR",file,index,f"Rule {ri} has unsupported action {action!r}",name))
                         if action == "FailIndex" and per_index is None:
-                            out.append(finding("FAIL_INDEX_REQUIBES_PER_INDEX","ERROR",file,index,f"Rule {ri} uses FailIndex but backoffLimitPerIndex is not set",name))
+                            out.append(finding("FAIL_INDEX_REQUIRES_PER_INDEX","ERROR",file,index,f"Rule {ri} uses FailIndex but backoffLimitPerIndex is not set",name))
                         has_exit="onExitCodes" in rule and rule.get("onExitCodes") is not None
                         has_conditions="onPodConditions" in rule and rule.get("onPodConditions") is not None
                         if has_exit == has_conditions:
