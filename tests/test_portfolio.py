@@ -6,19 +6,21 @@ import unittest
 import xml.etree.ElementTree as ET
 
 ROOT=Path(__file__).resolve().parents[1]
-REPOS=['openapi-compat-audit','ci-log-triage','gha-trust-boundary-audit','env-contract-audit','pg-migration-risk-audit','docker-context-guard','python-artifact-audit','k8s-rbac-rights-audit','terraform-plan-impact-audit','k8s-netpol-scope-audit','codeowners-review-gap-audit','k8s-image-pin-audit','compose-port-exposure-audit','helm-values-contract-audit','aws-github-oidc-trust-audit','npm-export-map-audit','compose-startup-readiness-audit','python-entrypoint-contract-audit','k8s-pdb-scope-audit','pip-index-boundary-audit','py-dependency-group-audit','pg-rls-policy-audit','nginx-header-inheritance-audit','npm-lifecycle-policy-audit','compose-mount-write-audit','gha-reusable-permission-audit','k8s-securitycontext-audit','git-submodule-boundary-audit','gha-attestation-gate-audit','k8s-vap-binding-audit','k8s-hpa-request-contract-audit','k8s-service-backend-audit','gha-concurrency-scope-audit','buildkit-secret-boundary-audit','k8s-cronjob-timezone-audit','argocd-sync-option-audit','gha-environment-gate-audit','terraform-state-transition-audit','gha-cache-mode-boundary-audit','k8s-statefulset-pvc-audit','npm-trusted-publisher-audit','otel-http-semconv-audit','gateway-referencegrant-audit','argo-rollouts-analysis-audit','k8s-topology-spread-audit','helm-dependency-lock-audit','k8s-volume-snapshot-contract-audit','py-editable-wheel-parity-audit','gha-reusable-input-contract-audit','k8s-ingress-tls-contract-audit','pg-security-definer-path-audit','gha-artifact-retention-audit','compose-profile-dependency-audit','k8s-psa-namespace-audit']
+REPOS=['openapi-compat-audit','ci-log-triage','gha-trust-boundary-audit','env-contract-audit','pg-migration-risk-audit','docker-context-guard','python-artifact-audit','k8s-rbac-rights-audit','terraform-plan-impact-audit','k8s-netpol-scope-audit','codeowners-review-gap-audit','k8s-image-pin-audit','compose-port-exposure-audit','helm-values-contract-audit','aws-github-oidc-trust-audit','npm-export-map-audit','compose-startup-readiness-audit','python-entrypoint-contract-audit','k8s-pdb-scope-audit','pip-index-boundary-audit','py-dependency-group-audit','pg-rls-policy-audit','nginx-header-inheritance-audit','npm-lifecycle-policy-audit','compose-mount-write-audit','gha-reusable-permission-audit','k8s-securitycontext-audit','git-submodule-boundary-audit','gha-attestation-gate-audit','k8s-vap-binding-audit','k8s-hpa-request-contract-audit','k8s-service-backend-audit','gha-concurrency-scope-audit','buildkit-secret-boundary-audit','k8s-cronjob-timezone-audit','argocd-sync-option-audit','gha-environment-gate-audit','terraform-state-transition-audit','gha-cache-mode-boundary-audit','k8s-statefulset-pvc-audit','npm-trusted-publisher-audit','otel-http-semconv-audit','gateway-referencegrant-audit','argo-rollouts-analysis-audit','k8s-topology-spread-audit','helm-dependency-lock-audit','k8s-volume-snapshot-contract-audit','py-editable-wheel-parity-audit','gha-reusable-input-contract-audit','k8s-ingress-tls-contract-audit','pg-security-definer-path-audit','gha-artifact-retention-audit','compose-profile-dependency-audit','k8s-psa-namespace-audit','k8s-runtimeclass-contract-audit','k8s-job-failure-policy-audit']
 EXPECTED={
  'area-zero-logo-full.svg':'89b459e6a4e61748d2d56d54da2cd17ff2b55deafbbc90e45e43d4c319462d16',
  'area-zero-logo-icon.svg':'f566816db1f90656499b5e8377b04cc96584c45b2a62c8113895f3f24eeb0c68'
 }
 class PortfolioTests(unittest.TestCase):
- def test_directory_is_exactly_52_unique_skill_links(self):
-  self.assertEqual(len(REPOS),54)
+ def test_directory_is_exactly_56_unique_skill_links(self):
+  self.assertEqual(len(REPOS),56)
   self.assertEqual(len(REPOS),len(set(REPOS)))
   text=(ROOT/'README.md').read_text(encoding='utf-8')
-  self.assertIn('independent%20skill%20repos-54-',text)
+  self.assertIn('independent%20skill%20repos-56-',text)
   self.assertIn('docs/CANDIDATE_RESEARCH_2026-11-20.md',text)
+  self.assertIn('docs/CANDIDATE_RESEARCH_2026-11-21.md',text)
   self.assertIn('**EP.27 — 2026-11-20**',(ROOT/'docs/EPISODES.md').read_text(encoding='utf-8'))
+  self.assertIn('**EP.28 — 2026-11-21**',(ROOT/'docs/EPISODES.md').read_text(encoding='utf-8'))
 
  def test_all_standalone_repos_linked(self):
   readme=(ROOT/'README.md').read_text(encoding='utf-8')
