@@ -1,0 +1,34 @@
+apiVersion: node.k8s.io/v1
+kind: RuntimeClass
+metadata:
+  name: gvisor
+spec:
+  handler: gvisor
+  scheduling:
+    nodeSelector:
+      runtime.example.com/type: gvisor
+  overhead:
+    podFixed:
+      cpu: -10m
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: incompatible
+spec:
+  runtimeClassName: gvisor
+  nodeSelector:
+    runtime.example.com/type: runc
+  containers:
+    - name: app
+      image: example/app:v1
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: external
+spec:
+  runtimeClassName: kata-unknown
+  containers:
+    - name: app
+      image: example/app:v1
