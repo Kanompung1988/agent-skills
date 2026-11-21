@@ -1,0 +1,32 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: broken-policy
+spec:
+  completionMode: NonIndexed
+  backoffLimitPerIndex: 2
+  maxFailedIndexes: 3
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: worker
+          image: example/worker:v1
+  podReplacementPolicy: TerminatingOrFailed
+  podFailurePolicy:
+    rules:
+      - action: FailIndex
+        onExitCodes:
+          containerName: missing
+          operator: In
+          values: [42, 42]
+      - action: Nope
+        onExitCodes:
+          operator: In
+          values: [0]
+      - action: Ignore
+        onExitCodes:
+          operator: NotIn
+          values: [7]
+        onPodConditions:
+          - type: DisruptionTarget
