@@ -70,7 +70,7 @@ class RuntimeClassAuditTests(unittest.TestCase):
         try: self.assertIn("INPUT_PARSE_ERROR", self.codes("bad.yaml"))
         finally: p.unlink(missing_ok=True)
     def test_pod_without_runtimeclass_is_ignored(self):
-        self.assertEqual(audit_documents([{"kind":"Pod","spec":{"runtimeClassName":"x"}}]), [])
+        self.assertEqual(audit_documents([{"kind":"Pod","spec":{"containers":[]}}]), [])
     def test_runtimeclass_without_scheduling_is_valid(self):
         self.assertEqual(audit_documents([{"kind":"RuntimeClass","metadata":{"name":"x"},"spec":{"handler":"x"}}]), [])
     def test_multiple_documents_preserve_document_number(self):
