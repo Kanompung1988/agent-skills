@@ -9,7 +9,7 @@
 <p align="center">
 <a href="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml"><img alt="Index QA status" src="https://github.com/Kanompung1988/agent-skills/actions/workflows/validate-skills.yml/badge.svg"></a>
 <a href="https://agentskills.io/specification"><img src="https://img.shields.io/badge/Agent%20Skills-open%20spec-00D9FF?style=flat-square" alt="Agent Skills specification"></a>
-<img src="https://img.shields.io/badge/independent%20skill%20repos-54-00FFA3?style=flat-square" alt="Fifty-four independent skills">
+<img src="https://img.shields.io/badge/independent%20skill%20repos-56-00FFA3?style=flat-square" alt="Fifty-six independent skills">
 <a href="LICENSE"><img src="https://img.shields.io/badge/code%20license-MIT-0A1929?style=flat-square" alt="Code MIT License"></a>
 </p>
 
@@ -459,6 +459,23 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 <p><a href="https://github.com/Kanompung1988/k8s-psa-namespace-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/k8s-psa-namespace-audit/actions/workflows/ci.yml/badge.svg" alt="PSA Namespace CI"></a></p>
 </td>
 </tr>
+
+<tr>
+<td width="50%" valign="top">
+<h3>55 · Kubernetes RuntimeClass Contract Audit</h3>
+<p><b>Catch RuntimeClass and Pod scheduling conflicts before admission.</b></p>
+<p>Offline YAML audit of handler/scheduling shapes, merged nodeSelector conflicts and non-negative Pod overhead quantities. External RuntimeClass references are informational; no cluster access.</p>
+<p><a href="https://github.com/Kanompung1988/k8s-runtimeclass-contract-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/k8s-runtimeclass-contract-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/k8s-runtimeclass-contract-audit/actions/workflows/ci.yml/badge.svg" alt="RuntimeClass audit CI"></a></p>
+</td>
+<td width="50%" valign="top">
+<h3>56 · Kubernetes Job Failure Policy Audit</h3>
+<p><b>Catch incompatible batch retry rules before Job execution.</b></p>
+<p>Offline Job/CronJob checks for podFailurePolicy, restartPolicy, exit-code matchers, indexed backoff, FailIndex and replacement-policy contracts. No cluster access or workload execution.</p>
+<p><a href="https://github.com/Kanompung1988/k8s-job-failure-policy-audit"><b>Source, README &amp; install →</b></a></p>
+<p><a href="https://github.com/Kanompung1988/k8s-job-failure-policy-audit/actions/workflows/ci.yml"><img src="https://github.com/Kanompung1988/k8s-job-failure-policy-audit/actions/workflows/ci.yml/badge.svg" alt="Job failure policy CI"></a></p>
+</td>
+</tr>
 </table>
 
 | Skill | CLI | Verified QA evidence | Repository |
@@ -529,6 +546,10 @@ Most developer problems deserve a focused tool, not a giant feature list. Indepe
 
 | Compose profile dependency | Offline profile activation and hard-dependency scenario review | [Python 3.10/3.12 — 32 tests + CLI fixtures](https://github.com/Kanompung1988/compose-profile-dependency-audit/actions/runs/44659440171) | [compose-profile-dependency-audit](https://github.com/Kanompung1988/compose-profile-dependency-audit) |
 | Kubernetes PSA namespace | Offline Pod Security Admission namespace label review | [Python 3.10/3.12 — 36 tests + CLI fixtures](https://github.com/Kanompung1988/k8s-psa-namespace-audit/actions/runs/44659474154) | [k8s-psa-namespace-audit](https://github.com/Kanompung1988/k8s-psa-namespace-audit) |
+
+| Kubernetes RuntimeClass | Offline RuntimeClass scheduling merge, handler/overhead and Pod-template contract review | [24 tests + official skills-ref + CLI × Python 3.10/3.12](https://github.com/Kanompung1988/k8s-runtimeclass-contract-audit/actions/runs/44855075655) | [k8s-runtimeclass-contract-audit](https://github.com/Kanompung1988/k8s-runtimeclass-contract-audit) |
+| Kubernetes Job failure policy | Offline Job/CronJob retry, podFailurePolicy, indexed backoff and replacement-policy review | [26 tests + official skills-ref + CLI × Python 3.10/3.12](https://github.com/Kanompung1988/k8s-job-failure-policy-audit/actions/runs/44855080977) | [k8s-job-failure-policy-audit](https://github.com/Kanompung1988/k8s-job-failure-policy-audit) |
+
 
 ## How to install
 
@@ -613,6 +634,8 @@ EP.25 (2026-11-18) adds **GitHub Actions Reusable Input Contract Audit** and **K
 EP.26 (2026-11-19) adds **PostgreSQL SECURITY DEFINER Search Path Audit** (25 tests per Python version) and **GitHub Actions Artifact Retention Audit** (30 tests per Python version). Both ship as independent PUBLIC repositories with Python 3.10/3.12 passing pull-request and post-merge `main` Actions. An additional Compose published-port repository was provisioned and verified but **not curated as a new Skill** because it substantially duplicates the existing Compose Port Exposure Audit; its repository and idempotency record are preserved. Neither accepted skill connects to production systems. [See the eight scored problems, duplication decision, primary docs and exact PR/CI evidence](docs/CANDIDATE_RESEARCH_2026-11-19.md). **Skill Lab social OFF; Daily AI Scout unchanged.**
 
 EP.27 (2026-11-20) adds **Docker Compose Profile Dependency Audit** (32 tests) and **Kubernetes Pod Security Admission Namespace Audit** (36 tests), each a separate PUBLIC repository with passing Python 3.10/3.12 PR and post-merge main CI and safe/review CLI fixtures. Both are deliberately bounded static reviews; neither evaluates live deployment or admission state. [Eight scored developer problems, source references, verified commits and CI](docs/CANDIDATE_RESEARCH_2026-11-20.md). **Skill Lab social OFF indefinitely; Daily AI Scout unchanged.**
+
+EP.28 (2026-11-21) adds **Kubernetes RuntimeClass Contract Audit** (24 tests) and **Kubernetes Job Failure Policy Audit** (26 tests), each in a separate PUBLIC repository. PR and post-merge `main` CI passed on Python 3.10/3.12; the official `skills-ref` validator ran on Python 3.12 (upstream validator requires Python 3.11+). Both are offline static reviews, not cluster certification. [Eight scored developer pain points, commits, official validator and CI evidence](docs/CANDIDATE_RESEARCH_2026-11-21.md). **Skill Lab social OFF indefinitely; Daily AI Scout unchanged.**
 
 ## Roadmap and collaboration
 
